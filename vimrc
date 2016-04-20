@@ -23,6 +23,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'szw/vim-tags'
 Bundle 'SirVer/ultisnips'
+"Bundle 'majutsushi/tagbar'
 "End list of bundles
 
 
@@ -146,7 +147,10 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 au FileType rust nnoremap <F4> :Dispatch ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
+" see :TagsGenerate
 
+"nnoremap <F3> :TagbarToggle<cr>
+nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>t <c-]>
 nnoremap <leader>T <c-t>
 

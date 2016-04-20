@@ -117,13 +117,6 @@ export PATH
 MANPATH=$MANPATH:$HOME/Logiciels/minizinc-2.0.1/doc/man
 export MANPATH
 
-alias sshjanus="ssh vigneron@janus.info.univ-angers.fr"
-alias sftpjanus="sftp vigneron@janus.info.univ-angers.fr"
-alias sshtaurus="ssh vincent.vigneron@taurus2.info-ua"
-alias sftptaurus="sftp vincent.vigneron@taurus2.info-ua"
-alias vimupdate="git --git-dir=/home/vigneron/vim/.git --work-tree=/home/vigneron/vim"
-
-alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror -std=c++11"
 
 #LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Logiciels/gecode-4.4.0
 #export LD_LIBRARY_PATH
@@ -132,7 +125,10 @@ alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror -std=c++11"
 
 shopt -s histappend
 PROMPT_COMMAND='history -a'
-alias tmux="tmux -2"
+
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
 
 
 # ssh-keygen -t rda -C "vigneron.vincent.49@gmail.com"
