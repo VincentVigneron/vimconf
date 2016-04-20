@@ -1,0 +1,31 @@
+snippet doccode "test" b
+/// \`\`\`
+/// $0
+/// \`\`\`
+endsnippet
+
+snippet docex "test"
+/// # Examples
+endsnippet
+
+snippet docerr "test"
+/// # Errors
+endsnippet
+
+snippet doctype "test"
+\`${1}\`$0
+endsnippet
+
+snippet debug "test"
+#[derive(Debug)]
+endsnippet
+
+snippet for "test" b
+for ${1} in ${2} {
+	$0
+}
+endsnippet
+
+snippet println
+println!("${1:\{\}}\n"${1/(^{.*}.*})?.*/(?2:, :\);)/}$2${1/1/(^{.*}.*})?.*/(?2:, :\);)/}
+endsnippet
