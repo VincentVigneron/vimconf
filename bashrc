@@ -123,6 +123,8 @@ alias sshtaurus="ssh vincent.vigneron@taurus2.info-ua"
 alias sftptaurus="sftp vincent.vigneron@taurus2.info-ua"
 alias vimupdate="git --git-dir=/home/vigneron/vim/.git --work-tree=/home/vigneron/vim"
 
+alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror -std=c++11"
+
 #LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Logiciels/gecode-4.4.0
 #export LD_LIBRARY_PATH
 
