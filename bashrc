@@ -133,3 +133,9 @@ alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror -std=c++11"
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 alias tmux="tmux -2"
+
+
+# ssh-keygen -t rda -C "vigneron.vincent.49@gmail.com"
+# xsel --clipboard < ~/.ssh/id_rsa.pub
+# firefox https://github.com/
+# firefox https://sourcesup.renater.fr
