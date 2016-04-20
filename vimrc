@@ -121,7 +121,7 @@ au BufRead,BufNewFile *.rs set filetype=rust
 au BufRead,BufNewFile *.pas set filetype=pascal
 au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
-au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always \| less -r<cr>
+au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 au FileType cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
