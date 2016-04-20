@@ -1,5 +1,5 @@
-snippet rustlic "" b
-// Copyright ${1} ${2:Vincent Vigneron}. See the COPYRIGHT
+snippet rustlic "Displays the MIT Licence." b
+// Copyright ${1:Year} ${2:Vincent Vigneron}. See the COPYRIGHT
 // file at the top-level directory of this distribution.
 //
 // Licensed under the MIT license <LICENSE-MIT or
@@ -9,29 +9,37 @@ snippet rustlic "" b
 $0
 endsnippet
 
-snippet doccode "test" b
+snippet doccode "Wrapping for code block inside the documentation."
 /// \`\`\`
 /// $0
 /// \`\`\`
 endsnippet
 
-snippet docex "test"
-/// # Examples
+snippet docex "Examples section."
+# Examples
 endsnippet
 
-snippet docerr "test"
-/// # Errors
+snippet docerr "Errors section."
+# Errors
 endsnippet
 
-snippet doctype "test"
-\`${1}\`$0
+snippet doctype "Wrapping for type inside documentation."
+\`${1:Type}\`$0
 endsnippet
 
-snippet debug "test"
+snippet docpar "Parameter description."
+* \`${1:Parameter}\` - ${2:Description}.$0
+endsnippet
+
+snippet docdes "Description section."
+# Description
+endsnippet
+
+snippet debug "Debug."
 #[derive(Debug)]
 endsnippet
 
-snippet for "test" b
+snippet for "For loop." b
 for ${1} in ${2} {
 	$0
 }
