@@ -132,6 +132,7 @@ au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
 
 au FileType plaintex,tex nnoremap <F8> :Make<cr>
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
+au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
 au FileType plaintex,tex set spell spelllang=fr
 au FileType plaintex,tex nnoremap <leader>n ]s<cr>
 au FileType plaintex,tex nnoremap <leader>p [s<cr>
