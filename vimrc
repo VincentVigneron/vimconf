@@ -30,6 +30,7 @@ Bundle 'SirVer/ultisnips'
 filetype plugin indent on " required
 
 let mapleader = "-"
+syntax on
 
 set tabstop=4
 set shiftwidth=4
@@ -60,6 +61,8 @@ set colorcolumn=+1
 "Color Scheme
 set t_Co=256
 "if $COLORTERM == 'gnome-terminal'
+"	set t_Co=256 "endif colorscheme lucius
+"if $COLORTERM == 'mate-terminal'
 "	set t_Co=256 "endif colorscheme lucius
 colorscheme lucius
 LuciusLightHighContrast
