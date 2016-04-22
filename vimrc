@@ -77,7 +77,7 @@ LuciusLightHighContrast
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path="/home/vigneron/Developer/rust-master/src"
+let g:ycm_rust_src_path="$HOME/Developer/rust-master/src"
 
 "NerdTree
 "au VimEnter * NERDTree
