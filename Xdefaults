@@ -1,0 +1,17 @@
+! rxvt-unicode-256colors
+
+URxvt*scrollBar: False
+
+URxvt.geometry: 91x25
+
+URxvt*background: #eeeeee
+URxvt*foreground: #5c3577
+
+URxvt.font: xft:DejaVu Sans Mono:size=10
+URxvt.boldfont: xft:DejaVu Sans Mono:bold:size=10
+
+! url
+! 1:left click; 2: middle click; 3: right click
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: $BROWSER
+URxvt.matcher.button: 1
