@@ -11,3 +11,5 @@ alias vimcommit="git --git-dir=$HOME/vim/.git --work-tree=$HOME/vim commit"
 alias vimpull="git --git-dir=$HOME/vim/.git --work-tree=$HOME/vim pull"
 alias vimpush="git --git-dir=$HOME/vim/.git --work-tree=$HOME/vim push origin master"
 alias vimbrows="xdg-open https://github.com/VincentVigneron/vimconf.git"
+
+alias python=python3
