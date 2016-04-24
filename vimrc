@@ -23,6 +23,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'szw/vim-tags'
 Bundle 'SirVer/ultisnips'
+Bundle 'klen/python-mode'
 "Bundle 'majutsushi/tagbar'
 "End list of bundles
 
@@ -139,6 +140,16 @@ au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
 au FileType plaintex,tex set spell spelllang=fr
 au FileType plaintex,tex nnoremap <leader>n ]s<cr>
 au FileType plaintex,tex nnoremap <leader>p [s<cr>
+
+" au BufRead,BufNewFile *.py
+	" \ set tabstop=4
+	" \ set softtabstop=4
+	" \ set shiftwidth=4
+	" \ set expandtab=4
+	" \ set autoindent=4
+	" \ set fileformat=unix
+	" \ set foldmethod=indent
+	" \ set foldlevel=99
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
