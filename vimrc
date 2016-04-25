@@ -93,7 +93,7 @@ noremap <F2> :NERDTreeToggle<CR>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 
 "let g:markify_autocmd = 0
@@ -133,6 +133,7 @@ au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
 au FileType cpp let g:syntastic_cpp_compiler_options="-std=c++1y"
 au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
+au FileType pascal set foldmethod=indent
 
 au FileType plaintex,tex nnoremap <F8> :Make<cr>
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
