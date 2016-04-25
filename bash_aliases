@@ -13,3 +13,5 @@ alias vimpush="git --git-dir=$HOME/vim/.git --work-tree=$HOME/vim push origin ma
 alias vimbrows="xdg-open https://github.com/VincentVigneron/vimconf.git"
 
 alias python=python3
+
+alias cpycm="cp $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"

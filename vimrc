@@ -23,7 +23,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'szw/vim-tags'
 Bundle 'SirVer/ultisnips'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 "Bundle 'majutsushi/tagbar'
 "End list of bundles
 
@@ -74,12 +74,14 @@ LuciusLightHighContrast
 ""$git submodule update --init --recursive
 ""$
 ""$./install.py --racer-completer
+""$./install.py --clang-completer
 ""$
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path="$HOME/Developer/rust-master/src"
+let g:ycm_rust_src_path='$HOME/Developer/rust-master/src'
 
+let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "NerdTree
 "au VimEnter * NERDTree
 "au BufEnter * NERDTreeMirrori
@@ -123,14 +125,16 @@ au BufRead,BufNewFile *.cpp,*.hpp set filetype=cpp
 au BufRead,BufNewFile Cargo.toml,Cargo.lock set filetype=rust_config
 au BufRead,BufNewFile *.rs set filetype=rust
 au BufRead,BufNewFile *.pas set filetype=pascal
+
 au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
+
 au FileType cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
+au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1y'
 
-au FileType cpp let g:syntastic_cpp_compiler_options="-std=c++1y"
 au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
 au FileType pascal set foldmethod=indent
@@ -142,26 +146,20 @@ au FileType plaintex,tex set spell spelllang=fr
 au FileType plaintex,tex nnoremap <leader>n ]s<cr>
 au FileType plaintex,tex nnoremap <leader>p [s<cr>
 
-" au BufRead,BufNewFile *.py
-	" \ set tabstop=4
-	" \ set softtabstop=4
-	" \ set shiftwidth=4
-	" \ set expandtab=4
-	" \ set autoindent=4
-	" \ set fileformat=unix
-	" \ set foldmethod=indent
-	" \ set foldlevel=99
+let g:syntastic_python_python_exec = 'usr/bin/python3'
+let g:ycm_python_binary_path = 'usr/bin/python3'
+au FileType python nnoremap <F5> :!python "%p<cr>
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
-	\ 'active_file_types': ['rust','cpp','pascal'],
+	\ 'active_file_types': ['rust','cpp','pascal', 'python'],
 	\ 'passive_file_types': []
 	\}
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 au FileType rust nnoremap <F4> :Dispatch ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
 " see :TagsGenerate
 
