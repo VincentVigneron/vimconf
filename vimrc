@@ -51,6 +51,7 @@ set laststatus=2
 
 "Line numbers
 set relativenumber
+set lazyredraw
 set number
 
 "Color text that goes over the 80 column
