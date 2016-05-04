@@ -166,6 +166,9 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 au FileType rust nnoremap <F4> :Dispatch ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
 " see :TagsGenerate
 
+" disabl default long line highlighting in zinc files
+let g:zinc_no_highlight_overlong = 1
+
 "nnoremap <F3> :TagbarToggle<cr>
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <leader>t <c-]>
