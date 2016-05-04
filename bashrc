@@ -135,3 +135,7 @@ fi
 # xsel --clipboard < ~/.ssh/id_rsa.pub
 # firefox https://github.com/
 # firefox https://sourcesup.renater.fr
+
+
+stty ixany
+stty ixoff -ixon
