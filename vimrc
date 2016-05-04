@@ -23,6 +23,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'szw/vim-tags'
 Bundle 'SirVer/ultisnips'
+Bundle 'vale1410/vim-minizinc'
 "Bundle 'klen/python-mode'
 "Bundle 'majutsushi/tagbar'
 "End list of bundles
@@ -197,3 +198,5 @@ inoremap <c-w> <esc>:w<cr>
 nnoremap <c-u> vwU
 cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
+
+
