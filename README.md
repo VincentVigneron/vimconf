@@ -13,5 +13,5 @@ sudo apt-get install python3-numpy
 sudo apt-get install python3-matlib
 sudo apt-get install python3-pip
 
-sudo pip3 install pyttsx
 sudo pip3 install gTTS
+sudo apt-get install mpg321
