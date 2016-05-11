@@ -9,8 +9,9 @@ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 cd .vim/bundle/YouComplete/me
 ./install.py --clang-completer
 sudo ln -s libclang.so.1 libclang.so
-sudo apt-get isntall python3-numpy
-sudo apt-get isntall python3-matlib
+sudo apt-get install python3-numpy
+sudo apt-get install python3-matlib
+sudo apt-get install python3-pip
 
-sudo pip install pyttsx
-sudo pip install gTTS
+sudo pip3 install pyttsx
+sudo pip3 install gTTS
