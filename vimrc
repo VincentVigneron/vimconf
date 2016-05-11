@@ -151,7 +151,7 @@ au FileType plaintex,tex nnoremap <leader>p [s<cr>
 
 let g:syntastic_python_python_exec = 'usr/bin/python3'
 let g:ycm_python_binary_path = 'usr/bin/python3'
-au FileType python nnoremap <F5> :!python "%p<cr>
+au FileType python nnoremap <F5> :!python3 %<cr>
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
