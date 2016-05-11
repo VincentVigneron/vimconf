@@ -12,3 +12,5 @@ sudo ln -s libclang.so.1 libclang.so
 sudo apt-get isntall python3-numpy
 sudo apt-get isntall python3-matlib
 
+sudo pip install pyttsx
+sudo pip install gTTS
