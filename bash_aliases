@@ -15,3 +15,4 @@ alias vimbrows="xdg-open https://github.com/VincentVigneron/vimconf.git"
 alias python=python3
 
 alias cpycm="cp $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+alias @phpDev='docker run --rm -it --name phpDev -p 80:80 -p 3306:3306 -v $HOME/Mes_projets_web:/home/php_dev/Mes_projets_web php-dev'

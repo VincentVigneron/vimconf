@@ -6,26 +6,33 @@ filetype off " required
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "List of bundles
-Bundle 'rust-lang/rust.vim'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'tpope/vim-dispatch'
-Bundle 'dhruvasagar/vim-markify'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'szw/vim-tags'
-Bundle 'SirVer/ultisnips'
-Bundle 'vale1410/vim-minizinc'
-"Bundle 'klen/python-mode'
-"Bundle 'majutsushi/tagbar'
+Plugin 'rust-lang/rust.vim'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'dhruvasagar/vim-markify'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tommcdo/vim-fubitive'
+Plugin 'szw/vim-tags'
+Plugin 'SirVer/ultisnips'
+Plugin 'vale1410/vim-minizinc'
+Plugin 'surround.vim'
+Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-commentary'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'vim-latex/vim-latex'
+"Plugin 'klen/python-mode'
+"Plugin 'majutsushi/tagbar'
 "End list of bundles
 
 
@@ -36,6 +43,10 @@ syntax on
 
 set tabstop=4
 set shiftwidth=4
+
+"set guifont=Lucida_Console:h11
+set guifont=Monospace\ 10
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 "Display non printable characters:
 "	eol      : end of line
@@ -49,6 +60,11 @@ set list
 
 "airline
 set laststatus=2
+let g:airline_theme="base16_chalk"
+"let g:airline_left_sep= ' '
+"let g:airline_right_sep = ' '
+let g:bufferline_echo=0
+let g:airline#extensions#bufferline#enabled = 1
 
 "Line numbers
 set relativenumber
@@ -134,20 +150,23 @@ au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 
-au FileType cpp nnoremap <F8> :Dispatch make -C build<cr>
+au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
 au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1y'
 
 au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
-au FileType pascal set foldmethod=indent
+"au FileType pascal set foldmethod=indent
 
 au FileType plaintex,tex nnoremap <F8> :Make<cr>
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
+au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
 au FileType plaintex,tex set spell spelllang=fr
 au FileType plaintex,tex nnoremap <leader>n ]s<cr>
 au FileType plaintex,tex nnoremap <leader>p [s<cr>
+au FileType plaintex,tex set foldmethod=indent
+au FileType plaintex,tex set foldlevel=0
 
 let g:syntastic_python_python_exec = 'usr/bin/python3'
 let g:ycm_python_binary_path = 'usr/bin/python3'
@@ -185,6 +204,10 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gp :Gpush origin master<cr>
 nnoremap <leader>gb :Gbrowse<cr>
+
+nnoremap <leader>se :set spell spelllang=en<cr>
+nnoremap <leader>sf :set spell spelllang=fr<cr>
+nnoremap <leader>sn :set nospell<cr>
 "
 nnoremap <leader>q :qa<cr>
 inoremap jk <esc>
@@ -201,5 +224,3 @@ inoremap <c-w> <esc>:w<cr>
 nnoremap <c-u> vwU
 cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
-
-

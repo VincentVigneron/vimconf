@@ -111,7 +111,7 @@ PATH=$PATH:$HOME/Logiciels/MiniZincIDE-0.9.6-linux-x86_64
 PATH=$PATH:$HOME/Logiciels/Zotero_linux-x86_64
 PATH=$PATH:/usr/include/mysql
 PATH=$PATH:$HOME/Documents/D/toGraphiz/toGraphiz/bin/Release
-
+PATH=$PATH:$HOME/.cargo/bin
 export PATH
 
 MANPATH=$MANPATH:$HOME/Logiciels/minizinc-2.0.1/doc/man
@@ -139,3 +139,6 @@ fi
 
 stty ixany
 stty ixoff -ixon
+
+export VISUAL="/usr/bin/gnome-text-editor"
+export EDITOR="$VISUAL"
