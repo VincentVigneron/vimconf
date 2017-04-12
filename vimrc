@@ -44,10 +44,6 @@ syntax on
 set tabstop=4
 set shiftwidth=4
 
-"set guifont=Lucida_Console:h11
-set guifont=Monospace\ 10
-set guifont=DejaVu\ Sans\ Mono\ 10
-
 "Display non printable characters:
 "	eol      : end of line
 "	tab      : tabulation
@@ -108,7 +104,7 @@ let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycm
 ""CTRL-t to toggle tree view with CTRL-t
 "nmap <silent> <C-t> :NERDTreeToggle<CR>
 ""Set F2 to put the cursor to the nerdtree
-noremap <F2> :NERDTreeToggle<CR>
+noremap <F2> :NERDTreeToggle<cr>
 
 "Syntastic
 
@@ -222,5 +218,8 @@ nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 inoremap <c-w> <esc>:w<cr>
 nnoremap <c-u> vwU
-cnoremap <C-F> <Right>
-cnoremap <C-B> <Left>
+cnoremap <c-F> <Right>
+cnoremap <c-B> <Left>
+nnoremap <space> :bnext<cr>
+nnoremap <c-@> :bprevious<cr>
+inoremap <c-@> <c-x><c-o>
