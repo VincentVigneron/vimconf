@@ -23,6 +23,7 @@ do
 		ln -s $directory/$i $HOME/.$i
 	fi
 done
+fc-cache -fv
 
 if [ ! -d $HOME/.vim ]
 then

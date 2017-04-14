@@ -7,7 +7,7 @@ URxvt.geometry: 91x25
 URxvt*background: #eeeeee
 URxvt*foreground: #5c3577
 
-URxvt.font: xft:noto mono:size=10
+URxvt.font: xft:Inconsolata:size=11
 URxvt.boldfont: xft:DejaVu Sans Mono:bold:size=10
 
 ! url
