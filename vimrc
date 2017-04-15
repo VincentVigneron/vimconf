@@ -30,6 +30,7 @@ Plugin 'surround.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-commentary'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'dhruvasagar/vim-table-mode'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'klen/python-mode'
 "Plugin 'majutsushi/tagbar'
@@ -43,6 +44,7 @@ syntax on
 
 set tabstop=4
 set shiftwidth=4
+set hlsearch
 
 "Display non printable characters:
 "	eol      : end of line
@@ -97,6 +99,7 @@ LuciusLightHighContrast
 let g:ycm_rust_src_path='$HOME/Developer/rust-master/src'
 
 let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 "NerdTree
 "au VimEnter * NERDTree
 "au BufEnter * NERDTreeMirrori
