@@ -39,3 +39,6 @@ do
 	fi
 done
 
+# curl https://sh.rustup.rs -sSf | sh
+# cargo install racer
+# rustup component add rust-src

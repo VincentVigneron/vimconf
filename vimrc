@@ -10,6 +10,7 @@ Plugin 'gmarik/vundle'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'scrooloose/syntastic'
@@ -144,6 +145,11 @@ au BufRead,BufNewFile Cargo.toml,Cargo.lock set filetype=rust_config
 au BufRead,BufNewFile *.rs set filetype=rust
 au BufRead,BufNewFile *.pas set filetype=pascal
 
+"cargo install racer
+"rustup component add rust-src
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let g:racer_exeperimental_completer = 1
 au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
