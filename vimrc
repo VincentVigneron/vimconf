@@ -46,6 +46,7 @@ syntax on
 set tabstop=4
 set shiftwidth=4
 set hlsearch
+set omnifunc=syntaxcomplete#Complete
 
 "Display non printable characters:
 "	eol      : end of line
@@ -97,8 +98,7 @@ LuciusLightHighContrast
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path = '$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/'
-let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_rust_src_path = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
 let g:ycm_confirm_extra_conf = 0
 "NerdTree
 "au VimEnter * NERDTree
@@ -151,6 +151,7 @@ au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 
+au FileType c,cpp let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
 au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1y'

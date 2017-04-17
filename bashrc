@@ -111,8 +111,9 @@ PATH=$PATH:$HOME/Logiciels/MiniZincIDE-0.9.6-linux-x86_64
 PATH=$PATH:$HOME/Logiciels/Zotero_linux-x86_64
 PATH=$PATH:/usr/include/mysql
 PATH=$PATH:$HOME/Documents/D/toGraphiz/toGraphiz/bin/Release
-PATH=$PATH:$HOME/.cargo/env
 export PATH
+
+source $HOME/.cargo/env
 
 MANPATH=$MANPATH:$HOME/Logiciels/minizinc-2.0.1/doc/man
 export MANPATH
@@ -142,3 +143,4 @@ stty ixoff -ixon
 
 export VISUAL="/usr/bin/gnome-text-editor"
 export EDITOR="$VISUAL"
+export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
