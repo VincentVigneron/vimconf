@@ -10,8 +10,6 @@ Plugin 'gmarik/vundle'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
-"Plugin 'racer-rust/vim-racer'
-"Plugin 'Rip-Rip/clang_complete' " obsolete due to ycm
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
@@ -92,8 +90,7 @@ LuciusLightHighContrast
 ""$
 ""$git submodule update --init --recursive
 ""$
-""$./install.py --racer-completer
-""$./install.py --clang-completer
+""$./install.py --clang-completer --racer-completer
 ""$
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
