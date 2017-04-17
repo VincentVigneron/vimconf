@@ -10,8 +10,8 @@ Plugin 'gmarik/vundle'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'Rip-Rip/clang_complete'
+"Plugin 'racer-rust/vim-racer'
+"Plugin 'Rip-Rip/clang_complete' " obsolete due to ycm
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
@@ -97,8 +97,7 @@ LuciusLightHighContrast
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path='$HOME/Developer/rust-master/src'
-
+let g:ycm_rust_src_path = '$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/'
 let g:ycm_global_ycm_extra_conf='$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 "NerdTree
@@ -147,9 +146,6 @@ au BufRead,BufNewFile *.pas set filetype=pascal
 
 "cargo install racer
 "rustup component add rust-src
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let g:racer_exeperimental_completer = 1
 au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
