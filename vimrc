@@ -31,6 +31,9 @@ Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-commentary'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'dhruvasagar/vim-table-mode'
+"Plugin 'suan/vim-instant-markdown'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'klen/python-mode'
 "Plugin 'majutsushi/tagbar'
@@ -238,3 +241,5 @@ cnoremap <c-k> <right>
 cnoremap <c-j> <left>
 cnoremap <c-l> <s-right>
 cnoremap <c-h> <s-left>
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <c-l> :nohl<cr><c-l>
