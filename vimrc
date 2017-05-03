@@ -50,6 +50,8 @@ set shiftwidth=4
 set hlsearch
 set omnifunc=syntaxcomplete#Complete
 
+match SpellBad /\<\(\w\+\)\s\+\1\>/
+
 "Display non printable characters:
 "	eol      : end of line
 "	tab      : tabulation
