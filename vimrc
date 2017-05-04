@@ -37,6 +37,7 @@ Plugin 'xolox/vim-notes'
 "Plugin 'vim-latex/vim-latex'
 "Plugin 'klen/python-mode'
 "Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/StyleChecker--perl'
 "End list of bundles
 
 
@@ -51,6 +52,10 @@ set hlsearch
 set omnifunc=syntaxcomplete#Complete
 
 match SpellBad /\<\(\w\+\)\s\+\1\>/
+"set updatetime=10
+
+"autocmd! CursorHold,CursorHoldI * let @/='\<'.expand('<cword>').'\>'
+
 
 "Display non printable characters:
 "	eol      : end of line
@@ -210,9 +215,15 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gp :Gpush origin master<cr>
 nnoremap <leader>gb :Gbrowse<cr>
 
-nnoremap <leader>se :set spell spelllang=en<cr>
-nnoremap <leader>sf :set spell spelllang=fr<cr>
-nnoremap <leader>sn :set nospell<cr>
+au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
+au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
+au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
+au FileType plaintex,tex nnoremap <leader>sc :call SC_used()<cr>
+"au FileType plaintex,tex nnoremap <leader>scr1 let g:SC_sensitivity=1
+"au FileType plaintex,tex nnoremap <leader>scr2 let g:SC_sensitivity=2
+"au FileType plaintex,tex nnoremap <leader>scr3 let g:SC_sensitivity=3
+"au FileType plaintex,tex nnoremap <leader>scl3 let g:SC_length=3
+"au FileType plaintex,tex nnoremap <leader>scl4 let g:SC_length=4
 "
 nnoremap <leader>q :qa<cr>
 inoremap jk <esc>
