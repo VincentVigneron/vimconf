@@ -184,7 +184,7 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
-	\ 'active_file_types': ['rust','cpp','pascal', 'python'],
+	\ 'active_file_types': ['rust','cpp','pascal', 'python', 'tex'],
 	\ 'passive_file_types': []
 	\}
 
@@ -221,14 +221,14 @@ au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 
 function! SC_highlight()
 	call SC_used()
-	highlight scError1 ctermfg=16 ctermbg=151 guibg=#afd7af
-	highlight scError2 ctermfg=16 ctermbg=187 guibg=#d7d7af
-	highlight scError3 ctermfg=16 ctermbg=181 guibg=#d7afaf
-	highlight scError4 ctermfg=16 ctermbg=153 guibg=#afd7ff
-	highlight scError5 ctermfg=16 ctermbg=143 guibg=#acc267
-	highlight scError6 ctermfg=16 ctermbg=249 guibg=#b0b0b0
-	highlight scError7 ctermfg=16 ctermbg=214 guibg=#ffaf00
-	highlight scError8 ctermfg=16 ctermbg=229 guibg=#ffffaf
+	highlight scError1 ctermfg=16 ctermbg=151 guifg=fg guibg=#afd7af
+	highlight scError2 ctermfg=16 ctermbg=187 guifg=fg guibg=#d7d7af
+	highlight scError3 ctermfg=16 ctermbg=181 guifg=fg guibg=#d7afaf
+	highlight scError4 ctermfg=16 ctermbg=153 guifg=fg guibg=#afd7ff
+	highlight scError5 ctermfg=16 ctermbg=143 guifg=fg guibg=#acc267
+	highlight scError6 ctermfg=16 ctermbg=249 guifg=fg guibg=#b0b0b0
+	highlight scError7 ctermfg=16 ctermbg=214 guifg=fg guibg=#ffaf00
+	highlight scError8 ctermfg=16 ctermbg=229 guifg=fg guibg=#ffffaf
 endfunc
 au FileType plaintex,tex nnoremap <leader>sc :call SC_highlight()<cr>
 "au FileType plaintex,tex nnoremap <leader>scr1 let g:SC_sensitivity=1
