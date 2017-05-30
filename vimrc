@@ -50,6 +50,7 @@ set tabstop=4
 set shiftwidth=4
 set hlsearch
 set omnifunc=syntaxcomplete#Complete
+set digraph
 
 match SpellBad /\<\(\w\+\)\s\+\1\>/
 "set updatetime=10
@@ -184,8 +185,8 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
-	\ 'active_file_types': ['rust','cpp','pascal', 'python', 'tex'],
-	\ 'passive_file_types': []
+	\ 'active_file_types': ['rust','cpp','pascal', 'python'],
+	\ 'passive_file_types': ['tex']
 	\}
 
 " Snippets

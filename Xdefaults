@@ -19,3 +19,6 @@ URxvt.bolditalicfont: xft:InputMonoNarrow:bolditalic:size=10
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: $BROWSER
 URxvt.matcher.button: 1
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
