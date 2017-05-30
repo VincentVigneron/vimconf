@@ -218,6 +218,7 @@ nnoremap <leader>gb :Gbrowse<cr>
 au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
+au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
 
 function! SC_highlight()
 	call SC_used()
