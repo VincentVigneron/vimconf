@@ -213,7 +213,7 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gp :Gpush origin master<cr>
+nnoremap <leader>gp :Gpush origin HEAD<cr>
 nnoremap <leader>gb :Gbrowse<cr>
 
 au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
