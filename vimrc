@@ -139,6 +139,7 @@ let g:syntastic_warning_symbol = "⚠"
 
 let g:ctrlp_root_markers=['Cargo.toml']
 let g:ctrlp_working_path='ra'
+let g:ctrlp_show_hidden = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = {
@@ -174,8 +175,8 @@ au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
 au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
 au FileType plaintex,tex set spell spelllang=fr
-au FileType plaintex,tex nnoremap <leader>n ]s<cr>
-au FileType plaintex,tex nnoremap <leader>p [s<cr>
+au FileType plaintex,tex nnoremap <leader>n ]s
+au FileType plaintex,tex nnoremap <leader>p [s
 au FileType plaintex,tex set foldmethod=indent
 au FileType plaintex,tex set foldlevel=0
 
@@ -220,6 +221,7 @@ au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
+au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 80<cr>`n
 
 function! SC_highlight()
 	call SC_used()
@@ -264,9 +266,7 @@ cnoremap <Down> <nop>
 cnoremap <Left> <nop>
 cnoremap <Right> <nop>
 inoremap <c-w> <esc>:w<cr>
-nnoremap <c-u> vwU
-cnoremap <c-F> <Right>
-cnoremap <c-B> <Left>
+nnoremap <c-u> viw~
 nnoremap <space> :bnext<cr>
 nnoremap <c-@> :bprevious<cr>
 nnoremap <c-space> <c-@>
