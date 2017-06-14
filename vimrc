@@ -29,7 +29,7 @@ Plugin 'vale1410/vim-minizinc'
 Plugin 'surround.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-commentary'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'dhruvasagar/vim-table-mode'
 "Plugin 'suan/vim-instant-markdown'
 Plugin 'xolox/vim-misc'
@@ -38,6 +38,7 @@ Plugin 'xolox/vim-notes'
 "Plugin 'klen/python-mode'
 "Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/StyleChecker--perl'
+Plugin 'timakro/vim-searchant'
 "End list of bundles
 
 
@@ -86,7 +87,8 @@ set textwidth=90
 set colorcolumn=+1
 "let &colorcolumn=join(range(90,999),",")
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
-
+"
+" highlight SearchCurrent ctermbg=cyan
 
 "Color Scheme
 set t_Co=256
@@ -221,7 +223,7 @@ au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
-au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 80<cr>`n
+au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 90<cr>`n
 
 function! SC_highlight()
 	call SC_used()
@@ -279,3 +281,14 @@ cnoremap <c-l> <s-right>
 cnoremap <c-h> <s-left>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <c-l> :nohl<cr><c-l>
+
+" nnoremap <silent> n n:call HLNext(0.4,3)<cr>
+" nnoremap <silent> N N:call HLNext(0.4,3)<cr>
+
+" function! HLNext (blinktime, blinks)
+	" highlight WhiteOnRed ctermfg=black ctermbg=red
+	" let [bufnum, lnum, col, off] = getpos('.')
+	" let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+	" let target_pat = '\c\%#'.@/
+	" let red = matchadd('WhiteOnRed', target_pat, 101)
+" endfunction
