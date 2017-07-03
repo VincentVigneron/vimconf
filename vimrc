@@ -34,7 +34,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 "Plugin 'suan/vim-instant-markdown'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-"Plugin 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 "Plugin 'klen/python-mode'
 "Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/StyleChecker--perl'
@@ -219,11 +219,46 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gp :Gpush origin HEAD<cr>
 nnoremap <leader>gb :Gbrowse<cr>
 
+function! SPELL_remove_region(region)
+	let l:regexp = substitute("\\\\@REGIONNAME{[^}]\\{-}}", "@REGIONNAME", a:region, "")
+	let l:region_matcher =
+		\ 'syn match texSomevariable "'.l:regexp.'"hs=s+14,he=e-1 containedin=texStatement contains=@NoSpell'
+	exec region_matcher
+endfunc
+
+function! SPELL_remove_regions(regions)
+	for region in a:regions
+		call SPELL_remove_region(region)
+	endfor
+endfunc
+
 au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
 au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 90<cr>`n
+
+let latex_regions = [
+	\ "defref",
+	\ "Defref",
+	\ "charef",
+	\ "secref",
+	\ "figref",
+	\ "tabref",
+	\ "algref",
+	\ "expref",
+	\ "chasref",
+	\ "secsref",
+	\ "figsref",
+	\ "tabsref",
+	\ "algsref",
+	\ "expsref",
+	\ "textmath",
+	\ "lineref",
+	\ "linesref",
+	\ "complexite"
+\]
+au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 
 function! SC_highlight()
 	call SC_used()
@@ -236,6 +271,7 @@ function! SC_highlight()
 	highlight scError7 ctermfg=16 ctermbg=214 guifg=fg guibg=#ffaf00
 	highlight scError8 ctermfg=16 ctermbg=229 guifg=fg guibg=#ffffaf
 endfunc
+
 au FileType plaintex,tex nnoremap <leader>sc :call SC_highlight()<cr>
 "au FileType plaintex,tex nnoremap <leader>scr1 let g:SC_sensitivity=1
 "au FileType plaintex,tex nnoremap <leader>scr2 let g:SC_sensitivity=2
