@@ -256,6 +256,11 @@ let latex_regions = [
 	\ "textmath",
 	\ "lineref",
 	\ "linesref",
+	\ "complexite",
+	\ "cite",
+	\ "ref",
+	\ "label",
+	\ "complexite",
 	\ "complexite"
 \]
 au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
