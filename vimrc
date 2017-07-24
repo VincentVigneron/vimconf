@@ -261,7 +261,7 @@ let latex_regions = [
 	\ "ref",
 	\ "label",
 	\ "complexite",
-	\ "complexite"
+	\ "gls"
 \]
 au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 

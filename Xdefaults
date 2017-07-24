@@ -21,4 +21,5 @@ URxvt.urlLauncher: $BROWSER
 URxvt.matcher.button: 1
 
 URxvt.iso14755: false
+
 URxvt.iso14755_52: false
