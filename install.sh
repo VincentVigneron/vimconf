@@ -40,6 +40,17 @@ do
 	fi
 done
 
+if [ ! -d $HOME/.config ]
+then
+	mkdir $HOME/.config/
+fi
+
+if [ -e $HOME/.config/i3 ]
+then
+	echo "Le répertoire .config/i3 existe déjà, je n'ai donc rien fait !"
+else
+	cp -r $directory/i3 $HOME/.config
+fi
 # curl https://sh.rustup.rs -sSf | sh
 # cargo install racer
 # rustup component add rust-src
