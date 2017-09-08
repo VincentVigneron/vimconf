@@ -1,0 +1,25 @@
+! rxvt-unicode-256colors
+
+URxvt*scrollBar: False
+
+URxvt.geometry: 91x25
+
+URxvt*background: #eeeeee
+URxvt*foreground: #5c3577
+
+
+
+URxvt.font: xft:InputMonoNarrow:regular:size=10
+URxvt.boldfont: xft:InputMonoNarrow:bold:size=10
+URxvt.italicfont: xft:InputMonoNarrow:italic:size=10
+URxvt.bolditalicfont: xft:InputMonoNarrow:bolditalic:size=10
+
+! url
+! 1:left click; 2: middle click; 3: right click
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: $BROWSER
+URxvt.matcher.button: 1
+
+URxvt.iso14755: false
+
+URxvt.iso14755_52: false

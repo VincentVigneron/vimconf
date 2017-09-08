@@ -10,6 +10,7 @@ declare -a list_of_files=(
 	"inputrc"
 	"tmux.conf"
 	"vimrc"
+	"Xresources"
 	"Xdefaults"
 )
 declare -a list_of_vim=("spell" "UltiSnips")
