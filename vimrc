@@ -218,6 +218,8 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gp :Gpush origin HEAD<cr>
 nnoremap <leader>gb :Gbrowse<cr>
+" Table Mode
+nnoremap <leader>tm :TableModeToggle<cr>
 
 function! SPELL_remove_region(region)
 	let l:regexp = substitute("\\\\@REGIONNAME{[^}]\\{-}}", "@REGIONNAME", a:region, "")
