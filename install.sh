@@ -2,6 +2,10 @@
 
 directory="$HOME/vim"
 
+
+##########
+## HOME ##
+##########
 declare -a list_of_files=(
 	"bash_aliases"
 	"bash_profile"
@@ -13,8 +17,6 @@ declare -a list_of_files=(
 	"Xresources"
 	"Xdefaults"
 )
-declare -a list_of_vim=("spell" "UltiSnips")
-
 for i in "${list_of_files[@]}"
 do
 	if [ -e $HOME/.$i ]
@@ -26,6 +28,10 @@ do
 done
 fc-cache -fv
 
+#########
+## VIM ##
+#########
+declare -a list_of_vim=("spell" "UltiSnips")
 if [ ! -d $HOME/.vim ]
 then
 	mkdir $HOME/.vim
@@ -40,6 +46,11 @@ do
 	fi
 done
 
+
+########
+## I3 ##
+########
+declare -a list_of_i3=("config" "emenu_run.sh" "Images/Wallpapers/black.jpg")
 if [ ! -d $HOME/.config ]
 then
 	mkdir $HOME/.config/
@@ -49,8 +60,20 @@ if [ -e $HOME/.config/i3 ]
 then
 	echo "Le répertoire .config/i3 existe déjà, je n'ai donc rien fait !"
 else
-	cp -r $directory/i3 $HOME/.config
+	mkdir $HOME/.config/i3
+	mkdir $HOME/.config/i3/Images
+	mkdir $HOME/.config/i3/Images/Wallpapers
 fi
+for i in "${list_of_i3[@]}"
+do
+	if [ -e $HOME/.config/i3/$i ]
+	then
+		echo "Le fichier $i existe déjà, je n'ai donc rien fait !"
+	else
+		ln -s $directory/i3/$i $HOME/.config/i3/$i
+	fi
+done
+
 # curl https://sh.rustup.rs -sSf | sh
 # cargo install racer
 # rustup component add rust-src

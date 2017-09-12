@@ -24,7 +24,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 #set wallpaper
-exec --no-startup-id feh --bg-scale $HOME/.config/i3/Images/Wallpapers/3D-Wallpaper-25.jpg
+exec --no-startup-id feh --bg-scale $HOME/.config/i3/Images/Wallpapers/black.jpg
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -33,7 +33,9 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
+bindsym $mod+d exec $HOME/.config/i3/emenu_run.sh -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
+# bindsym $mod+d exec $HOME/.config/i3/emenu_run.sh
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
