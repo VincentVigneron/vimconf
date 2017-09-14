@@ -22,5 +22,6 @@ cmd=`tail -n1 $hist`
 
 i3-msg "exec $cmd"
 
-uniq $hist | tail -n$histsize > $hist.tmp
+# only keep commands with parameter
+cat $hist | grep -e "^[^\s]\+\s\+[^\s]" | uniq | tail -n$histsize > $hist.tmp
 mv $hist.tmp $hist
