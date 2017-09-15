@@ -13,9 +13,9 @@ if [ ! -e "$hist" ]; then
 fi
 
 if stest -dqr -n "$cache" $PATH; then
-	(tac "$hist" ; stest -flx $PATH | sort -u | tee "$cache" ) | dmenu "$@" >> $hist
+	(echo "" ; tac "$hist" ; stest -flx $PATH | sort -u | tee "$cache" ) | dmenu "$@" >> $hist
 else
-	(tac "$hist" ; cat "$cache") | dmenu "$@" >> $hist
+	(echo "" ; tac "$hist" ; cat "$cache") | dmenu "$@" >> $hist
 fi
 
 cmd=`tail -n1 $hist`
