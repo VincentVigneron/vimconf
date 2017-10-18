@@ -77,8 +77,10 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+q focus parent
 
 # lock screen
-bindsym $mod+Shift+s exec --no-startup-id "lock"
-exec xautolock -time 10 -locker lock
+# bindsym $mod+Shift+s exec --no-startup-id "lock"
+bindsym $mod+Shift+s exec --no-startup-id i3lock
+# exec xautolock -time 10 -locker lock
+exec xautolock -time 10 -locker i3lock
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -106,6 +108,21 @@ bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+underscore move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
+
+# rename focused  workspace
+bindsym $mod+Ctrl+ampersand rename  workspace  to 1
+bindsym $mod+Ctrl+eacute rename  workspace  to 2
+bindsym $mod+Ctrl+quotedbl rename  workspace  to 3
+bindsym $mod+Ctrl+apostrophe rename  workspace  to 4
+bindsym $mod+Ctrl+5 rename  workspace  to 5
+bindsym $mod+Ctrl+minus rename  workspace  to 6
+bindsym $mod+Ctrl+egrave rename  workspace  to 7
+bindsym $mod+Ctrl+underscore rename  workspace to 8
+bindsym $mod+Ctrl+ccedilla rename  workspace to 9
+bindsym $mod+Ctrl+agrave rename  workspace to 10
+
+bindsym $mod+x move workspace to output left
+bindsym $mod+Shift+x move workspace to output right
 
 bindsym $mod+Ctrl+h resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+l resize grow width 1 px or 1 ppt
@@ -155,12 +172,16 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 
 hide_edge_borders both
 
+focus_follows_mouse no
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+	# status_command i3status
+	status_command python3 $HOME/.config/i3/status.py
 	position top
+	workspace_buttons yes
 	colors {
 		background $bg-color
 		separator  $separator-color

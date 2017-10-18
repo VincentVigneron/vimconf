@@ -17,14 +17,14 @@ URxvt*foreground: #5c3577
 ! color6    cyan
 ! color7    white
 
-urxvt*color0:    #6c6c6c
+urxvt*color0:    #000000
 urxvt*color1:    #801b15
 urxvt*color2:    #5f7914
 urxvt*color3:    #786f13
 urxvt*color4:    #11334d
 urxvt*color5:    #784f93
 urxvt*color6:    #438484
-urxvt*color7:    #e2e2e2
+urxvt*color7:    #ffffff
 
 ! Light
 ! color8    black
@@ -43,7 +43,7 @@ urxvt*color11:    #786f13
 urxvt*color12:    #11334d
 urxvt*color13:    #784f93
 urxvt*color14:    #438484
-urxvt*color15:    #e2e2e2
+urxvt*color15:    #ffffff
 
 
 ! urxvt*color8:    #747474
