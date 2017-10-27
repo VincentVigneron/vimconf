@@ -3,8 +3,13 @@ itemset
 itemsets
 sous-chaînes
 inductivement
-existentiellement/!
-existentiellement
 incrémental
-priorisant/!
 priorisant
+sous-séquence
+intension
+maximalité
+anti-monotone
+d'itemsets
+sous-séquences
+sous-chaîne
+existentiellement

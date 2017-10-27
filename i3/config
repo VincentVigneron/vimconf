@@ -78,9 +78,9 @@ bindsym $mod+q focus parent
 
 # lock screen
 # bindsym $mod+Shift+s exec --no-startup-id "lock"
-bindsym $mod+Shift+s exec --no-startup-id i3lock
+bindsym $mod+Shift+s exec --no-startup-id i3lock -c 000000
 # exec xautolock -time 10 -locker lock
-exec xautolock -time 10 -locker i3lock
+exec xautolock -time 10 -locker i3lock -c 000000
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -191,3 +191,5 @@ bar {
 		urgent_workspace     $urgent-bg-color    $urgent-bg-color    $text-color
 	}
 }
+
+for_window [class="screenkey"] floating enable move right 330px,move down 70px

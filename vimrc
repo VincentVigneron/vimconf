@@ -172,7 +172,7 @@ au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
 "au FileType pascal set foldmethod=indent
 
-au FileType plaintex,tex nnoremap <F8> :Make<cr>
+au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
 au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
@@ -239,6 +239,7 @@ au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
 au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 90<cr>`n
+au FileType plaintex,tex LuciusBlackHighContrast
 
 let latex_regions = [
 	\ "defref",
