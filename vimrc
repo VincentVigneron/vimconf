@@ -29,7 +29,7 @@ Plugin 'vale1410/vim-minizinc'
 Plugin 'surround.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-commentary'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'dhruvasagar/vim-table-mode'
 "Plugin 'suan/vim-instant-markdown'
 Plugin 'xolox/vim-misc'
@@ -39,6 +39,7 @@ Plugin 'vim-latex/vim-latex'
 "Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/StyleChecker--perl'
 Plugin 'timakro/vim-searchant'
+"Plugin '907th/vim-auto-save'
 "End list of bundles
 
 
@@ -97,7 +98,7 @@ set t_Co=256
 "if $COLORTERM == 'mate-terminal'
 "	set t_Co=256 "endif colorscheme lucius
 colorscheme lucius
-LuciusLightHighContrast
+LuciusBlackHighContrast
 
 "Code completion
 ""$cd ~/.vim/bundle/YouCompleteMe
@@ -172,7 +173,9 @@ au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
 "au FileType pascal set foldmethod=indent
 
-au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
+"au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
+au FileType plaintex,tex nnoremap <F8> :Make<cr>
+au FileType plaintex,tex set mp=make
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
 au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
@@ -233,6 +236,10 @@ function! SPELL_remove_regions(regions)
 		call SPELL_remove_region(region)
 	endfor
 endfunc
+
+" let g:auto_save_silent = 1
+" set updatetime=1
+" au FileType plaintex,tex let g:auto_save=1
 
 au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
