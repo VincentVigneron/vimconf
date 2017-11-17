@@ -1,0 +1,12 @@
+mainwindow_position = mouse
+mainwindow_xoffset = -53
+mainwindow_yoffset = 32
+mark_today = 1
+mainwindow_decorate = 1
+force_lang = fr_FR.utf8
+close_on_unfocus = 1
+show_week_numbers = 1
+mainwindow_sticky = 1
+mainwindow_skip_taskbar=  0
+mainwindow_keep_above = 0
+mainwindow_decorated = 0

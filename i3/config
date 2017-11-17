@@ -23,8 +23,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id compton
+exec --no-startup-id albert
+exec --no-startup-id wicd-client --tray
+
 #set wallpaper
-exec --no-startup-id feh --bg-scale $HOME/.config/i3/Images/Wallpapers/black.jpg
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -34,8 +39,8 @@ bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
-bindsym $mod+d exec $HOME/.config/i3/emenu_run.sh -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
-# bindsym $mod+d exec $HOME/.config/i3/emenu_run.sh
+# bindsym $mod+d exec ~/.config/i3/emenu_run.sh -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
+# bindsym $mod+d exec ~/.config/i3/emenu_run.sh
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -46,6 +51,8 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+force_focus_wrapping yes
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -97,6 +104,8 @@ bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
 
+bindsym $mode+w xset -dpms s off
+
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace 1
 bindsym $mod+Shift+eacute move container to workspace 2
@@ -134,7 +143,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/.config/i3/i3exit
+for_window [class="I3-exit" instance="i3exit"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,23 +184,37 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 hide_edge_borders both
 
 focus_follows_mouse no
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+focus_on_window_activation focus
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	# status_command i3status
-	status_command python3 $HOME/.config/i3/status.py
-	position top
-	workspace_buttons yes
-	colors {
-		background $bg-color
-		separator  $separator-color
-		# entry              border              background          text
-		focused_workspace    $bg-color           $bg-color           $text-color
-		inactive_workspace   $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-		urgent_workspace     $urgent-bg-color    $urgent-bg-color    $text-color
-	}
-}
+# bar {
+# 	status_command polybar example
+	# position top
+	# workspace_buttons yes
+	# colors {
+	# 	background $bg-color
+	# 	separator  $separator-color
+	# 	# entry              border              background          text
+	# 	focused_workspace    $bg-color           $bg-color           $text-color
+	# 	inactive_workspace   $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+	# 	urgent_workspace     $urgent-bg-color    $urgent-bg-color    $text-color
+	# }
+# }
 
 for_window [class="screenkey"] floating enable move right 330px,move down 70px
+
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioLowerVolume exec amixer set Master 1%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 1%+
+
+
+# gaps
+for_window [class="^.*"] border pixel 0
+gaps inner 15
+gaps outer 0
+smart_gaps on
+smart_borders on

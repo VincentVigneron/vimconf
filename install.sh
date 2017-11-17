@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory="$HOME/vim"
+directory="$HOME/vimconf"
 
 
 ##########

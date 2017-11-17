@@ -4,10 +4,10 @@ set nocompatible
 filetype off " required
 
 "Vundle setup
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
@@ -39,8 +39,12 @@ Plugin 'vim-latex/vim-latex'
 "Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/StyleChecker--perl'
 Plugin 'timakro/vim-searchant'
+Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin '907th/vim-auto-save'
 "End list of bundles
+
+" let g:livepreview_previewer = 'okular'
+" let g:livepreview_engine = 'make'
 
 
 filetype plugin indent on " required
@@ -110,8 +114,8 @@ LuciusBlackHighContrast
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
-let g:ycm_global_ycm_extra_conf=$HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 "NerdTree
 "au VimEnter * NERDTree
@@ -168,6 +172,8 @@ au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
 au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1y'
+au FileType cpp setlocal foldmethod=indent
+au FileType cpp setlocal foldlevel=99
 
 au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
 au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>

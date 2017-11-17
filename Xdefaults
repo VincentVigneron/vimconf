@@ -4,7 +4,10 @@ URxvt*scrollBar: False
 
 URxvt.geometry: 91x25
 
-URxvt*background: #eeeeee
+! URxvt*background: #eeeeee
+urxvt*depth: 32
+! URxvt*background: #eeeeee
+urxvt*background: rgba:eeee/eeee/eeee/c800
 URxvt*foreground: #5c3577
 
 
