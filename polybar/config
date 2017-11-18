@@ -54,7 +54,7 @@ modules-left = i3
 modules-center = 
 ;modules-right = volume xkeyboard eth wlan memory cpu battery temperature  date  powermenu 
 ;modules-right = volume backlight-acpi cpu eth wlan battery  date  powermenu 
-modules-right = volume cpu eth wlan battery  date  powermenu 
+modules-right = volume cpu eth wlan battery  date  powermenu tray
 ;modules-right = volume cpu eth wlan battery  date  powermenu 
 
 ;tray-position = right

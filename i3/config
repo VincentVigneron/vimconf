@@ -29,7 +29,8 @@ exec --no-startup-id albert
 exec --no-startup-id wicd-client --tray
 
 #set wallpaper
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
+exec_always --no-startup-id feh --randomize ~/.config/i3/Images/Wallpapers/* --bg-scale
+# exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
 
 # start a terminal
 bindsym $mod+Return exec urxvt

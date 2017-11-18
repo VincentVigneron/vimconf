@@ -41,6 +41,7 @@ Plugin 'vim-scripts/StyleChecker--perl'
 Plugin 'timakro/vim-searchant'
 Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin '907th/vim-auto-save'
+" Plugin 'godlygeek/csapprox'
 "End list of bundles
 
 " let g:livepreview_previewer = 'okular'
@@ -101,8 +102,24 @@ set t_Co=256
 "	set t_Co=256 "endif colorscheme lucius
 "if $COLORTERM == 'mate-terminal'
 "	set t_Co=256 "endif colorscheme lucius
-colorscheme lucius
-LuciusBlackHighContrast
+" colorscheme lucius
+" LuciusBlackHighContrast
+
+""" Colorscheme Approximation """
+" This transforms colorschemes to terminal colorschemes
+" The ctermbg=NONE hooks make backgrounds transparent in terminals
+
+function! AdaptColorscheme()
+    highlight clear CursorLine
+    highlight Normal ctermbg=none
+    highlight LineNr ctermbg=none
+    highlight Folded ctermbg=none
+    highlight NonText ctermbg=none
+    highlight SpecialKey ctermbg=none
+    highlight VertSplit ctermbg=none
+    highlight SignColumn ctermbg=none
+endfunction
+autocmd ColorScheme * call AdaptColorscheme()
 
 "Code completion
 ""$cd ~/.vim/bundle/YouCompleteMe

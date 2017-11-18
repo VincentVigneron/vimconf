@@ -6,11 +6,11 @@ alias g++="g++ -fdiagnostics-color=auto"
 alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror -std=c++11"
 alias tmux="tmux -2"
 
-alias vimstatus="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vim status"
-alias vimadd="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vim add"
-alias vimcommit="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vim commit"
-alias vimpull="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vim pull"
-alias vimpush="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vim push origin master"
+alias vimstatus="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vimconf status"
+alias vimadd="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vimconf add"
+alias vimcommit="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vimconf commit"
+alias vimpull="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vimconf pull"
+alias vimpush="git --git-dir=$HOME/vimconf/.git --work-tree=$HOME/vimconf push origin master"
 alias vimbrows="xdg-open https://github.com/VincentVigneron/vimconf.git"
 
 alias python=python3

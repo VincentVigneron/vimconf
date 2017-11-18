@@ -2,14 +2,49 @@
 
 URxvt*scrollBar: False
 
-URxvt.geometry: 91x25
+! URxvt.geometry: 91x25
 
-! URxvt*background: #eeeeee
-urxvt*depth: 32
-! URxvt*background: #eeeeee
-urxvt*background: rgba:eeee/eeee/eeee/c800
-URxvt*foreground: #5c3577
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
 
+urxvt*foreground: white
+urxvt*background: black
+
+*color0:  #2E3436
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
+
+urxvt*transparent: true
+urxvt*shading: 15
 
 
 URxvt.font: xft:InputMonoNarrow:regular:size=10
