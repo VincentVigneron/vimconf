@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
-Plugin 'jonathanfilip/vim-lucius'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
@@ -42,6 +41,9 @@ Plugin 'timakro/vim-searchant'
 Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin '907th/vim-auto-save'
 " Plugin 'godlygeek/csapprox'
+
+Plugin 'dim13/smyck.vim'
+
 "End list of bundles
 
 " let g:livepreview_previewer = 'okular'
@@ -102,24 +104,24 @@ set t_Co=256
 "	set t_Co=256 "endif colorscheme lucius
 "if $COLORTERM == 'mate-terminal'
 "	set t_Co=256 "endif colorscheme lucius
-" colorscheme lucius
-" LuciusBlackHighContrast
+colorscheme smyck
+
 
 """ Colorscheme Approximation """
 " This transforms colorschemes to terminal colorschemes
 " The ctermbg=NONE hooks make backgrounds transparent in terminals
 
-function! AdaptColorscheme()
-    highlight clear CursorLine
-    highlight Normal ctermbg=none
-    highlight LineNr ctermbg=none
-    highlight Folded ctermbg=none
-    highlight NonText ctermbg=none
-    highlight SpecialKey ctermbg=none
-    highlight VertSplit ctermbg=none
-    highlight SignColumn ctermbg=none
-endfunction
-autocmd ColorScheme * call AdaptColorscheme()
+" function! AdaptColorscheme()
+"     highlight clear CursorLine
+"     highlight Normal ctermbg=none
+"     highlight LineNr ctermbg=none
+"     highlight Folded ctermbg=none
+"     highlight NonText ctermbg=none
+"     highlight SpecialKey ctermbg=none
+"     highlight VertSplit ctermbg=none
+"     highlight SignColumn ctermbg=none
+" endfunction
+" autocmd ColorScheme * call AdaptColorscheme()
 
 "Code completion
 ""$cd ~/.vim/bundle/YouCompleteMe
@@ -188,7 +190,7 @@ au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 
 au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
-au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1y'
+au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1z'
 au FileType cpp setlocal foldmethod=indent
 au FileType cpp setlocal foldlevel=99
 

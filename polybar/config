@@ -9,12 +9,12 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #22200044
-background-alt = #44400033
+background = #99000000
+background-alt = #99BB0000
 
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #999
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
