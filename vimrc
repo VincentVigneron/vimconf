@@ -133,7 +133,7 @@ colorscheme smyck
 ""$mkdir -p ~/Developer/
 ""$cd ~/Developer/
 ""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
-let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 "NerdTree
@@ -187,6 +187,7 @@ au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
+au FileType rust let g:syntastic_rust_checkers=['cargo']
 
 au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
@@ -216,8 +217,8 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 
 let g:syntastic_mode_map = {
 	\ 'mode': 'passive',
-	\ 'active_file_types': ['rust','cpp','pascal', 'python'],
-	\ 'passive_file_types': ['tex']
+	\ 'active_filetypes': ['rust','cpp','pascal', 'python'],
+	\ 'passive_filetypes': ['tex']
 	\}
 
 " Snippets
@@ -271,7 +272,6 @@ au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
 au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
 au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
 au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 90<cr>`n
-au FileType plaintex,tex LuciusBlackHighContrast
 
 let latex_regions = [
 	\ "defref",
