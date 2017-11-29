@@ -32,24 +32,13 @@ cmake<br />
 okular<br />
 openjdk9<br />
 python<br />
-texlive-bibtexextra<br />
-texlive-core<br />
-texlive-fontsextra<br />
-texlive-formatsextra<br />
-texlive-games<br />
-texlive-humanities<br />
-texlive-langextra<br />
-texlive-latexextra<br />
-texlive-music<br />
-texlive-pictures<br />
-texlive-pstricks<br />
-texlive-publishers<br />
-texlive-science<br />
+texlive-most<br />
+texlive-lang<br />
+texlive-bin<br />
 tmux<br />
 tree<br />
 wicd<br />
 wicd-gtk<br />
-wpa_actiond<br />
 wpa_supplicant<br />
 util-linux<br />
 vim<br />
@@ -88,6 +77,23 @@ rustfmt<br />
 rustup<br />
 skypeforlinux-bin (aur)<br />
 virtualbox<br />
+qt4<br />
+
+# TO REMOVE ?
+texlive-bibtexextra<br />
+texlive-core<br />
+texlive-fontsextra<br />
+texlive-formatsextra<br />
+texlive-games<br />
+texlive-humanities<br />
+texlive-langextra<br />
+texlive-latexextra<br />
+texlive-music<br />
+texlive-pictures<br />
+texlive-pstricks<br />
+texlive-publishers<br />
+texlive-science<br />
+wpa_actiond<br />
 
 # FONTS
 terminus-font<br />
@@ -132,5 +138,16 @@ HandlePowerKey=ignore<br />
 sudo cp ethernet-dhcp /etc/netctl/<br />
 sudo systemctl enable ifplugd<br />
 
+# WIFI
+sudo systemctl enable wicd.service
+
 # CUPS
 ??<br />
+
+# LANG
+
+# KEYBOARD
+
+# RUST
+rustup toolchain install nightly
+rustup component add rls-preview --toolchain nightly
