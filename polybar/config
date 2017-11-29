@@ -52,15 +52,15 @@ font-5 = Symbola:size=2;-2
 
 modules-left = i3
 modules-center = 
-;modules-right = volume xkeyboard eth wlan memory cpu battery temperature  date  powermenu 
-;modules-right = volume backlight-acpi cpu eth wlan battery  date  powermenu 
-modules-right = volume cpu eth wlan battery  date  powermenu tray
+modules-right = volume cpu eth wlan battery  date  powermenu
 ;modules-right = volume cpu eth wlan battery  date  powermenu 
 
-;tray-position = right
-;tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+; tray-position = right
+; tray-detached = false
+; tray-padding = 2
+; tray-background = #0063ff
+; tray-transparent = true
+;tray-background = #55000000
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -248,10 +248,12 @@ type = internal/network
 interface = wlo1
 interval = 3.0
 
+; format-connected = %{A1:nm-connection-editor &:} <label-connected> %{A}
 format-connected = %{A1:wicd-gtk &:} <label-connected> %{A}
 format-connected-underline = #9f78e1
 label-connected = %{T5}%{T-}
 
+; format-disconnected = %{A1:nm-connection-editor &:} <label-disconnected> %{A}
 format-disconnected = %{A1:wicd-gtk &:} <label-disconnected> %{A}
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected =  %{T5}%{T-}

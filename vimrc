@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 "List of bundles
 Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
@@ -41,8 +40,8 @@ Plugin 'timakro/vim-searchant'
 Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin '907th/vim-auto-save'
 " Plugin 'godlygeek/csapprox'
-
 Plugin 'dim13/smyck.vim'
+Plugin 'w0rp/ale'
 
 "End list of bundles
 
@@ -91,37 +90,16 @@ set lazyredraw
 set number
 
 "Color text that goes over the 80 column
-set textwidth=90
+set textwidth=80
 set colorcolumn=+1
-"let &colorcolumn=join(range(90,999),",")
-"highlight ColorColumn ctermbg=235 guibg=#2c2d27
-"
-" highlight SearchCurrent ctermbg=cyan
 
 "Color Scheme
 set t_Co=256
-"if $COLORTERM == 'gnome-terminal'
-"	set t_Co=256 "endif colorscheme lucius
-"if $COLORTERM == 'mate-terminal'
-"	set t_Co=256 "endif colorscheme lucius
 colorscheme smyck
+hi CtrlPLinePre guifg=red ctermfg=red
+set cursorline
+hi CursorLine gui=underline cterm=underline ctermbg=NONE guibg=NONE
 
-
-""" Colorscheme Approximation """
-" This transforms colorschemes to terminal colorschemes
-" The ctermbg=NONE hooks make backgrounds transparent in terminals
-
-" function! AdaptColorscheme()
-"     highlight clear CursorLine
-"     highlight Normal ctermbg=none
-"     highlight LineNr ctermbg=none
-"     highlight Folded ctermbg=none
-"     highlight NonText ctermbg=none
-"     highlight SpecialKey ctermbg=none
-"     highlight VertSplit ctermbg=none
-"     highlight SignColumn ctermbg=none
-" endfunction
-" autocmd ColorScheme * call AdaptColorscheme()
 
 "Code completion
 ""$cd ~/.vim/bundle/YouCompleteMe
@@ -148,20 +126,33 @@ noremap <F2> :NERDTreeToggle<cr>
 "Syntastic
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%{fugitive#statusline()}
+" set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 
 "let g:markify_autocmd = 0
 let g:markify_error_text = '✗'
 let g:markify_warning_text = '⚠'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
+let g:ale_linters = {
+	\ 'latex' : ['chktex'],
+	\ 'cpp' : ['clangtidy'],
+	\ 'rust' : ['rls', 'cargo'],
+	\}
+let g:ale_fixers = {
+	\ 'rust' : ['rustfmt'],
+	\}
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠"
+let g:airline#extensions#ale#enabled = 1
+let g:ale_cpp_clang_options = '-std=c++1z -Wall'
+let g:ale_cpp_clangtidy_options = '-std=c++1z -Wall'
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+let g:ale_warn_about_trailing_whitespace = 1
+let g:ale_set_highlitghts = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 'always'
 
 let g:ctrlp_root_markers=['Cargo.toml']
 let g:ctrlp_working_path='ra'
@@ -187,11 +178,9 @@ au FileType rust,rust_config compiler cargo
 au FileType rust,rust_config nnoremap <F8> :Make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
-au FileType rust let g:syntastic_rust_checkers=['cargo']
 
 au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
 au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
-au FileType cpp let g:syntastic_cpp_compiler_options='-std=c++1z'
 au FileType cpp setlocal foldmethod=indent
 au FileType cpp setlocal foldlevel=99
 
@@ -211,15 +200,8 @@ au FileType plaintex,tex nnoremap <leader>p [s
 au FileType plaintex,tex set foldmethod=indent
 au FileType plaintex,tex set foldlevel=0
 
-let g:syntastic_python_python_exec = 'usr/bin/python3'
 let g:ycm_python_binary_path = 'usr/bin/python3'
 au FileType python nnoremap <F5> :!python3 %<cr>
-
-let g:syntastic_mode_map = {
-	\ 'mode': 'passive',
-	\ 'active_filetypes': ['rust','cpp','pascal', 'python'],
-	\ 'passive_filetypes': ['tex']
-	\}
 
 " Snippets
 let g:UltiSnipsExpandTrigger='<c-j>'
@@ -269,9 +251,11 @@ endfunc
 
 au FileType plaintex,tex nnoremap <leader>se :set spell spelllang=en<cr>
 au FileType plaintex,tex nnoremap <leader>sf :set spell spelllang=fr<cr>
-au FileType plaintex,tex nnoremap <leader>sn :set nospell<cr>
-au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
-au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 90<cr>`n
+au FileType plaintex,tex nnoremap <leader>sd :set nospell<cr>
+au FileType plaintex,tex nnoremap <leader>sn :lnext<cr>
+au FileType plaintex,tex nnoremap <leader>sp :lprev<cr>
+" au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
+au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 80<cr>`n
 
 let latex_regions = [
 	\ "defref",

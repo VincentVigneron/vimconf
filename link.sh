@@ -10,6 +10,7 @@ declare -a list_of_conf=(
 	"gsimplecal"
 	"pacaur"
 	"albert"
+	"termite"
 )
 for i in "${list_of_conf[@]}"
 do

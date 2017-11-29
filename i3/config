@@ -33,7 +33,7 @@ exec_always --no-startup-id feh --randomize ~/.config/i3/Images/Wallpapers/* --b
 # exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+a kill
