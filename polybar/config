@@ -10,7 +10,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #99000000
-background-alt = #99BB0000
+background-alt = #99bb0000
 
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -182,9 +182,9 @@ bar-foreground-0 = #666633
 bar-foreground-1 = #777744
 bar-foreground-2 = #888855
 bar-foreground-3 = #999966
-bar-foreground-4 = #AAAA77
-bar-foreground-5 = #BBBB88
-bar-foreground-6 = #CCCC99
+bar-foreground-4 = #aaaa77
+bar-foreground-5 = #bbbb88
+bar-foreground-6 = #cccc99
 bar-gradient = false
 bar-indicator = 
 bar-indicator-font = 2
@@ -308,7 +308,7 @@ bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 format-muted-prefix = %{A1:amixer -D pulse sset Master toggle&:}  %{A}
-format-muted-prefix-foreground = #FF0000
+format-muted-prefix-foreground = #ff0000
 format-muted = <label-muted>
 label-muted =  %{T6}█████████████████████████████████%{T-}
 label-muted-foreground = ${colors.foreground-alt}

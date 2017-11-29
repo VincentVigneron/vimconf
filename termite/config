@@ -7,7 +7,9 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = InputMonoNarrow 11
+#font = InputMonoNarrow 11
+#font = Inconsolata, medium 12
+font = xos4 Terminus 10
 
 scrollback_lines = 10000
 search_wrap = true

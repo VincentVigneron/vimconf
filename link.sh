@@ -14,11 +14,11 @@ declare -a list_of_conf=(
 )
 for i in "${list_of_conf[@]}"
 do
-	if [ -e $HOME/.$i ]
+	if [ -e $HOME/.config/$i ]
 	then
 		echo "Le fichier $i existe déjà, je n'ai donc rien fait !"
 	else
 		echo $i
-		ln -s $directory/$i ~/.config/$i
+		ln -s $directory/$i $HOME/.config/$i
 	fi
 done
