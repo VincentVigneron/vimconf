@@ -120,6 +120,7 @@ export PATH
 
 # source $HOME/.cargo/env
 
+complete -c man which
 MANPATH=$MANPATH:$HOME/Logiciels/minizinc-2.0.1/doc/man
 export MANPATH
 
