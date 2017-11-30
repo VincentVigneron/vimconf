@@ -8,7 +8,7 @@ xrandr<br />
 gtk-3<br />
 g++<br />
 clang<br />
-notification-daemon<br />
+notify-osd<br />
 acpi<br />
 acpid<br />
 alsa-tools<br />
@@ -94,10 +94,10 @@ texlive-pstricks<br />
 texlive-publishers<br />
 texlive-science<br />
 wpa_actiond<br />
+ttf-inconsolata<br />
 
 # FONTS
 terminus-font<br />
-ttf-font-awesomefont<br />
 typicons (aur ?)<br />
 bdf-unifont<br />
 ttf-bitstream-vera<br />
@@ -108,10 +108,10 @@ ttf-fira-sans<br />
 ttf-font-awesome<br />
 ttf-freefont<br />
 ttf-hack<br />
-ttf-inconsolata<br />
 ttf-roboto<br />
 ttf-symbola<br />
 ttf-typicons (aur)<br />
+ttf-inconsolata<br />
 ttf-ubuntu-font-family<br />
 
 # VIM
@@ -141,13 +141,30 @@ sudo systemctl enable ifplugd<br />
 # WIFI
 sudo systemctl enable wicd.service
 
+# ACPI¶
+sudo systemctl enable acpid.service
+
+# LIGHT
+? acpi
+sudo cp bl /etc/acpi/handlers/
+sudo cp bl_u /etc/acpi/events
+sudo cp bl_d /etc/acpi/events
+
 # CUPS
-??<br />
+sudo systemctl enable cups-browsed.service
+sudo systemctl enable org.cups.cupsd.service
+sudo gpasswd -a USER sys
+sudo gpasswd -a USER lp
+[ drivers ]
+? sudo chmod a+r /etc/cups<br />
+? sudo chmod 1777 /var/spool/cups/tmp<br />
+? sudo chmod 1777 /var/spool/cups<br />
+? sudo chmod 1777 /usr/lib/cups/\*<br />
 
 # LANG
 
 # KEYBOARD
 
 # RUST
-rustup toolchain install nightly
-rustup component add rls-preview --toolchain nightly
+rustup toolchain install nightly<br />
+rustup component add rls-preview --toolchain nightly<br />
