@@ -1,4 +1,6 @@
-# PACKAGES
+# INSTALLATION
+
+## PACKAGES
 pacaur (aur)<br />
 termite<br />
 albert (aur)<br />
@@ -79,7 +81,7 @@ skypeforlinux-bin (aur)<br />
 virtualbox<br />
 qt4<br />
 
-# TO REMOVE ?
+## TO REMOVE ?
 texlive-bibtexextra<br />
 texlive-core<br />
 texlive-fontsextra<br />
@@ -96,7 +98,7 @@ texlive-science<br />
 wpa_actiond<br />
 ttf-inconsolata<br />
 
-# FONTS
+## FONTS
 terminus-font<br />
 typicons (aur ?)<br />
 bdf-unifont<br />
@@ -114,10 +116,10 @@ ttf-typicons (aur)<br />
 ttf-inconsolata<br />
 ttf-ubuntu-font-family<br />
 
-# VIM
+## VIM
 Install plugin<br />
 
-# YouCompleteMe
+## YouCompleteMe
 cd ~<br />
 mkdir ycm_build<br />
 cd ycm_build<br />
@@ -125,49 +127,49 @@ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp<br 
 cd .vim/bundle/YouComplete/me<br />
 ./install.py --clang-completer --racer-completer<br />
 
-# BATTERY
+## BATTERY
 sudo cp lowbattery.timer /etc/systemd/user<br />
 sudo cp lowbattery.service /etc/systemd/user<br />
 systemctl --user enable lowbattery.timer<br />
 
-# DISABLE POWER BUTTON
+## DISABLE POWER BUTTON
 sudo -E /etc/systemd/logind.conf<br />
 HandlePowerKey=ignore<br />
 
-# ETHERNET
+## ETHERNET
 sudo cp ethernet-dhcp /etc/netctl/<br />
 sudo systemctl enable ifplugd<br />
 
-# WIFI
+## WIFI
 sudo systemctl enable wicd.service
 
-# ACPI¶
+## ACPI¶
 sudo systemctl enable acpid.service
 
-# LIGHT
+## LIGHT
 sudo cp bl /etc/acpi/handlers/
 sudo cp bl_u /etc/acpi/events
 sudo cp bl_d /etc/acpi/events
 
-# CUPS
+## CUPS
 sudo systemctl enable cups-browsed.service<br />
 sudo systemctl enable org.cups.cupsd.service<br />
 sudo gpasswd -a USER sys<br />
 sudo gpasswd -a USER lp<br />
-## drivers
+#### drivers
 ? sudo chmod a+r /etc/cups<br />
 ? sudo chmod 1777 /var/spool/cups/tmp<br />
 ? sudo chmod 1777 /var/spool/cups<br />
 ? sudo chmod 1777 /usr/lib/cups/\*<br />
 
-# LANG
+## LANG
 
-# KEYBOARD
+## KEYBOARD
 
-# RUST
+## RUST
 rustup toolchain install nightly<br />
 rustup component add rls-preview --toolchain nightly<br />
 
-# DISPLAY AT STARTUP
+## DISPLAY AT STARTUP
 
-# CLONE SCALING
+## CLONE SCALING
