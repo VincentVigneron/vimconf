@@ -142,7 +142,7 @@ sudo -E /etc/systemd/logind.conf<br />
 HandlePowerKey=ignore<br />
 
 ## ETHERNET
-sudo cp ethernet-dhcp /etc/netctl/<br />
+sudo cp netctl/ethernet-dhcp /etc/netctl/<br />
 sudo systemctl enable ifplugd<br />
 
 ## WIFI
