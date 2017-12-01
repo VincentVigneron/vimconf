@@ -128,7 +128,7 @@ cd .vim/bundle/YouComplete/me<br />
 # BATTERY
 sudo cp lowbattery.timer /etc/systemd/user<br />
 sudo cp lowbattery.service /etc/systemd/user<br />
-sudo systemctl enable lowbattery.timer<br />
+systemctl --user enable lowbattery.timer<br />
 
 # DISABLE POWER BUTTON
 sudo -E /etc/systemd/logind.conf<br />
@@ -145,17 +145,16 @@ sudo systemctl enable wicd.service
 sudo systemctl enable acpid.service
 
 # LIGHT
-? acpi
 sudo cp bl /etc/acpi/handlers/
 sudo cp bl_u /etc/acpi/events
 sudo cp bl_d /etc/acpi/events
 
 # CUPS
-sudo systemctl enable cups-browsed.service
-sudo systemctl enable org.cups.cupsd.service
-sudo gpasswd -a USER sys
-sudo gpasswd -a USER lp
-[ drivers ]
+sudo systemctl enable cups-browsed.service<br />
+sudo systemctl enable org.cups.cupsd.service<br />
+sudo gpasswd -a USER sys<br />
+sudo gpasswd -a USER lp<br />
+## drivers
 ? sudo chmod a+r /etc/cups<br />
 ? sudo chmod 1777 /var/spool/cups/tmp<br />
 ? sudo chmod 1777 /var/spool/cups<br />
@@ -168,3 +167,7 @@ sudo gpasswd -a USER lp
 # RUST
 rustup toolchain install nightly<br />
 rustup component add rls-preview --toolchain nightly<br />
+
+# DISPLAY AT STARTUP
+
+# CLONE SCALING

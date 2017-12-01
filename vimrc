@@ -138,6 +138,7 @@ let g:ale_linters = {
 	\ 'latex' : ['chktex'],
 	\ 'cpp' : ['clangtidy'],
 	\ 'rust' : ['rls', 'cargo'],
+	\ 'python' : ['flake8'],
 	\}
 let g:ale_fixers = {
 	\ 'rust' : ['rustfmt'],

@@ -3,13 +3,13 @@
 # low battery warning
 #
 
-battery=/sys/class/power_supply/BAT0
+discharging=`acpi --details | head -n1 | cut -d':' -f2 | cut -d',' -f1 | sed -e 's/^\s*//g'`
+percent=`acpi --details | head -n1 | sed -e 's/.*\s\([0-9]\+\)%.*/\1/'`
 
-percent=`grep "POWER_SUPPLY_CAPACITY=" $battery/uevent | awk -F= '{ print $2 }'`
-discharging=`grep "POWER_SUPPLY_STATUS=" $battery/uevent | awk -F= '{ print $2 }'`
 
-if [ $discharging == "Discharging" ] && [ $percent -le "15" ]; then
-	notify-send Battery "Low Battery"
+if [ $discharging == "Discharging" ] && [ $percent -le 15 ]; then
+	remaining=`acpi --details | head -n1 | sed -e 's/.*\([0-9][0-9]:[0-9][0-9]:[0-9][0-9]\).*/\1/'`
+	notify-send Battery "Low Battery $remaining"
 fi
 
 exit 0

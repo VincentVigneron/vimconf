@@ -106,10 +106,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [[ $UID -ge 1000 && -d $HOME/bin && -z $(echo $PATH | grep -o $HOME/bin) ]]
-then
-	    export PATH="${PATH}:$HOME/bin"
-fi
+# if [[ $UID -ge 1000 && -d $HOME/bin && -z $(echo $PATH | grep -o $HOME/bin) ]]
+# then
+# 	    export PATH="${PATH}:$HOME/bin"
+# fi
 
 PATH=$PATH:$HOME/Logiciels/minizinc-2.0.1/bin
 PATH=$PATH:$HOME/Logiciels/MiniZincIDE-0.9.6-linux-x86_64
