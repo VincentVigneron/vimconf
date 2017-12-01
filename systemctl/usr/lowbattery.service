@@ -1,0 +1,8 @@
+[Unit]
+Description="Alert for low battery events"
+
+[Service]
+ExecStart=/usr/bin/lowbattery.sh
+
+[Install]
+WantedBy=timer-twominutes.target
