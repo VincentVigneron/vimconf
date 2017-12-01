@@ -313,6 +313,9 @@ au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 "highlight scError6 ctermfg=16 ctermbg=249 guifg=fg guibg=#b0b0b0
 "highlight scError7 ctermfg=16 ctermbg=214 guifg=fg guibg=#ffaf00
 "highlight scError8 ctermfg=16 ctermbg=229 guifg=fg guibg=#ffffaf
+"
+nmap <silent> <leader>ps <Plug>(ale_previous)
+nmap <silent> <leader>ns <Plug>(ale_next)
 
 nnoremap <leader>q :qa<cr>
 inoremap jk <esc>
