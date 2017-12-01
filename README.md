@@ -127,10 +127,15 @@ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp<br 
 cd .vim/bundle/YouComplete/me<br />
 ./install.py --clang-completer --racer-completer<br />
 
+## TWO MINUTES TIMERj
+sudo cp systemd/usr/timer-twominutes.timer /etc/systemd/user<br />
+sudo cp systemd/usr/timer-twominutes.target /etc/systemd/user<br />
+systemctl --user enable timer-twominutes.timer<br />
+
 ## BATTERY
-sudo cp lowbattery.timer /etc/systemd/user<br />
-sudo cp lowbattery.service /etc/systemd/user<br />
-systemctl --user enable lowbattery.timer<br />
+sudo cp systemd/usr/lowbattery.service /etc/systemd/user<br />
+sudo cp bin/lowbattery.sh /usr/bin
+systemctl --user enable lowbattery.service<br />
 
 ## DISABLE POWER BUTTON
 sudo -E /etc/systemd/logind.conf<br />
