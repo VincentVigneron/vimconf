@@ -21,5 +21,6 @@ alias @portable="xrandr --output VGA-1 --off --output DP-1 --off --output LVDS-1
 alias @bureau="xrandr --output LVDS-1 --off --output VGA-1 --auto --output DP-1 --auto --right-of VGA-1 && i3 restart"
 alias @salle="xrandr --output DP-1 --off --output LVDS-1 --auto --output VGA-1 --mode 1024x768 --right-of LVDS-1 && i3 restart"
 alias @clone="xrandr --output DP-1 --off --output VGA-1 --auto --output LVDS-1 --same-as VGA-1&& i3 restart"
+alias vim=nvim
 
 # alias ranger='ranger --choosedir=$HOME/.config/ranger/rangerdir; LASTDIR=`cat $HOME/.config/ranger/rangerdir`; cd "$LASTDIR"'

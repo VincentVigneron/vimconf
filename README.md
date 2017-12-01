@@ -43,7 +43,8 @@ wicd<br />
 wicd-gtk<br />
 wpa_supplicant<br />
 util-linux<br />
-vim<br />
+nvim<br />
+python-nvim<br />
 vlc<br />
 w3m<br />
 wget<br />

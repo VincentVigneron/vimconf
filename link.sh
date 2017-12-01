@@ -11,6 +11,7 @@ declare -a list_of_conf=(
 	"pacaur"
 	"albert"
 	"termite"
+	"nvim"
 )
 for i in "${list_of_conf[@]}"
 do
