@@ -44,6 +44,16 @@ wicd-gtk<br />
 wpa_supplicant<br />
 util-linux<br />
 nvim<br />
+neovim-surround (aur)<br />
+neovim-airline (aur)<br />
+neovim-airline-themes (aur)<br />
+neovim-commentary (aur)<br />
+neovim-ctrlp (aur)<br />
+neovim-fugitive (aur)<br />
+neovim-nerdtree (aur)<br />
+neovim-plug (aur)<br />
+neovim-ultisnips (aur)<br />
+neovim-youcomplete-me-core-git (aur)<br />
 python-nvim<br />
 vlc<br />
 w3m<br />

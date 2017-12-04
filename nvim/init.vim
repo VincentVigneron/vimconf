@@ -14,7 +14,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 
 " Tools
-Plug 'surround.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'skywind3000/asyncrun.vim'
 
@@ -160,19 +159,10 @@ hi CursorLine gui=underline cterm=underline ctermbg=NONE guibg=NONE
 
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
-"Code completion
-""$cd ~/.vim/bundle/YouCompleteMe
-""$
-""$git submodule update --init --recursive
-""$
-""$./install.py --clang-completer --racer-completer
-""$
-""$mkdir -p ~/Developer/
-""$cd ~/Developer/
-""$git clone --depth 1 --branch master https://github.com/rust-lang/rust rust-master
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+
 "NerdTree
 "au VimEnter * NERDTree
 "au BufEnter * NERDTreeMirrori
