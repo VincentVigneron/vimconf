@@ -21,6 +21,7 @@ Plugin 'vim-airline/vim-airline'
 " Tools
 Plugin 'surround.vim'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'skywind3000/asyncrun.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -58,7 +59,6 @@ Plugin 'vim-latex/vim-latex'
 " Plugin '907th/vim-auto-save'
 
 " To Delete ?
-Plugin 'tpope/vim-dispatch'
 Plugin 'dhruvasagar/vim-markify'
 
 
@@ -132,6 +132,8 @@ let g:airline_symbols.linenr = ''
 
 let g:bufferline_echo=0
 let g:airline#extensions#bufferline#enabled = 1
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+
 
 "Line numbers
 set relativenumber
@@ -149,6 +151,8 @@ hi CtrlPLinePre guifg=red ctermfg=red
 set cursorline
 hi CursorLine gui=underline cterm=underline ctermbg=NONE guibg=NONE
 
+
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
 "Code completion
 ""$cd ~/.vim/bundle/YouCompleteMe
@@ -235,22 +239,23 @@ au BufRead,BufNewFile *.pas set filetype=pascal
 "cargo install racer
 "rustup component add rust-src
 au FileType rust,rust_config compiler cargo
-au FileType rust,rust_config nnoremap <F8> make build<cr>
-au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
-au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
+au FileType rust,rust_config nnoremap <F8> :Make build<cr>
+au FileType rust,rust_config nnoremap <F7> :AsyncRun cargo test --color=always<cr>
+au FileType rust,rust_config nnoremap <F5> :AsyncRun cargo run<cr>
 
-au FileType c,cpp nnoremap <F8> :Dispatch make -C build<cr>
-au FileType cpp nnoremap <F5> :Dispatch ./run.sh<cr>
+au FileType c,cpp nnoremap <F8> :AsyncRun make -C build<cr>
+au FileType cpp nnoremap <F5> :AsyncRun ./run.sh<cr>
 au FileType cpp setlocal foldmethod=indent
 au FileType cpp setlocal foldlevel=99
 
-au FileType pascal nnoremap <F8> :Dispatch fpc -S2 %:t<cr>
-au FileType pascal nnoremap <F5> :Dispatch ./%:r<cr>
+au FileType pascal nnoremap <F8> :AsyncRun fpc -S2 %:t<cr>
+au FileType pascal nnoremap <F5> :AsyncRun ./%:r<cr>
 "au FileType pascal set foldmethod=indent
 
 "au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
+" au FileType plaintex,tex nnoremap <F8> :Make<cr>
 au FileType plaintex,tex nnoremap <F8> :Make<cr>
-au FileType plaintex,tex set mp=make
+" au FileType plaintex,tex set mp=make
 au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
 au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
@@ -267,7 +272,7 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-au FileType rust nnoremap <F4> :Dispatch ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
+au FileType rust nnoremap <F4> :AsyncRun ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
 " see :TagsGenerate
 
 " disabl default long line highlighting in zinc files

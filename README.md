@@ -121,9 +121,10 @@ ttf-ubuntu-font-family<br />
 Install plugin<br />
 
 # TODO
-ctrlp -> fzf
-nerdtree -> netrw + vinegar
-Vundle -> vim-plug
+ctrlp -> fzf<br />
+nerdtree -> netrw + vinegar<br />
+Vundle -> vim-plug<br />
+async compilation ?<br />
 
 
 ## YouCompleteMe
@@ -153,15 +154,15 @@ sudo cp netctl/ethernet-dhcp /etc/netctl/<br />
 sudo systemctl enable ifplugd<br />
 
 ## WIFI
-sudo systemctl enable wicd.service
+sudo systemctl enable wicd.service<br />
 
 ## ACPI¶
-sudo systemctl enable acpid.service
+sudo systemctl enable acpid.service<br />
 
 ## LIGHT
-sudo cp bl /etc/acpi/handlers/
-sudo cp bl_u /etc/acpi/events
-sudo cp bl_d /etc/acpi/events
+sudo cp bl /etc/acpi/handlers/<br />
+sudo cp bl_u /etc/acpi/events<br />
+sudo cp bl_d /etc/acpi/events<br />
 
 ## CUPS
 sudo systemctl enable cups-browsed.service<br />
@@ -175,13 +176,27 @@ sudo gpasswd -a USER lp<br />
 ? sudo chmod 1777 /usr/lib/cups/\*<br />
 
 ## LANG
+# TODO
+basic language config<br />
 
 ## KEYBOARD
+# TODO
+basic keyboard config<br />
 
 ## RUST
 rustup toolchain install nightly<br />
 rustup component add rls-preview --toolchain nightly<br />
 
-## DISPLAY AT STARTUP
+## DISPLAY AT BOOT
+#TODO
+chose the "best" monitors at boot<br />
+
 
 ## CLONE SCALING
+# TOTO
+make clone alias to scale<br />
+
+
+## DOCK EVENT
+# TODO
+handle dock event<br />
