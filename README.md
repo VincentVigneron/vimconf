@@ -134,6 +134,7 @@ Install plugin<br />
 ctrlp -> fzf<br />
 nerdtree -> netrw + vinegar<br />
 async compilation ?<br />
+remove plyg and isntall package from aur ?<br />
 
 
 ## TWO MINUTES TIMER
