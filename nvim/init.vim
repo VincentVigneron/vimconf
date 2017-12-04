@@ -1,70 +1,70 @@
 "
-"Setup vimrc for vundle
-set nocompatible
-filetype off " required
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-"Vundle setup
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-
-" Plugin 'junegunn/vim-plug'
-Plugin 'VundleVim/Vundle.vim'
-
-"List of bundles
+call plug#begin('~/.vim/bundle')
 
 " Navigation
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
 
 " Tools
-Plugin 'surround.vim'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'skywind3000/asyncrun.vim'
+Plug 'surround.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'skywind3000/asyncrun.vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Highlight Current Search
-Plugin 'timakro/vim-searchant'
+Plug 'timakro/vim-searchant'
 
 " Programming
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-commentary'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale'
-" Plugin 'neomake/neomake'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'Valloric/YouCompleteMe'
+Plug 'w0rp/ale'
+" Plug 'neomake/neomake'
+Plug 'donRaphaco/neotex'
+", { 'for': 'tex' }
 
 " Themes
-Plugin 'dim13/smyck.vim'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'dim13/smyck.vim'
+Plug 'vim-airline/vim-airline-themes'
 
 " Approx the terminal colorscheme
-" Plugin 'godlygeek/csapprox'
+" Plug 'godlygeek/csapprox'
 
 " To check
-" Plugin 'tommcdo/vim-fubitive'
-Plugin 'vale1410/vim-minizinc'
-Plugin 'szw/vim-tags'
-Plugin 'bling/vim-bufferline'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'vim-latex/vim-latex'
-" Plugin 'majutsushi/tagbar'
-" Plugin 'suan/vim-instant-markdown'
-" Plugin 'xuhdev/vim-latex-live-preview'
-" Plugin '907th/vim-auto-save'
+" Plug 'tommcdo/vim-fubitive'
+Plug 'vale1410/vim-minizinc'
+Plug 'szw/vim-tags'
+Plug 'bling/vim-bufferline'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+" Plug 'majutsushi/tagbar'
+" Plug 'suan/vim-instant-markdown'
+Plug 'xuhdev/vim-latex-live-preview'
+" Plug '907th/vim-auto-save'
 
 " To Delete ?
-Plugin 'dhruvasagar/vim-markify'
+Plug 'dhruvasagar/vim-markify'
+
+call plug#end()
 
 
 "End list of bundles
+" call plug#end()
 
-filetype plugin indent on " required
+
+let g:livepreview_engine = 'make'
 
 let g:netrw_winsize = 31
 
@@ -253,10 +253,10 @@ au FileType pascal nnoremap <F5> :AsyncRun ./%:r<cr>
 "au FileType pascal set foldmethod=indent
 
 "au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
-" au FileType plaintex,tex nnoremap <F8> :Make<cr>
 au FileType plaintex,tex nnoremap <F8> :Make<cr>
-" au FileType plaintex,tex set mp=make
-au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
+" au FileType plaintex,tex nnoremap <F8> :AsyncRun make<cr>
+au FileType plaintex,tex set mp=make
+" au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
 au FileType plaintex,tex nnoremap <F6> :Make print<cr>
 au FileType plaintex,tex nnoremap <F5> :!xdg-open *.pdf<cr>
 au FileType plaintex,tex set spell spelllang=fr
