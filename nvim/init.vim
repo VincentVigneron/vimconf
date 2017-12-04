@@ -5,7 +5,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
 " Navigation
 Plug 'scrooloose/nerdtree'
@@ -28,11 +28,21 @@ Plug 'timakro/vim-searchant'
 " Programming
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
-Plug 'Valloric/YouCompleteMe'
+
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --all
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 " Plug 'neomake/neomake'
-Plug 'donRaphaco/neotex'
-", { 'for': 'tex' }
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
 
 " Themes
 Plug 'dim13/smyck.vim'
@@ -58,10 +68,6 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'dhruvasagar/vim-markify'
 
 call plug#end()
-
-
-"End list of bundles
-" call plug#end()
 
 
 let g:livepreview_engine = 'make'

@@ -123,17 +123,8 @@ Install plugin<br />
 ### TODO
 ctrlp -> fzf<br />
 nerdtree -> netrw + vinegar<br />
-Vundle -> vim-plug<br />
 async compilation ?<br />
 
-
-## YouCompleteMe
-cd ~<br />
-mkdir ycm_build<br />
-cd ycm_build<br />
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp<br />
-cd .vim/bundle/YouComplete/me<br />
-./install.py --clang-completer --racer-completer<br />
 
 ## TWO MINUTES TIMER
 sudo cp systemd/usr/timer-twominutes.timer /etc/systemd/user<br />
