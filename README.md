@@ -169,7 +169,7 @@ sudo systemctl enable cups-browsed.service<br />
 sudo systemctl enable org.cups.cupsd.service<br />
 sudo gpasswd -a USER sys<br />
 sudo gpasswd -a USER lp<br />
-#### drivers
+### drivers
 ? sudo chmod a+r /etc/cups<br />
 ? sudo chmod 1777 /var/spool/cups/tmp<br />
 ? sudo chmod 1777 /var/spool/cups<br />
@@ -188,12 +188,12 @@ rustup toolchain install nightly<br />
 rustup component add rls-preview --toolchain nightly<br />
 
 ## DISPLAY AT BOOT
-#TODO
+### TODO
 chose the "best" monitors at boot<br />
 
 
 ## CLONE SCALING
-### TOTO
+### TODO
 make clone alias to scale<br />
 
 
