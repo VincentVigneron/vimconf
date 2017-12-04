@@ -120,6 +120,12 @@ ttf-ubuntu-font-family<br />
 ## VIM
 Install plugin<br />
 
+# TODO
+ctrlp -> fzf
+nerdtree -> netrw + vinegar
+Vundle -> vim-plug
+
+
 ## YouCompleteMe
 cd ~<br />
 mkdir ycm_build<br />

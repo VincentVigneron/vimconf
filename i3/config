@@ -105,7 +105,7 @@ bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
 
-bindsym $mode+w xset -dpms s off
+bindsym $mod+w xset -dpms s off
 
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace 1
@@ -196,7 +196,7 @@ focus_on_window_activation focus
 # 	status_command polybar example
 	# position top
 	# workspace_buttons yes
-	# colors {
+# colors {
 	# 	background $bg-color
 	# 	separator  $separator-color
 	# 	# entry              border              background          text

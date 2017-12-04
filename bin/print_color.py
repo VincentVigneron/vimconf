@@ -75,7 +75,6 @@ def print_pdf(file_name, black, color, delay=10):
             call(print_cmd.format(**options), shell=True)
             time.sleep(delay)
         except OSError as e:
-            print >>sys.stderr, 'Printing failed:', e
             sys.exit('Échec de l\'impression')
 
 

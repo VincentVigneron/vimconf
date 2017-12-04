@@ -7,49 +7,66 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
+" Plugin 'junegunn/vim-plug'
 Plugin 'VundleVim/Vundle.vim'
 
 "List of bundles
-Plugin 'rust-lang/rust.vim'
-Plugin 'Valloric/YouCompleteMe'
+
+" Navigation
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-dispatch'
-Plugin 'dhruvasagar/vim-markify'
 Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'vim-airline/vim-airline'
+
+" Tools
+Plugin 'surround.vim'
+Plugin 'dhruvasagar/vim-table-mode'
+
+" Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
-Plugin 'tommcdo/vim-fubitive'
-Plugin 'szw/vim-tags'
+
+" Highlight Current Search
+Plugin 'timakro/vim-searchant'
+
+" Programming
 Plugin 'SirVer/ultisnips'
-Plugin 'vale1410/vim-minizinc'
-Plugin 'surround.vim'
-Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-commentary'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'dhruvasagar/vim-table-mode'
-"Plugin 'suan/vim-instant-markdown'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'w0rp/ale'
+" Plugin 'neomake/neomake'
+
+" Themes
+Plugin 'dim13/smyck.vim'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Approx the terminal colorscheme
+" Plugin 'godlygeek/csapprox'
+
+" To check
+" Plugin 'tommcdo/vim-fubitive'
+Plugin 'vale1410/vim-minizinc'
+Plugin 'szw/vim-tags'
+Plugin 'bling/vim-bufferline'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'vim-latex/vim-latex'
-"Plugin 'klen/python-mode'
-"Plugin 'majutsushi/tagbar'
-" Plugin 'vim-scripts/StyleChecker--perl'
-Plugin 'timakro/vim-searchant'
-Plugin 'xuhdev/vim-latex-live-preview'
-"Plugin '907th/vim-auto-save'
-" Plugin 'godlygeek/csapprox'
-Plugin 'dim13/smyck.vim'
-Plugin 'w0rp/ale'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'suan/vim-instant-markdown'
+" Plugin 'xuhdev/vim-latex-live-preview'
+" Plugin '907th/vim-auto-save'
+
+" To Delete ?
+Plugin 'tpope/vim-dispatch'
+Plugin 'dhruvasagar/vim-markify'
+
 
 "End list of bundles
 
-" let g:livepreview_previewer = 'okular'
-" let g:livepreview_engine = 'make'
-
-
 filetype plugin indent on " required
+
+let g:netrw_winsize = 31
 
 let mapleader = "-"
 syntax on
@@ -78,9 +95,41 @@ set list
 
 "airline
 set laststatus=2
+
 let g:airline_theme="base16_chalk"
-"let g:airline_left_sep= ' '
-"let g:airline_right_sep = ' '
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
 let g:bufferline_echo=0
 let g:airline#extensions#bufferline#enabled = 1
 
@@ -123,6 +172,17 @@ let g:ycm_confirm_extra_conf = 0
 ""Set F2 to put the cursor to the nerdtree
 noremap <F2> :NERDTreeToggle<cr>
 
+" vinegar.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " MacOSX/Linux
+
+" noremap <F2> :Lexplore<cr>
+" let g:netrw_winsize = 20
+" let g:netrw_list_hide = &wildignore
+" let g:netrw_liststyle=3
+" let g:netrw_browse_split=4
+" let g:netrw_altv=1
+" let g:netrw_banner=0
+
 "Syntastic
 
 set statusline+=%#warningmsg#
@@ -158,7 +218,6 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ctrlp_root_markers=['Cargo.toml']
 let g:ctrlp_working_path='ra'
 let g:ctrlp_show_hidden = 1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -170,13 +229,13 @@ let g:ctrlp_custom_ignore = {
 au BufRead,BufNewFile *.c,*.h     set filetype=c
 au BufRead,BufNewFile *.cpp,*.hpp set filetype=cpp
 au BufRead,BufNewFile Cargo.toml,Cargo.lock set filetype=rust_config
-au BufRead,BufNewFile *.rs set filetype=rust
+" au BufRead,BufNewFile *.rs set filetype=rust
 au BufRead,BufNewFile *.pas set filetype=pascal
 
 "cargo install racer
 "rustup component add rust-src
 au FileType rust,rust_config compiler cargo
-au FileType rust,rust_config nnoremap <F8> :Make build<cr>
+au FileType rust,rust_config nnoremap <F8> make build<cr>
 au FileType rust,rust_config nnoremap <F7> :Dispatch cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :Dispatch cargo run<cr>
 
