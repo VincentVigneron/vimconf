@@ -120,7 +120,7 @@ ttf-ubuntu-font-family<br />
 ## VIM
 Install plugin<br />
 
-# TODO
+### TODO
 ctrlp -> fzf<br />
 nerdtree -> netrw + vinegar<br />
 Vundle -> vim-plug<br />
@@ -135,7 +135,7 @@ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp<br 
 cd .vim/bundle/YouComplete/me<br />
 ./install.py --clang-completer --racer-completer<br />
 
-## TWO MINUTES TIMERj
+## TWO MINUTES TIMER
 sudo cp systemd/usr/timer-twominutes.timer /etc/systemd/user<br />
 sudo cp systemd/usr/timer-twominutes.target /etc/systemd/user<br />
 systemctl --user enable timer-twominutes.timer<br />
@@ -176,11 +176,11 @@ sudo gpasswd -a USER lp<br />
 ? sudo chmod 1777 /usr/lib/cups/\*<br />
 
 ## LANG
-# TODO
+### TODO
 basic language config<br />
 
 ## KEYBOARD
-# TODO
+### TODO
 basic keyboard config<br />
 
 ## RUST
@@ -193,10 +193,10 @@ chose the "best" monitors at boot<br />
 
 
 ## CLONE SCALING
-# TOTO
+### TOTO
 make clone alias to scale<br />
 
 
 ## DOCK EVENT
-# TODO
+### TODO
 handle dock event<br />
