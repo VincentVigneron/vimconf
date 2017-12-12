@@ -37,6 +37,7 @@ python<br />
 texlive-most<br />
 texlive-lang<br />
 texlive-bin<br />
+the_silver_searcher<br />
 tmux<br />
 tree<br />
 wicd<br />

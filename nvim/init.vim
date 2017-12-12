@@ -1,4 +1,3 @@
-"
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -9,9 +8,11 @@ call plug#begin('~/.vim/plugged')
 
 " Navigation
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'rking/ag.vim'
+Plug 'Chun-Yang/vim-action-ag'
 
 " Tools
 Plug 'dhruvasagar/vim-table-mode'
@@ -27,6 +28,8 @@ Plug 'timakro/vim-searchant'
 " Programming
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+Plug 'dhruvasagar/vim-markify'
+Plug 'othree/xml.vim'
 
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
@@ -62,18 +65,18 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Plug 'suan/vim-instant-markdown'
 Plug 'xuhdev/vim-latex-live-preview'
 " Plug '907th/vim-auto-save'
-
-" To Delete ?
-Plug 'dhruvasagar/vim-markify'
+Plug 'hkupty/iron.nvim'
 
 call plug#end()
 
+" UpdateRemotePlugins
 
-let g:livepreview_engine = 'make'
 
+let g:livepreview_previewer = 'okular'
 let g:netrw_winsize = 31
 
 let mapleader = "-"
+let maplocalleader = "\\"
 syntax on
 
 set tabstop=4
@@ -138,6 +141,7 @@ let g:airline_symbols.linenr = ''
 let g:bufferline_echo=0
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+let g:asyncrun_status=' pending '
 
 
 "Line numbers
@@ -152,7 +156,7 @@ set colorcolumn=+1
 "Color Scheme
 set t_Co=256
 colorscheme smyck
-hi CtrlPLinePre guifg=red ctermfg=red
+" hi CtrlPLinePre guifg=red ctermfg=red
 set cursorline
 hi CursorLine gui=underline cterm=underline ctermbg=NONE guibg=NONE
 
@@ -240,6 +244,7 @@ au FileType rust,rust_config nnoremap <F7> :AsyncRun cargo test --color=always<c
 au FileType rust,rust_config nnoremap <F5> :AsyncRun cargo run<cr>
 
 au FileType c,cpp nnoremap <F8> :AsyncRun make -C build<cr>
+au FileType c,cpp nnoremap <F9> :AsyncRun g++ -Wall %<cr>
 au FileType cpp nnoremap <F5> :AsyncRun ./run.sh<cr>
 au FileType cpp setlocal foldmethod=indent
 au FileType cpp setlocal foldlevel=99
@@ -275,7 +280,8 @@ au FileType rust nnoremap <F4> :AsyncRun ctags -f tags --options=$HOME/Developer
 let g:zinc_no_highlight_overlong = 1
 
 "nnoremap <F3> :TagbarToggle<cr>
-nnoremap <leader>. :CtrlPTag<cr>
+" nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <c-p> :Files<cr>
 nnoremap <leader>t <c-]>
 nnoremap <leader>T <c-t>
 
@@ -345,6 +351,8 @@ let latex_regions = [
 \]
 au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 
+let g:iron_repl_open_cmd="vsplit"
+
 " function! SC_highlight()
 " 	call SC_used()
 " 	highlight scError1 ctermfg=16 ctermbg=151 guifg=fg guibg=#afd7af
@@ -406,6 +414,9 @@ cnoremap <c-l> <s-right>
 cnoremap <c-h> <s-left>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <c-l> :nohl<cr><c-l>
+tnoremap <Esc> <C-\><C-n>
+
+nnoremap <c-l> <c-l>:AirlineRefresh<cr>
 
 " nnoremap <silent> n n:call HLNext(0.4,3)<cr>
 " nnoremap <silent> N N:call HLNext(0.4,3)<cr>
