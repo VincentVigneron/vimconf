@@ -203,3 +203,11 @@ make clone alias to scale<br />
 ## DOCK EVENT
 ### TODO
 handle dock event<br />
+
+
+## PRINT COLOR
+chmod u+x print_color.py
+sudo apt-get install python3
+sudo apt-get install python-pip3
+sudo pip3 install PyPDF2
+sudo pip3 install wand
