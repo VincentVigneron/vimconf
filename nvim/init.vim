@@ -30,6 +30,11 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
+
+" Coloration
+" Plug 'ap/vim-css-color'
+Plug 'chrisbra/Colorizer'
 
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
@@ -100,6 +105,12 @@ match SpellBad /\<\(\w\+\)\s\+\1\>/
 "	precedes : left overflow
 set listchars=nbsp:¤,tab:>-,trail:.,extends:>,precedes:<,eol:¶
 set list
+
+" COLORIZER
+let g:colorizer_auto_color = 0
+let g:colorizer_auto_filetype='css,html'
+let g:colorizer_fgcontrast=0
+let g:colorizer_skip_comments = 1
 
 "airline
 set laststatus=2
@@ -384,6 +395,8 @@ let g:iron_repl_open_cmd="vsplit"
 "
 nmap <silent> <leader>ps <Plug>(ale_previous)
 nmap <silent> <leader>ns <Plug>(ale_next)
+
+nnoremap <leader>ct :ColorToggle<cr>
 
 nnoremap <leader>q :qa<cr>
 inoremap jk <esc>

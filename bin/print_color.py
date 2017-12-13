@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 
+"""Foobar.py: Description of what foobar does."""
+
+__author__ = "Rob Knight, Gavin Huttley, and Peter Maxwell"
+__copyright__ = "Copyright 2007, The Cogent Project"
+__credits__ = ["Rob Knight", "Peter Maxwell", "Gavin Huttley",
+               "Matthew Wakefield"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Rob Knight"
+__email__ = "rob@spot.colorado.edu"
+__status__ = "Production"
+
 import os
 import argparse
 import time
@@ -10,42 +22,39 @@ from itertools import groupby, accumulate
 from subprocess import call
 
 
-def page_color(file_name, page):
+def is_page_color(file_name, page):
+    """Returns if the page of the pdf file is in color."""
     # convert the pdf in image
     with Image(filename=file_name+'['+str(page)+']') as sheet:
         # check the color levels
         red = sheet.channel_depths['red']
         blue = sheet.channel_depths['blue']
         green = sheet.channel_depths['green']
-        color = (red == 1) and (blue == 1) and (green == 1)
-    return not color
+        black = (red == 1) and (blue == 1) and (green == 1)
+    return not black
 
 
-def pdf_sheet_color(file_name, numpages):
+def pdf_sheets_color(file_name, numpages):
+    """Generator yielding the color of the sheets."""
     for page in range(0, numpages, 2):
-        color = page_color(file_name, page) or (
-            (page+1 < numpages) and page_color(file_name, page+1))
+        color = is_page_color(file_name, page) or (
+            (page+1 < numpages) and is_page_color(file_name, page+1))
         yield color
 
 
 def print_pdf(file_name, black, color, delay=10):
-    # Open the pdf to check the number of pages
     with open(file_name, 'rb') as file_input:
         file_pdf = PdfFileReader(file_input)
         numpages = file_pdf.getNumPages()
 
-    # Check the color of each pair of pages (sheet)
-    # and group the adjacent color sheets
-    # (resp. grayscale sheets)
+    # Group together the adjacent color (resp. grayscale) sheets
     sheets = ({
         'color': is_color,
         'first': 1,
-        'last': min(numpages, 2*len(list(sheets)))
+        'last': min(numpages, 2*len(list(nsheets)))
         }
-        for is_color, sheets
-        in groupby(pdf_sheet_color(file_name, numpages)))
-    # Compute the range of color (resp. grayscale) sheets
-    # from the previous list
+        for is_color, nsheets
+        in groupby(pdf_sheets_color(file_name, numpages)))
     sheets = [sheet for sheet in accumulate(
         sheets,
         lambda prev, curr: {
@@ -59,10 +68,10 @@ def print_pdf(file_name, black, color, delay=10):
             '-o sides=two-sided-long-edge '
             '-o ColorModel={color} '
             '-P {first}-{last}')
-    for pages in sheets:
-        is_color = pages['color']
-        first = pages['first']
-        last = pages['last']
+    for sheet in sheets:
+        is_color = sheet['color']
+        first = sheet['first']
+        last = sheet['last']
         options = {'file': file_name, 'first': first, 'last': last}
         if is_color:
             options['printer'] = color
@@ -80,8 +89,9 @@ def print_pdf(file_name, black, color, delay=10):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--file', help='Fichier à imprimer.', required=True)
+parser.add_argument('--color', help='Nom de l\'imprimante couleurs.',
+                    required=True)
 parser.add_argument('--black', help='Nom de l\'imprimante noire et blanc.')
-parser.add_argument('--color', help='Nom de l\'imprimante couleurs.')
 args = parser.parse_args()
 
 file_name = getattr(args, 'file')
