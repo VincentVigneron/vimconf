@@ -16,6 +16,24 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+Orange='\033[0;33m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+LightGray='\033[0;37m'
+DarkGray='\033[1;30m'
+LightRed='\033[1;31m'
+LightGreen='\033[1;32m'
+Yellow='\033[1;33m'
+LightBlue='\033[1;34m'
+LightPurple='\033[1;35m'
+LightCyan='\033[1;36m'
+White='\033[1;37m'
+NoColor='\033[0m'
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -54,7 +72,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;30m\][\A]\[\033[01;31m\]\u\[\033[01;30m\]@\h\[\033[00m\]:\[\033[01;30m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}${White}[\A]${LightRed}\u${White}@\h${NoColor}:${LightGreen}\w${White}\$ ${NoColor}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

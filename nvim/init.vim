@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 " Navigation
 Plug 'scrooloose/nerdtree'
+" Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -185,6 +186,7 @@ let g:ycm_confirm_extra_conf = 0
 ""CTRL-t to toggle tree view with CTRL-t
 "nmap <silent> <C-t> :NERDTreeToggle<CR>
 ""Set F2 to put the cursor to the nerdtree
+" noremap <F2> :NERDTreeToggle<cr>
 noremap <F2> :NERDTreeToggle<cr>
 
 " vinegar.vim
