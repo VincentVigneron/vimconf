@@ -1,4 +1,5 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
+
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -14,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
+Plug 'majutsushi/tagbar'
 
 " Tools
 Plug 'dhruvasagar/vim-table-mode'
@@ -31,7 +33,6 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
 
 " Coloration
 " Plug 'ap/vim-css-color'
@@ -188,6 +189,7 @@ let g:ycm_confirm_extra_conf = 0
 ""Set F2 to put the cursor to the nerdtree
 " noremap <F2> :NERDTreeToggle<cr>
 noremap <F2> :NERDTreeToggle<cr>
+noremap <F3> :Tagbar<cr>
 
 " vinegar.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " MacOSX/Linux
@@ -366,6 +368,56 @@ au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 
 let g:iron_repl_open_cmd="vsplit"
 
+let g:tagbar_type_rust = {
+    \ 'ctagstype' : 'rust',
+    \ 'kinds' : [
+        \'T:types,type definitions',
+        \'f:functions,function definitions',
+        \'g:enum,enumeration names',
+        \'s:structure names',
+        \'m:modules,module names',
+        \'c:consts,static constants',
+        \'t:traits',
+        \'i:impls,trait implementations',
+    \]
+    \}
+
+let g:tagbar_type_bib = {
+    \ 'ctagstype' : 'bib',
+    \ 'kinds'     : [
+        \ 'a:Articles',
+        \ 'b:Books',
+        \ 'L:Booklets',
+        \ 'c:Conferences',
+        \ 'B:Inbook',
+        \ 'C:Incollection',
+        \ 'P:Inproceedings',
+        \ 'm:Manuals',
+        \ 'T:Masterstheses',
+        \ 'M:Misc',
+        \ 't:Phdtheses',
+        \ 'p:Proceedings',
+        \ 'r:Techreports',
+        \ 'u:Unpublished',
+    \ ]
+\ }
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
+let g:tagbar_type_ps1 = {
+    \ 'ctagstype' : 'powershell',
+    \ 'kinds'     : [
+        \ 'f:function',
+        \ 'i:filter',
+        \ 'a:alias'
+    \ ]
+\ }
 " function! SC_highlight()
 " 	call SC_used()
 " 	highlight scError1 ctermfg=16 ctermbg=151 guifg=fg guibg=#afd7af
@@ -430,6 +482,9 @@ cnoremap <c-h> <s-left>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <c-l> :nohl<cr><c-l>
 tnoremap <Esc> <C-\><C-n>
+
+nnoremap <leader>lt :LLPStartPreview<cr>
+" let g:neotex_latexdiff=1
 
 nnoremap <c-l> <c-l>:AirlineRefresh<cr>
 

@@ -10,6 +10,7 @@ xrandr<br />
 gtk-3<br />
 g++<br />
 clang<br />
+ctags<br /> (link  ctags to ~/.ctags)
 notify-osd<br />
 acpi<br />
 acpid<br />
