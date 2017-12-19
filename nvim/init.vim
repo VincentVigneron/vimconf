@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
 Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
+Plug 'sjl/gundo.vim'
 
 " Tools
 Plug 'dhruvasagar/vim-table-mode'
@@ -77,6 +79,8 @@ Plug 'hkupty/iron.nvim'
 call plug#end()
 
 " UpdateRemotePlugins
+"
+let g:python_host_prog = 'python'
 
 
 let g:livepreview_previewer = 'okular'
@@ -190,6 +194,7 @@ let g:ycm_confirm_extra_conf = 0
 " noremap <F2> :NERDTreeToggle<cr>
 noremap <F2> :NERDTreeToggle<cr>
 noremap <F3> :Tagbar<cr>
+noremap <F4> :GundoToggle<cr>
 
 " vinegar.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " MacOSX/Linux
@@ -254,7 +259,7 @@ au BufRead,BufNewFile *.pas set filetype=pascal
 "cargo install racer
 "rustup component add rust-src
 au FileType rust,rust_config compiler cargo
-au FileType rust,rust_config nnoremap <F8> :Make build<cr>
+au FileType rust,rust_config nnoremap <F8> :AsyncRun cargo build<cr>
 au FileType rust,rust_config nnoremap <F7> :AsyncRun cargo test --color=always<cr>
 au FileType rust,rust_config nnoremap <F5> :AsyncRun cargo run<cr>
 
@@ -269,7 +274,7 @@ au FileType pascal nnoremap <F5> :AsyncRun ./%:r<cr>
 "au FileType pascal set foldmethod=indent
 
 "au FileType plaintex,tex nnoremap <F8> :w<cr>:Make<cr>
-au FileType plaintex,tex nnoremap <F8> :Make<cr>
+au FileType plaintex,tex nnoremap <F8> :AsyncRun make<cr>
 " au FileType plaintex,tex nnoremap <F8> :AsyncRun make<cr>
 au FileType plaintex,tex set mp=make
 " au FileType plaintex,tex nnoremap <F7> :Make clean<cr>
@@ -288,7 +293,7 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-au FileType rust nnoremap <F4> :AsyncRun ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
+" au FileType rust nnoremap <F4> :AsyncRun ctags -f tags --options=$HOME/Developer/rust-master/src/etc/ctags.rust --recurse .<cr>
 " see :TagsGenerate
 
 " disabl default long line highlighting in zinc files
@@ -368,6 +373,7 @@ au FileType plaintex,tex call SPELL_remove_regions(latex_regions)
 
 let g:iron_repl_open_cmd="vsplit"
 
+let g:easytags_async=1
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
     \ 'kinds' : [
@@ -418,6 +424,8 @@ let g:tagbar_type_ps1 = {
         \ 'a:alias'
     \ ]
 \ }
+
+let g:gundo_preview_bottom = 1
 " function! SC_highlight()
 " 	call SC_used()
 " 	highlight scError1 ctermfg=16 ctermbg=151 guifg=fg guibg=#afd7af

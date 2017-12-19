@@ -29,7 +29,10 @@ exec --no-startup-id albert
 exec --no-startup-id wicd-client --tray
 
 # set wallpaper
-exec_always --no-startup-id feh --randomize ~/.config/i3/Images/Wallpapers/* --bg-scale
+# exec_always --no-startup-id feh --randomize ~/.config/i3/Images/Wallpapers/* --bg-scale
+exec_always --no-startup-id feh --bg-scale `find /home/vincent/.config/i3/Images/Wallpapers/ -type f | shuf -n 1`
+
+
 # exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
 # exec_always --no-startup-id feh --bg-scale ~/fond-ecran-noir.jpg
 
@@ -106,7 +109,8 @@ bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
 
-bindsym $mod+w xset -dpms s off
+bindsym $mod+w exec xset -dpms s off
+bindsym $mod+i exec notify-send "Wallpaper" `~/.config/i3/wallpaper_name.sh`
 
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace 1

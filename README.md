@@ -133,10 +133,8 @@ ttf-ubuntu-font-family<br />
 Install plugin<br />
 
 ### TODO
-ctrlp -> fzf<br />
 nerdtree -> netrw + vinegar<br />
-async compilation ?<br />
-remove plyg and isntall package from aur ?<br />
+treetag & easytag<br />
 
 
 ## TWO MINUTES TIMER
@@ -212,3 +210,8 @@ sudo apt-get install python3
 sudo apt-get install python-pip3
 sudo pip3 install PyPDF2
 sudo pip3 install wand
+
+
+## BASHRC
+### TODO
+Clean bashrc
