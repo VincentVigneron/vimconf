@@ -52,18 +52,18 @@ bindsym $mod+Shift+a kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym   $mod+h   focus   left
+bindsym   $mod+j   focus   down
+bindsym   $mod+k   focus   up
+bindsym   $mod+l   focus   right
 
 force_focus_wrapping yes
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym   $mod+Shift+h   move   left
+bindsym   $mod+Shift+j   move   down
+bindsym   $mod+Shift+k   move   up
+bindsym   $mod+Shift+l   move   right
 
 # split in horizontal orientation
 bindsym $mod+Shift+v split h
@@ -75,9 +75,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym   $mod+s   layout   stacking
+bindsym   $mod+z   layout   tabbed
+bindsym   $mod+e   layout   toggle     split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -98,51 +98,51 @@ exec xautolock -time 10 -locker i3lock -c 000000
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym   $mod+ampersand    workspace   1
+bindsym   $mod+eacute       workspace   2
+bindsym   $mod+quotedbl     workspace   3
+bindsym   $mod+apostrophe   workspace   4
+bindsym   $mod+parenleft    workspace   5
+bindsym   $mod+minus        workspace   6
+bindsym   $mod+egrave       workspace   7
+bindsym   $mod+underscore   workspace   8
+bindsym   $mod+ccedilla     workspace   9
+bindsym   $mod+agrave       workspace   10
 
 bindsym $mod+w exec xset -dpms s off
 bindsym $mod+i exec notify-send "Wallpaper" `~/.config/i3/wallpaper_name.sh`
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym   $mod+Shift+ampersand    move   container   to   workspace   1
+bindsym   $mod+Shift+eacute       move   container   to   workspace   2
+bindsym   $mod+Shift+quotedbl     move   container   to   workspace   3
+bindsym   $mod+Shift+apostrophe   move   container   to   workspace   4
+bindsym   $mod+Shift+5            move   container   to   workspace   5
+bindsym   $mod+Shift+minus        move   container   to   workspace   6
+bindsym   $mod+Shift+egrave       move   container   to   workspace   7
+bindsym   $mod+Shift+underscore   move   container   to   workspace   8
+bindsym   $mod+Shift+ccedilla     move   container   to   workspace   9
+bindsym   $mod+Shift+agrave       move   container   to   workspace   10
 
 # rename focused  workspace
-bindsym $mod+Ctrl+ampersand rename  workspace  to 1
-bindsym $mod+Ctrl+eacute rename  workspace  to 2
-bindsym $mod+Ctrl+quotedbl rename  workspace  to 3
-bindsym $mod+Ctrl+apostrophe rename  workspace  to 4
-bindsym $mod+Ctrl+5 rename  workspace  to 5
-bindsym $mod+Ctrl+minus rename  workspace  to 6
-bindsym $mod+Ctrl+egrave rename  workspace  to 7
-bindsym $mod+Ctrl+underscore rename  workspace to 8
-bindsym $mod+Ctrl+ccedilla rename  workspace to 9
-bindsym $mod+Ctrl+agrave rename  workspace to 10
+bindsym   $mod+Ctrl+ampersand    rename      workspace   to   1
+bindsym   $mod+Ctrl+eacute       rename      workspace   to   2
+bindsym   $mod+Ctrl+quotedbl     rename      workspace   to   3
+bindsym   $mod+Ctrl+apostrophe   rename      workspace   to   4
+bindsym   $mod+Ctrl+5            rename      workspace   to   5
+bindsym   $mod+Ctrl+minus        rename      workspace   to   6
+bindsym   $mod+Ctrl+egrave       rename      workspace   to   7
+bindsym   $mod+Ctrl+underscore   rename      workspace   to   8
+bindsym   $mod+Ctrl+ccedilla     rename      workspace   to   9
+bindsym   $mod+Ctrl+agrave       rename      workspace   to   10
 
-bindsym $mod+x move workspace to output left
-bindsym $mod+Shift+x move workspace to output right
+bindsym   $mod+x         move   workspace   to   output   left
+bindsym   $mod+Shift+x   move   workspace   to   output   right
 
-bindsym $mod+Ctrl+h resize shrink width 1 px or 1 ppt
-bindsym $mod+Ctrl+l resize grow width 1 px or 1 ppt
-bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
-bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
+bindsym   $mod+Ctrl+h   resize   shrink   width    1   px   or   1   ppt
+bindsym   $mod+Ctrl+l   resize   grow     width    1   px   or   1   ppt
+bindsym   $mod+Ctrl+j   resize   shrink   height   1   px   or   1   ppt
+bindsym   $mod+Ctrl+k   resize   grow     height   1   px   or   1   ppt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -155,37 +155,37 @@ for_window [class="I3-exit" instance="i3exit"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym   h   resize   shrink   width    10   px   or   10   ppt
+	bindsym   j   resize   grow     height   10   px   or   10   ppt
+	bindsym   k   resize   shrink   height   10   px   or   10   ppt
+	bindsym   l   resize   grow     width    10   px   or   10   ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym   Return   mode   "default"
+	bindsym   Escape   mode   "default"
 }
 
 bindsym $mod+r mode "resize"
 
-set $bg-color             #2f343f
-set $inactive-bg-color    #2f343f
-set $text-color           #f3f4f5
-set $inactive-text-color  #676e7d
-set $urgent-bg-color      #e53935
-set $separator-color      #757575
+set   $bg-color              #2f343f
+set   $inactive-bg-color     #2f343f
+set   $text-color            #f3f4f5
+set   $inactive-text-color   #676e7d
+set   $urgent-bg-color       #e53935
+set   $separator-color       #757575
 
 # window colors
-# entry                 norder             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          #00ff00
+#entry                    norder               background           text                   indicator
+client.focused            $bg-color            $bg-color            $text-color            #00ff00
+client.unfocused          $inactive-bg-color   $inactive-bg-color   $inactive-text-color   #00ff00
+client.focused_inactive   $inactive-bg-color   $inactive-bg-color   $inactive-text-color   #00ff00
+client.urgent             $urgent-bg-color     $urgent-bg-color     $text-color            #00ff00
 
 hide_edge_borders both
 
@@ -213,9 +213,9 @@ focus_on_window_activation focus
 
 for_window [class="screenkey"] floating enable move right 330px,move down 70px
 
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioLowerVolume exec amixer set Master 1%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 1%+
+bindsym   XF86AudioMute          exec   amixer   set   Master   toggle
+bindsym   XF86AudioLowerVolume   exec   amixer   set   Master   1%-
+bindsym   XF86AudioRaiseVolume   exec   amixer   set   Master   1%+
 
 
 # gaps
