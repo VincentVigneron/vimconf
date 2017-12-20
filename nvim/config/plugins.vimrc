@@ -62,7 +62,7 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 let g:iron_repl_open_cmd="vsplit"
 
-let g:easytags_async=1
+let g:easytags_async=0
 
 let g:gundo_preview_bottom = 1
 
