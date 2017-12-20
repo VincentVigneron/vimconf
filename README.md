@@ -1,7 +1,7 @@
 # INSTALLATION
 
 ## PACKAGES
-pacaur (aur)<br />
+trizen (aur)<br />
 termite<br />
 albert (aur)<br />
 polybar (aur)<br />

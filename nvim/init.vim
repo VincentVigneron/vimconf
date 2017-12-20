@@ -35,6 +35,8 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'tfnico/vim-gradle'
 
 " Coloration
 " Plug 'ap/vim-css-color'
@@ -426,6 +428,9 @@ let g:tagbar_type_ps1 = {
 \ }
 
 let g:gundo_preview_bottom = 1
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java nnoremap <leader>jia :JCimportAddSmart<cr><esc>
 " function! SC_highlight()
 " 	call SC_used()
 " 	highlight scError1 ctermfg=16 ctermbg=151 guifg=fg guibg=#afd7af
@@ -492,6 +497,7 @@ nnoremap <silent> <c-l> :nohl<cr><c-l>
 tnoremap <Esc> <C-\><C-n>
 
 nnoremap <leader>lt :LLPStartPreview<cr>
+nnoremap <leader>ag :Ag<cr>
 " let g:neotex_latexdiff=1
 
 nnoremap <c-l> <c-l>:AirlineRefresh<cr>

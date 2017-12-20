@@ -224,3 +224,5 @@ gaps inner 15
 gaps outer 0
 smart_gaps on
 smart_borders on
+
+for_window [class="Nautilus" instance="file_progress"] floating enable
