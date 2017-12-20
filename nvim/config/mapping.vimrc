@@ -3,12 +3,12 @@ noremap  <F3>  :Tagbar<cr>
 noremap  <F4>  :GundoToggle<cr>
 nnoremap <c-p> :Files<cr>
 
-nnoremap  <leader>t=  mxvip:EasyAlign1/=/l1<cr>`x
-nnoremap  <leader>t:  mxvip:EasyAlign1/:/l1<cr>`x
-nnoremap  <leader>ts  mxvip:EasyAlign*/\s\+/l0<cr>`x
-vnoremap  <leader>t=  :EasyAlign*/=/l1<cr>
-vnoremap  <leader>t:  :EasyAlign*/:/l1<cr>
-vnoremap  <leader>ts  :EasyAlign*/\s\+/l0<cr>
+nnoremap  <leader>t=        mxvip:EasyAlign1/=/l1<cr>`x
+nnoremap  <leader>t:        mxvip:EasyAlign1/:/l1<cr>`x
+nnoremap  <leader>t<space>  mxvip:EasyAlign*/\s\+/l0<cr>`x
+vnoremap  <leader>t=        :EasyAlign*/=/l1<cr>
+vnoremap  <leader>t:        :EasyAlign*/:/l1<cr>
+vnoremap  <leader>t<space>  :EasyAlign*/\s\+/l0<cr>
 
 nnoremap  <leader>gs  :Gstatus<cr>
 nnoremap  <leader>gc  :Gcommit<cr>
@@ -51,14 +51,12 @@ cnoremap  <Right>    <nop>
 inoremap  <c-w>      <esc>:w<cr>
 nnoremap  <c-u>      viw~
 nnoremap  <space>    :bnext<cr>
-nnoremap  <c-@>      :bprevious<cr>
-nnoremap  <c-space>  <c-@>
-inoremap  <c-@>      <c-x><c-o>
-inoremap  <c-space>  <c-@>
-"cnoremap <c-j>     <Home>
+nnoremap  <c-space>  :bprevious<cr>
+inoremap  <c-space>  <c-x><c-o>
 cnoremap  <c-k>      <right>
 cnoremap  <c-j>      <left>
 cnoremap  <c-l>      <s-right>
+cnoremap  <c-h>      <s-left>
 tnoremap  <Esc>      <C-\><C-n>
 
 nnoremap  <silent>  <c-l>  :nohl<cr><c-l>:AirlineRefresh<cr>

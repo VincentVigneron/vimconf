@@ -1,4 +1,4 @@
-"Color Scheme
+" "Color Scheme
 colorscheme smyck
 
 " COLORIZER

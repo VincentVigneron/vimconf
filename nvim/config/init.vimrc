@@ -15,6 +15,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
 Plug 'majutsushi/tagbar'
+function! BuildPhpctags(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !make
+  endif
+endfunction
+Plug 'vim-php/tagbar-phpctags.vim', {'do': function('BuildPhpctags') }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'sjl/gundo.vim'
@@ -25,6 +35,8 @@ Plug 'junegunn/vim-easy-align'
 " Tools
 " Plug 'dhruvasagar/vim-table-mode'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'vim-scripts/nextval'
+Plug 'Raimondi/delimitMate'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -35,7 +47,7 @@ Plug 'timakro/vim-searchant'
 
 " Programming
 Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
 Plug 'artur-shaik/vim-javacomplete2'
