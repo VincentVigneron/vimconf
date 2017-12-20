@@ -16,42 +16,42 @@ au FileType plaintex,tex nnoremap <leader>sp :lprev<cr>
 au FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 80<cr>`n
 
 function! SPELL_remove_region(region)
-	let l:regexp = substitute("\\\\@REGIONNAME{[^}]\\{-}}", "@REGIONNAME", a:region, "")
-	let l:region_matcher =
-		\ 'syn match texSomevariable "'.l:regexp.'"hs=s+14,he=e-1 containedin=texStatement contains=@NoSpell'
-	exec region_matcher
+    let l:regexp = substitute("\\\\@REGIONNAME{[^}]\\{-}}", "@REGIONNAME", a:region, "")
+    let l:region_matcher =
+        \ 'syn match texSomevariable "'.l:regexp.'"hs=s+14,he=e-1 containedin=texStatement contains=@NoSpell'
+    exec region_matcher
 endfunc
 
 function! SPELL_remove_regions(regions)
-	for region in a:regions
-		call SPELL_remove_region(region)
-	endfor
+    for region in a:regions
+        call SPELL_remove_region(region)
+    endfor
 endfunc
 
 
 let latex_regions = [
-	\ "defref",
-	\ "Defref",
-	\ "charef",
-	\ "secref",
-	\ "figref",
-	\ "tabref",
-	\ "algref",
-	\ "expref",
-	\ "chasref",
-	\ "secsref",
-	\ "figsref",
-	\ "tabsref",
-	\ "algsref",
-	\ "expsref",
-	\ "textmath",
-	\ "lineref",
-	\ "linesref",
-	\ "complexite",
-	\ "cite",
-	\ "ref",
-	\ "label",
-	\ "complexite",
-	\ "gls"
+    \ "defref",
+    \ "Defref",
+    \ "charef",
+    \ "secref",
+    \ "figref",
+    \ "tabref",
+    \ "algref",
+    \ "expref",
+    \ "chasref",
+    \ "secsref",
+    \ "figsref",
+    \ "tabsref",
+    \ "algsref",
+    \ "expsref",
+    \ "textmath",
+    \ "lineref",
+    \ "linesref",
+    \ "complexite",
+    \ "cite",
+    \ "ref",
+    \ "label",
+    \ "complexite",
+    \ "gls"
 \]
 au FileType plaintex,tex call SPELL_remove_regions(latex_regions)

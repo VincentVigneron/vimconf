@@ -19,6 +19,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'sjl/gundo.vim'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 
 
 " Tools
