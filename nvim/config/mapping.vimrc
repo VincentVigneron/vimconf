@@ -14,7 +14,7 @@ nnoremap  <leader>gs  :Gstatus<cr>
 nnoremap  <leader>gc  :Gcommit<cr>
 nnoremap  <leader>ga  :Gwrite<cr>
 nnoremap  <leader>gl  :Glog<cr>
-nnoremap  <leader>gp  :AsyncRun :Gpush  origin  HEAD<cr>
+nnoremap  <leader>gp  :AsyncRun git push  origin HEAD<cr>
 nnoremap  <leader>gb  :Gbrowse<cr>
 nnoremap  <leader>ct  :ColorToggle<cr>
 nnoremap  <leader>ag  :Ag<cr>
