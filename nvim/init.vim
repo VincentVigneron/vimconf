@@ -5,7 +5,6 @@ source $HOME/.config/nvim/config/tagbar.vimrc
 source $HOME/.config/nvim/config/ale.vimrc
 source $HOME/.config/nvim/config/lang_detection.vimrc
 source $HOME/.config/nvim/config/latex.vimrc
-source $HOME/.config/nvim/config/mapping.vimrc
 source $HOME/.config/nvim/config/programming.vimrc
 source $HOME/.config/nvim/config/ycm.vimrc
 source $HOME/.config/nvim/config/mapping.vimrc

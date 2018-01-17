@@ -18,7 +18,7 @@ alsa-tools<br />
 alsa-utils<br />
 cups<br />
 firefox<br />
-gimmage<br />
+deepin-image-viewer<br />
 gimp<br />
 ranger<br />
 gnome-screenshot<br />

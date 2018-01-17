@@ -1,5 +1,5 @@
-# Pour l'historique
-set bell-style none
+set  bell-style    none
+set  editing-mode  vi
 
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+"\e[A":  history-search-backward
+"\e[B":  history-search-forward

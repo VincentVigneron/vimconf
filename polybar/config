@@ -48,6 +48,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome:size=12;1
 font-3 = Typicons:size=18;1
 font-4 = Typicons:size=14;1
+font-6 = Typicons:size=18;3
 font-5 = Symbola:size=2;-2
 
 modules-left   = i3
@@ -266,13 +267,13 @@ type      = internal/network
 interface = enp0s25
 interval  = 3.0
 
-format-connected           = <label-connected>
-format-connected-underline = #55aa55
-label-connected            = "    "
+format-connected            =  <label-connected>
+format-connected-underline  =  #55aa55
+label-connected             =  %{T5}    %{T-}
 
 format-disconnected           = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected            = "  "
+label-disconnected            = %{T5}   %{T-}
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -365,16 +366,16 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open                 = 
+label-open                 = %{T7}%{T-}
 label-open-foreground      = ${colors.secondary}
-label-close                = 
+label-close                = %{T7}%{T-}
 label-close-foreground     = ${colors.secondary}
 label-separator            = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0      = 
+menu-0-0      = 
 menu-0-0-exec = reboot
-menu-0-1      = 
+menu-0-1      = %{T7}%{T-}
 menu-0-1-exec = poweroff
 
 [settings]

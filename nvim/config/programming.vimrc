@@ -21,4 +21,10 @@ au FileType python nnoremap <F5> :!python3 %<cr>
 
 "java
 au FileType java setlocal omnifunc=javacomplete#Complete
-au FileType java nnoremap <leader>jia :JCimportAddSmart<cr><esc>
+au FileType java nnoremap <F8> :AsyncRun gradle compileJava<cr>
+au FileType java nnoremap <F5> :AsyncRun gradle<cr>
+au FileType java nnoremap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+au FileType java nnoremap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+au FileType java nnoremap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+au FileType java nnoremap <leader>jii <Plug>(JavaComplete-Imports-Add)
+au FileType java nnoremap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
