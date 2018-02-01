@@ -25,12 +25,13 @@ floating_modifier $mod
 
 exec_always  --no-startup-id  ~/.config/polybar/launch.sh
 exec         --no-startup-id  compton
-exec         --no-startup-id  albert
+#exec         --no-startup-id  albert
 exec         --no-startup-id  wicd-client  --tray
 
 # set wallpaper
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/Art/Storm\ -\ Andreas\ Achenbach.png
 # exec_always --no-startup-id feh --randomize ~/.config/i3/Images/Wallpapers/* --bg-scale
-exec_always --no-startup-id feh --bg-scale `find /home/vincent/.config/i3/Images/Wallpapers/ -type f | shuf -n 1`
+# exec_always --no-startup-id feh --bg-scale `find /home/vincent/.config/i3/Images/Wallpapers/ -type f | shuf -n 1`
 
 
 # exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/cthulu.jpg
@@ -46,6 +47,7 @@ bindsym $mod+Shift+a kill
 # bindsym $mod+d exec dmenu_run -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
 # bindsym $mod+d exec ~/.config/i3/emenu_run.sh -i -l 5 -nb "#7EE4CA" -nf "#A9306F" -fn "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
 # bindsym $mod+d exec ~/.config/i3/emenu_run.sh
+bindsym $mod+d exec "rofi -show run"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

@@ -1,0 +1,17 @@
+rofi.lines            : 7
+rofi.case-sensitive   : false
+rofi.sidebar-mode     : true
+rofi.autoselect       : false
+rofi.sort             : true
+rofi.levenshtein-sort : true
+rofi.matching         : fuzzy
+rofi.tokenize         : true
+rofi.m                : -4
+rofi.modi             : window,run,ssh
+rofi.disable-history  : false
+rofi.show-icons       : true
+rofi.terminal         : termite
+rofi.ssh-client       : ssh
+rofi.ssh-command      : {terminal} -e "{ssh-client} {host}"
+rofi.kb-mode-next     : Shift+Right,Control+Tab,2
+rofi.kb-mode-previous : Shift+Left,Control+ISO_Left_Tab,1

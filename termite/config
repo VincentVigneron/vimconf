@@ -9,7 +9,7 @@ urgent_on_bell = true
 clickable_url = true
 #font = InputMonoNarrow 11
 #font = Inconsolata, medium 12
-font = xos4 Terminus 10
+font = xos4 Terminus 12
 
 scrollback_lines = 10000
 search_wrap = true
@@ -34,36 +34,67 @@ filter_unmatched_urls = true
 # emit escape sequences for extra modified keys
 #modify_other_keys = false
 
-[colors]
-#cursor = #ff0000
-#cursor_foreground = #dcdccc
-foreground = #ffffff
-foreground_bold = #ffffff
-background = #000000
 
-# 20% background transparency (requires a compositor)
-background = rgba(0, 0, 0, 0.8)
+# Solarized light color scheme
+
+[colors]
+foreground = #657b83
+foreground_bold = #073642
+#foreground_dim = #888888
+background = #fdf6e3
+cursor = #586e75
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #839496
 
 # colors from color0 to color254 can be set
-color0 = #2e3436
-color1 = #a40000
-color2 = #4e9a06
-color3 = #c4a000
-color4 = #3465a4
-color5 = #75507b
-color6 = #ce5c00
-color7 = #babdb9
-color8 = #555753
-color9 = #ef2929
-color10 = #8ae234
-color11 = #fce94f
-color12 = #729fcf
-color13 = #ad7fa8
-color14 = #fcaf3e
-color15 = #eeeeec
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
+
+#[colors]
+##cursor = #ff0000
+##cursor_foreground = #dcdccc
+#foreground = #ffffff
+#foreground_bold = #ffffff
+#background = #000000
+
+## 20% background transparency (requires a compositor)
+#background = rgba(0, 0, 0, 0.8)
+
+## if unset, will reverse foreground and background
+#highlight = #2f2f2f
+
+## colors from color0 to color254 can be set
+#color0 = #2e3436
+#color1 = #a40000
+#color2 = #4e9a06
+#color3 = #c4a000
+#color4 = #3465a4
+#color5 = #75507b
+#color6 = #ce5c00
+#color7 = #babdb9
+#color8 = #555753
+#color9 = #ef2929
+#color10 = #8ae234
+#color11 = #fce94f
+#color12 = #729fcf
+#color13 = #ad7fa8
+#color14 = #fcaf3e
+#color15 = #eeeeec
 
 [hints]
 #font = Monospace 12

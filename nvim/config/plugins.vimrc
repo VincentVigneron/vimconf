@@ -1,5 +1,11 @@
 " "Color Scheme
-colorscheme smyck
+set termguicolors
+colorscheme gruvbox
+let g:gruvbox_italicize_comments = 1
+let g:gruvbox_italic             = 1
+let g:gruvbox_contrast_light     = 'hard'
+let g:gruvbox_contrast_dark      = 'hard'
+"colorscheme smyck 
 
 " COLORIZER
 let g:colorizer_auto_color = 0
@@ -8,8 +14,7 @@ let g:colorizer_fgcontrast=0
 let g:colorizer_skip_comments = 1
 
 "airline
-
-let g:airline_theme="base16_chalk"
+"let g:airline_theme="base16_chalk"
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

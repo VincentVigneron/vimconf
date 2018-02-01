@@ -3,7 +3,7 @@
 ## PACKAGES
 trizen (aur)<br />
 termite<br />
-albert (aur)<br />
+rofi<br />
 polybar (aur)<br />
 gsimplecal<br />
 xrandr<br />

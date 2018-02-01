@@ -4,30 +4,36 @@ noremap  <F4>  :GundoToggle<cr>
 nnoremap <c-p> :Files<cr>
 
 nnoremap  <leader>t=        mxvip:EasyAlign1/=/l1<cr>`x
-nnoremap  <leader>t:        mxvip:EasyAlign1/:/l1<cr>`x
-nnoremap  <leader>t<space>  mxvip:EasyAlign*/\s\+/l0<cr>`x
+nnoremap  <leader>t:        mxvip:EasyAlign1/:/l0<cr>`x
+nnoremap  <leader>tt:        mxvip:EasyAlign * /:/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>`x
+nnoremap  <leader>t,        mxvip:EasyAlign * /,/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>`x
+nnoremap  <leader>t<space>  mxvip:EasyAlign*/\s\+/l0r0<cr>`x
+
 vnoremap  <leader>t=        :EasyAlign*/=/l1<cr>
-vnoremap  <leader>t:        :EasyAlign*/:/l1<cr>
-vnoremap  <leader>t<space>  :EasyAlign*/\s\+/l0<cr>
+vnoremap  <leader>t:        :EasyAlign*/:/l0<cr>
+vnoremap  <leader>tt:       :EasyAlign * /:/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>
+vnoremap  <leader>t,        :EasyAlign * /,/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>
+vnoremap  <leader>t<space>  :EasyAlign*/\s\+/l0r0<cr>
 
-nnoremap  <leader>gs  :Gstatus<cr>
-nnoremap  <leader>gc  :Gcommit<cr>
-nnoremap  <leader>ga  :Gwrite<cr>
-nnoremap  <leader>gl  :Glog<cr>
-nnoremap  <leader>gp  :AsyncRun git push origin HEAD<cr>
-nnoremap  <leader>gb  :Gbrowse<cr>
-nnoremap  <leader>ct  :ColorToggle<cr>
-nnoremap  <leader>ag  :Ag<cr>
+"nmap  ga  <Plug>(EasyAlign)
+"xmap  ga  <Plug>(EasyAlign)
 
-nmap  ga  <Plug>(EasyAlign)
-xmap  ga  <Plug>(EasyAlign)
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gp :AsyncRun git push origin HEAD<cr>
+nnoremap <leader>gb :Gbrowse<cr>
+nnoremap <leader>ct :ColorToggle<cr>
+nnoremap <leader>ag :Ag<cr>
 
-nnoremap  <leader>t  <c-]>
-nnoremap  <leader>T  <c-t>
+
+nnoremap <leader>t <c-]>
+nnoremap <leader>T <c-t>
 
 " editing vimrc
-nnoremap  <leader>ev  :vsplit  $MYVIMRC<cr>
-nnoremap  <leader>sv  :source  $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 nmap  <silent>  <leader>ps  <Plug>(ale_previous)
@@ -40,6 +46,7 @@ inoremap  <Up>       <nop>
 inoremap  <Down>     <nop>
 inoremap  <Left>     <nop>
 inoremap  <Right>    <nop>
+inoremap  <c-u>      <esc>mxviwU`xa
 nnoremap  <Up>       <nop>
 nnoremap  <Down>     <nop>
 nnoremap  <Left>     <nop>

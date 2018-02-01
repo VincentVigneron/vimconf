@@ -71,6 +71,9 @@ Plug 'donRaphaco/neotex', { 'for': 'tex' }
 
 " Themes
 Plug 'dim13/smyck.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'morhetz/gruvbox'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline-themes'
 
 " Approx the terminal colorscheme

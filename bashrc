@@ -72,7 +72,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}${White}[\A]${LightRed}\u${White}@\h${NoColor}:${LightGreen}\w${White}\$${NoColor} "
+    PS1="${debian_chroot:+($debian_chroot)}${DarkGray}[\A]${LightRed}\u${DarkGray}@\h${NoColor}:${LightGreen}\w${DarkGray}\$${NoColor} "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -89,7 +89,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    if [ -f ~/.dircolors/dircolors.ansi-light ]; then
+        eval `dircolors ~/.dircolors/dircolors.ansi-light`
+    else
+        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -141,7 +145,7 @@ stty ixoff -ixon
 # export VISUAL=kate
 
 export JAVA_HOME="/usr/lib/jvm/java-9-openjdk"
-export VISUAL="/usr/bin/gnome-text-editor"
+# export VISUAL="/usr/bin/kate"
 export EDITOR="nvim"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
 
