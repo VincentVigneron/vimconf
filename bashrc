@@ -71,8 +71,29 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+_dir_chomp () {
+    local p=${1/#$HOME/\~} b s
+    s=${#p}
+    while [[ $p != "${p//\/}" ]]&&(($s>$2))
+    do
+        p=${p#/}
+        [[ $p =~ \.?. ]]
+        b=$b/${BASH_REMATCH[0]}
+        p=${p#*/}
+        ((s=${#b}+${#p}))
+    done
+    echo ${b/\/~/\~}${b+/}$p
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}${DarkGray}[\A]${LightRed}\u${DarkGray}@\h${NoColor}:${LightGreen}\w${DarkGray}\$${NoColor} "
+    #HomeShrink="${PWD/$HOME/\~}"
+    #FolderShrink="${HomeShrink#\~}"
+    #Dirname='`echo "${HomeShrink%/*}" | sed -e "s;\(/.\)[^/]*;\1;g"`/${FolderShrink##*/}'
+    #PS1="${debian_chroot:+($debian_chroot)}${DarkGray}[\A]${LightRed}\u${DarkGray}@\h${NoColor}:${LightGreen}${Dirname}${DarkGray}\$${NoColor} "
+    #PS1='`echo "${PWD%/*}" | sed -e "s;\(/.\)[^/]*;\1;g"`/${PWD##*/} \$ '
+    #PS1="${debian_chroot:+($debian_chroot)}${DarkGray}[\A]${LightRed}\u${DarkGray}@\h${NoColor}:${LightGreen}\W${DarkGray}\$${NoColor} "
+    #PS1='${debian_chroot:+($debian_chroot)}${DarkGray}[\A]${LightRed}\u${DarkGray}@\h${NoColor}:${LightGreen} $( _dir_chomp '$(pwd)' 20)${DarkGray}\$${NoColor} '
+    PS1='\[\e[1;30m\][\A]\[\e[1;31m\]\u\[\e[1;30m\]@\h\[\e[m\]:\[\e[1;32m\] $( _dir_chomp "$(pwd)" 20)\[\e[1;30m\]$\[\e[m\] ' 
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -150,3 +171,4 @@ export EDITOR="nvim"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+    #PS1="%{$fg[black]%}[%T]%{$reset_color%}%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}:%{$fg[yellow]%}%2~%{$reset_color%} "

@@ -10,7 +10,8 @@ xrandr<br />
 gtk-3<br />
 g++<br />
 clang<br />
-ctags<br /> (link  ctags to ~/.ctags)
+<!--ctags<br /> (link  ctags to ~/.ctags)-->
+unversak-ctags-git (aur)<br /> (link  ctags to ~/.ctags)
 notify-osd<br />
 acpi<br />
 acpid<br />
@@ -92,7 +93,12 @@ rustfmt<br />
 rustup<br />
 skypeforlinux-bin (aur)<br />
 virtualbox<br />
-qt4<br />
+shellcheck<br />
+python-vint (aur)<br />
+vint (pip3)<br />
+qt4<br /><br />
+
+xdg-open Documents/Cours/web/cours/crs_php_01_introduction.pdf<br />
 
 ## TO REMOVE ?
 texlive-bibtexextra<br />
@@ -214,4 +220,7 @@ sudo pip3 install wand
 
 ## BASHRC
 ### TODO
-Clean bashrc
+Clean bashrc => zshrc
+
+## ZSHRC
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

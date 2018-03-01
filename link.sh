@@ -11,14 +11,15 @@ declare -a list_of_conf=(
 	"ranger"
 	"rofi"
 	"termite"
+	"zshrc"
 )
 for i in "${list_of_conf[@]}"; do
-	if [ -e $HOME/.config/$i ]
+	if [ -e "$HOME/.config/$i" ]
 	then
 		echo "Le fichier $i existe déjà, je n'ai donc rien fait !"
 	else
-		echo $i
-		ln -s $directory/$i $HOME/.config/$i
+		echo "$i"
+		ln -s "$directory/$i" "$HOME/.config/$i"
 	fi
 done
 
@@ -33,11 +34,11 @@ declare -a list_of_conf=(
 	"tmux.conf"
 )
 for i in "${list_of_conf[@]}"; do
-	if [ -e $HOME/.$i ]
+	if [ -e "$HOME/.$i" ]
 	then
 		echo "Le fichier $i existe déjà, je n'ai donc rien fait !"
 	else
-		echo $i
-        ln -s $i/dircolors $HOME/.$i
+		echo "$i"
+        ln -s "$i/dircolors" "$HOME/.$i"
 	fi
 done

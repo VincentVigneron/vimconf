@@ -1,3 +1,4 @@
+" Rust filetype ---------------------- {{{
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
     \ 'kinds' : [
@@ -11,7 +12,9 @@ let g:tagbar_type_rust = {
         \'i:impls,trait implementations',
     \]
     \}
+" }}}
 
+" Bibtex filetype ---------------------- {{{
 let g:tagbar_type_bib = {
     \ 'ctagstype' : 'bib',
     \ 'kinds'     : [
@@ -31,7 +34,9 @@ let g:tagbar_type_bib = {
         \ 'u:Unpublished',
     \ ]
 \ }
+" }}}
 
+" Markdown filetype ---------------------- {{{
 let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
     \ 'kinds' : [
@@ -40,6 +45,9 @@ let g:tagbar_type_markdown = {
         \ 'k:Heading_L3'
     \ ]
 \ }
+" }}}
+
+" Bash filetype ---------------------- {{{
 let g:tagbar_type_ps1 = {
     \ 'ctagstype' : 'powershell',
     \ 'kinds'     : [
@@ -48,3 +56,15 @@ let g:tagbar_type_ps1 = {
         \ 'a:alias'
     \ ]
 \ }
+" }}}
+
+" Css filetype ---------------------- {{{
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
+" }}}

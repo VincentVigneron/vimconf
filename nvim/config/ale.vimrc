@@ -1,8 +1,11 @@
+" Ale setting ---------------------- {{{
 let g:ale_linters = {
 	\ 'latex' : ['chktex'],
 	\ 'cpp' : ['clangtidy'],
 	\ 'rust' : ['rls', 'cargo'],
 	\ 'python' : ['flake8'],
+	\ 'bash' : ['shellcheck'],
+	\ 'vim' : ['vint'],
 	\}
 let g:ale_fixers = {
 	\ 'rust' : ['rustfmt'],
@@ -18,3 +21,4 @@ let g:ale_warn_about_trailing_whitespace = 1
 let g:ale_set_highlitghts = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 'always'
+" }}}

@@ -93,7 +93,7 @@ class Solarized(ColorScheme):
         elif context.in_titlebar:
             attr |= bold
             if context.hostname:
-                fg = 16 if context.bad else 255
+                fg = 16 if context.bad else 40
                 if context.bad:
                     bg = 166
             elif context.directory:
@@ -140,4 +140,4 @@ class Solarized(ColorScheme):
                 else:
                     bg = self.progress_bar_color
 
-return fg, bg, attr
+        return fg, bg, attr

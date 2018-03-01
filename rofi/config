@@ -1,17 +1,37 @@
-rofi.lines            : 7
-rofi.case-sensitive   : false
-rofi.sidebar-mode     : true
-rofi.autoselect       : false
-rofi.sort             : true
-rofi.levenshtein-sort : true
-rofi.matching         : fuzzy
-rofi.tokenize         : true
-rofi.m                : -4
-rofi.modi             : window,run,ssh
-rofi.disable-history  : false
-rofi.show-icons       : true
-rofi.terminal         : termite
-rofi.ssh-client       : ssh
-rofi.ssh-command      : {terminal} -e "{ssh-client} {host}"
-rofi.kb-mode-next     : Shift+Right,Control+Tab,2
-rofi.kb-mode-previous : Shift+Left,Control+ISO_Left_Tab,1
+rofi.lines           : 7
+rofi.case-sensitive  : false
+rofi.sidebar-mode    : true
+rofi.autoselect      : false
+rofi.sort            : true
+rofi.levenshtein-sort: true
+rofi.matching        : fuzzy
+rofi.tokenize        : true
+rofi.m               : -4
+rofi.modi            : window,run,ssh
+rofi.disable-history : false
+rofi.show-icons      : true
+rofi.terminal        : termite
+rofi.ssh-client      : ssh
+rofi.ssh-command     : {terminal} -e "{ssh-client} {host}"
+rofi.kb-mode-next    : Shift+Right,Control+Tab,Alt+Tab
+rofi.kb-mode-previous: Shift+Left,Control+ISO_Left_Tab
+rofi.kb-custom-1     :
+rofi.kb-custom-2     :
+rofi.kb-custom-3     :
+rofi.kb-custom-4     :
+rofi.kb-custom-5     :
+rofi.kb-custom-6     :
+rofi.kb-custom-7     :
+rofi.kb-custom-8     :
+rofi.kb-custom-9     :
+rofi.kb-custom-10    :
+rofi.kb-custom-11    :
+rofi.kb-custom-12    :
+rofi.kb-custom-13    :
+rofi.kb-custom-14    :
+rofi.kb-custom-15    :
+rofi.kb-custom-16    :
+rofi.kb-custom-17    :
+rofi.kb-custom-18    :
+rofi.kb-custom-19    :
+rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi

@@ -7,7 +7,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Navigation
+" Navigation pluggins ---------------------- {{{
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -30,32 +30,30 @@ Plug 'xolox/vim-easytags'
 Plug 'sjl/gundo.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
+Plug 'bling/vim-bufferline'
+" }}}
 
-
-" Tools
+" Tools pluggins ---------------------- {{{
 " Plug 'dhruvasagar/vim-table-mode'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-scripts/nextval'
 Plug 'Raimondi/delimitMate'
+Plug 'chrisbra/Colorizer' " Coloration
+Plug 'timakro/vim-searchant' " Highlihht current search
+" }}}
 
-" Git
+" Git pluggins ---------------------- {{{
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+" }}}
 
-" Highlight Current Search
-Plug 'timakro/vim-searchant'
-
-" Programming
+" Programming pluggins ---------------------- {{{
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdcommenter'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'tfnico/vim-gradle'
-
-" Coloration
-Plug 'chrisbra/Colorizer'
-
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
   " - name:   name of the plugin
@@ -68,27 +66,26 @@ endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'w0rp/ale'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'hkupty/iron.nvim'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+" }}}
 
-" Themes
+" Themes pluggins ---------------------- {{{
 Plug 'dim13/smyck.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline-themes'
-
-" Approx the terminal colorscheme
 " Plug 'godlygeek/csapprox'
+" }}}
 
+" Old pluggins ---------------------- {{{
 " To check
 " Plug 'tommcdo/vim-fubitive'
 " Plug 'szw/vim-tags'
-Plug 'bling/vim-bufferline'
 " Plug 'xolox/vim-notes'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
 " Plug 'majutsushi/tagbar'
 " Plug 'suan/vim-instant-markdown'
-" Plug 'xuhdev/vim-latex-live-preview'
 " Plug '907th/vim-auto-save'
-Plug 'hkupty/iron.nvim'
+" }}}
 
 call plug#end()
