@@ -2,11 +2,11 @@ alias g++="g++ -fdiagnostics-color=auto"
 alias gcpp="g++ -Wall -Wconversion -Wenum-compare -Werror"
 alias tmux="tmux -2"
 
-alias vimstatus="git --git-dir=mappings/vimconf/.git --work-tree=mappings/vimconf status"
-alias vimadd="git --git-dir=mappings/vimconf/.git --work-tree=mappings/vimconf add"
-alias vimcommit="git --git-dir=mappings/vimconf/.git --work-tree=mappings/vimconf commit"
-alias vimpull="git --git-dir=mappings/vimconf/.git --work-tree=mappings/vimconf pull"
-alias vimpush="git --git-dir=mappings/vimconf/.git --work-tree=mappings/vimconf push origin master"
+alias vimstatus="git --git-dir=~/vimconf/.git --work-tree=/vimconf status"
+alias vimadd="git --git-dir=/vimconf/.git --work-tree=/vimconf add"
+alias vimcommit="git --git-dir=/vimconf/.git --work-tree=/vimconf commit"
+alias vimpull="git --git-dir=/vimconf/.git --work-tree=/vimconf pull"
+alias vimpush="git --git-dir=/vimconf/.git --work-tree=/vimconf push origin master"
 alias vimbrows="xdg-open https://github.com/VincentVigneron/vimconf.git"
 
 alias python=python3

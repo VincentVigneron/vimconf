@@ -42,26 +42,26 @@ augroup java_setting
     autocmd FileType java setlocal omnifunc=javacomplete#Complete
     autocmd FileType java nnoremap <F8> :AsyncRun gradle compileJava<cr>
     autocmd FileType java nnoremap <F5> :AsyncRun gradle run<cr>
-    autocmd FileType java nnoremap <localleader>jN  @<Plug>(JavaComplete-Generate-ClassInFile)
-    autocmd FileType java nnoremap <localleader>jn  @<Plug>(JavaComplete-Generate-NewClass)
-    autocmd FileType java nnoremap <localleader>jcc @<Plug>(JavaComplete-Generate-DefaultConstructor)
-    autocmd FileType java nnoremap <localleader>jc  @<Plug>(JavaComplete-Generate-Constructor)
-    autocmd FileType java nnoremap <localleader>jeq @<Plug>(JavaComplete-Generate-EqualsAndHashCode)
-    autocmd FileType java nnoremap <localleader>jts @<Plug>(JavaComplete-Generate-ToString)
-    autocmd FileType java nnoremap <localleader>ja  @<Plug>(JavaComplete-Generate-AccessorSetterGetter)
-    autocmd FileType java nnoremap <localleader>jg  @<Plug>(JavaComplete-Generate-AccessorGetter)
-    autocmd FileType java nnoremap <localleader>js  @<Plug>(JavaComplete-Generate-AccessorSetter)
-    autocmd FileType java nnoremap <localleader>jA  @<Plug>(JavaComplete-Generate-Accessors)
-    autocmd FileType java nnoremap <localleader>jM  @<Plug>(JavaComplete-Generate-AbstractMethods)
-    autocmd FileType java nnoremap <localleader>jis @<Plug>(JavaComplete-Imports-SortImports)
-    autocmd FileType java nnoremap <localleader>jii @<Plug>(JavaComplete-Imports-Add)
-    autocmd FileType java nnoremap <localleader>ji  @<Plug>(JavaComplete-Imports-AddSmart)
-    autocmd FileType java nnoremap <localleader>jR  @<Plug>(JavaComplete-Imports-RemoveUnused)
-    autocmd FileType java nnoremap <localleader>jI  @<Plug>(JavaComplete-Imports-AddMissing)
-    autocmd FileType java onoremap ic :<c-u>execute "normal! ?}\\s*catch\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
-    autocmd FileType java onoremap ii :<c-u>execute "normal! ?\\(else\\s\\+\\)\\=if\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
-    autocmd FileType java onoremap if :<c-u>execute "normal! ?}\\s*for\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
-    autocmd FileType java onoremap iw :<c-u>execute "normal! ?}\\s*while\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
+    autocmd FileType java nnoremap <localleader>jN  :JCgenerateClassInFile<cr>
+    autocmd FileType java nnoremap <localleader>jn  :JCgenerateNewClass<cr>
+    autocmd FileType java nnoremap <localleader>jcc :JCgenerateDefaultConstructor<cr>
+    autocmd FileType java nnoremap <localleader>jc  :JCgenerateConstructor<cr>
+    autocmd FileType java nnoremap <localleader>jeq :JCgenerateEqualsAndHashCode<cr>
+    autocmd FileType java nnoremap <localleader>jts :JCgenerateToString<cr>
+    autocmd FileType java nnoremap <localleader>ja  :JCgenerateAccessorSetterGetter<cr>
+    autocmd FileType java nnoremap <localleader>jg  :JCgenerateAccessorGetter<cr>
+    autocmd FileType java nnoremap <localleader>js  :JCgenerateAccessorSetter<cr>
+    autocmd FileType java nnoremap <localleader>jA  :JCgenerateAccessors<cr>
+    autocmd FileType java nnoremap <localleader>jM  :JCgenerateAbstractMethods<cr>
+    autocmd FileType java nnoremap <localleader>jis :JCimportsSortImports<cr>
+    autocmd FileType java nnoremap <localleader>jii :JCimportsAdd<cr>
+    autocmd FileType java nnoremap <localleader>ji  :JCimportsAddSmart<cr>
+    autocmd FileType java nnoremap <localleader>jR  :JCimportsRemoveUnused<cr>
+    autocmd FileType java nnoremap <localleader>jI  :JCimportsAddMissing<cr>
+    autocmd FileType java onoremap qc :<c-u>execute "normal! ?}\\s*catch\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
+    autocmd FileType java onoremap qi :<c-u>execute "normal! ?\\(else\\s\\+\\)\\=if\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
+    autocmd FileType java onoremap qf :<c-u>execute "normal! ?}\\s*for\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
+    autocmd FileType java onoremap qw :<c-u>execute "normal! ?}\\s*while\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
 augroup END
 " }}}
 
