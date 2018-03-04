@@ -10,8 +10,7 @@ xrandr<br />
 gtk-3<br />
 g++<br />
 clang<br />
-<!--ctags<br /> (link  ctags to ~/.ctags)-->
-unversak-ctags-git (aur)<br /> (link  ctags to ~/.ctags)
+unversak-ctags-git (aur)<br /> (link  ctags to ~/.ctags) <!--ctags<br /> (link  ctags to ~/.ctags)-->
 notify-osd<br />
 acpi<br />
 acpid<br />
@@ -134,6 +133,17 @@ ttf-symbola<br />
 ttf-typicons (aur)<br />
 ttf-inconsolata<br />
 ttf-ubuntu-font-family<br />
+
+## GRUB
+
+### EDIT /etc/default/grub
+sudo -E nvim /etc/default/grub
+GRUB_HIDDEN_TIMEOUT=1
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+
+### UPDATE GRUB
+sudo update-grub
+
 
 ## VIM
 Install plugin<br />
