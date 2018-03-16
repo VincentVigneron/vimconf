@@ -72,8 +72,8 @@ let g:iron_repl_open_cmd="vsplit"
 " }}}
 
 " Easytag setting ---------------------- {{{
-let g:easytags_cmd = '/usr/bin/ctags_wrapper'
-let g:easytags_async=0
+let g:easytags_cmd = '/usr/local/bin/ctags_wrapper'
+let g:easytags_async=1
 " }}}
 
 " Gundo setting ---------------------- {{{

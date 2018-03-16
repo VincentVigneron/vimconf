@@ -54,7 +54,7 @@ font-7 = Symbola:size=8;0
 
 modules-left   = i3
 modules-center =
-modules-right  = volume cpu eth wlan battery  date  powermenu
+modules-right  = volume cpu eth wlan battery  date
 ;modules-right = volume cpu eth wlan battery  date  powermenu 
 
 ; tray-position = right

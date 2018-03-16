@@ -62,7 +62,9 @@ augroup java_setting
     autocmd FileType java onoremap qi :<c-u>execute "normal! ?\\(else\\s\\+\\)\\=if\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
     autocmd FileType java onoremap qf :<c-u>execute "normal! ?}\\s*for\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
     autocmd FileType java onoremap qw :<c-u>execute "normal! ?}\\s*while\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
+    autocmd FileType java iabbrev sysout System.out.println
 augroup END
+
 " }}}
 
 " Groovy file settings ---------------------- {{{

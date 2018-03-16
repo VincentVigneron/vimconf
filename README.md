@@ -6,11 +6,10 @@ termite<br />
 rofi<br />
 polybar (aur)<br />
 gsimplecal<br />
-xrandr<br />
 gtk-3<br />
-g++<br />
+gcc<br />
 clang<br />
-unversak-ctags-git (aur)<br /> (link  ctags to ~/.ctags) <!--ctags<br /> (link  ctags to ~/.ctags)-->
+unversak-ctags-git (aur) (link  ctags to ~/.ctags) <br /> <!--ctags<br /> (link  ctags to ~/.ctags)-->
 notify-osd<br />
 acpi<br />
 acpid<br />
@@ -29,6 +28,7 @@ immagemagick<br />
 kate<br />
 lightdm<br />
 lightdm-greeter<br />
+sddm<br />
 nautilus<br />
 netctl<br />
 cmake<br />
@@ -45,7 +45,7 @@ wicd<br />
 wicd-gtk<br />
 wpa_supplicant<br />
 util-linux<br />
-nvim<br />
+neovim<br />
 neovim-surround (aur)<br />
 neovim-airline (aur)<br />
 neovim-airline-themes (aur)<br />
@@ -65,7 +65,6 @@ xorg-server<br />
 xorg-xbacklight<br />
 xorg-xinit<br />
 xorg-xrandr<br />
-xterm<br />
 zip<br />
 docker<br />
 compton<br />
@@ -142,8 +141,9 @@ GRUB_HIDDEN_TIMEOUT=1
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 
 ### UPDATE GRUB
-sudo update-grub
-
+update-grub<br />
+vim /etc/default/grub (HIDDEN TIMEOUT)<br />
+grub-mkconfig -o /boot/grub/grub.cfg<br />
 
 ## VIM
 Install plugin<br />
@@ -152,6 +152,8 @@ Install plugin<br />
 nerdtree -> netrw + vinegar<br />
 treetag & easytag<br />
 
+## BINARIES
+cp bin/\* /usr/local/bin
 
 ## TWO MINUTES TIMER
 sudo cp systemd/usr/timer-twominutes.timer /etc/systemd/user<br />
@@ -160,7 +162,7 @@ systemctl --user enable timer-twominutes.timer<br />
 
 ## BATTERY
 sudo cp systemd/usr/lowbattery.service /etc/systemd/user<br />
-sudo cp bin/lowbattery.sh /usr/bin
+sudo cp bin/lowbattery.sh /usr/local/bin (see BINARIES section)<br />
 systemctl --user enable lowbattery.service<br />
 
 ## DISABLE POWER BUTTON
@@ -193,11 +195,12 @@ sudo gpasswd -a USER lp<br />
 ? sudo chmod 1777 /var/spool/cups<br />
 ? sudo chmod 1777 /usr/lib/cups/\*<br />
 
-## LANG
+## LANG AND KEYBOARD
 ### TODO
 basic language config<br />
+localectl set-locale LANG=fr_FR.UTF-8<br />
+localectl set-x11-keymap fr<br />
 
-## KEYBOARD
 ### TODO
 basic keyboard config<br />
 
@@ -214,23 +217,28 @@ chose the "best" monitors at boot<br />
 ### TODO
 make clone alias to scale<br />
 
-
 ## DOCK EVENT
 ### TODO
 handle dock event<br />
 
 
 ## PRINT COLOR
-chmod u+x print_color.py
-sudo apt-get install python3
-sudo apt-get install python-pip3
-sudo pip3 install PyPDF2
-sudo pip3 install wand
+chmod u+x print_color.py<br />
+sudo apt-get install python3<br />
+sudo apt-get install python-pip3<br />
+sudo pip3 install PyPDF2<br />
+sudo pip3 install wand<br />
 
 
 ## BASHRC
 ### TODO
-Clean bashrc => zshrc
+Clean bashrc => zshrc<br />
 
 ## ZSHRC
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"<br />
+
+## SDDM
+systemctl enable sddm.service<br />
+sudo su<br />
+echo 'setxkbmap "fr"' >> /usr/share/sddm/scripts/Xsetup<br />
+pacman -Rs qt5-virtualkayboard<br />
