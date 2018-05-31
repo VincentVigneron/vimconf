@@ -9,7 +9,7 @@ gsimplecal<br />
 gtk-3<br />
 gcc<br />
 clang<br />
-unversak-ctags-git (aur) (link  ctags to ~/.ctags) <br /> <!--ctags<br /> (link  ctags to ~/.ctags)-->
+unversal-ctags-git (aur) (link  ctags to ~/.ctags) <br />
 notify-osd<br />
 acpi<br />
 acpid<br />
@@ -27,13 +27,13 @@ i3lock<br />
 immagemagick<br />
 kate<br />
 lightdm<br />
-lightdm-greeter<br />
+lightdm-gtk-greeter<br />
 sddm<br />
 nautilus<br />
 netctl<br />
 cmake<br />
 okular<br />
-openjdk9<br />
+openjdk<br />
 python<br />
 texlive-most<br />
 texlive-lang<br />
@@ -56,7 +56,7 @@ neovim-nerdtree (aur)<br />
 neovim-plug (aur)<br />
 neovim-ultisnips (aur)<br />
 neovim-youcomplete-me-core-git (aur)<br />
-python-nvim<br />
+python-neovim<br />
 vlc<br />
 w3m<br />
 wget<br />
@@ -136,13 +136,11 @@ ttf-ubuntu-font-family<br />
 ## GRUB
 
 ### EDIT /etc/default/grub
-sudo -E nvim /etc/default/grub
-GRUB_HIDDEN_TIMEOUT=1
-GRUB_HIDDEN_TIMEOUT_QUIET=true
+sudo -E nvim /etc/default/grub<br />
+GRUB_HIDDEN_TIMEOUT=1<br />
+GRUB_HIDDEN_TIMEOUT_QUIET=true<br />
 
 ### UPDATE GRUB
-update-grub<br />
-vim /etc/default/grub (HIDDEN TIMEOUT)<br />
 grub-mkconfig -o /boot/grub/grub.cfg<br />
 
 ## VIM
@@ -153,7 +151,7 @@ nerdtree -> netrw + vinegar<br />
 treetag & easytag<br />
 
 ## BINARIES
-cp bin/\* /usr/local/bin
+cp bin/\* /usr/local/bin<br />
 
 ## TWO MINUTES TIMER
 sudo cp systemd/usr/timer-twominutes.timer /etc/systemd/user<br />
