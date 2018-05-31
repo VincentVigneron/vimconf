@@ -89,6 +89,7 @@ rust-docs<br />
 rust-racer<br />
 rustfmt<br />
 rustup<br />
+cargo-profiler<br />
 skypeforlinux-bin (aur)<br />
 virtualbox<br />
 shellcheck<br />
