@@ -61,6 +61,8 @@ export ZSH=/home/vincent/.oh-my-zsh
 plugins=(
   git
   vi-mode
+  compleat
+  zsh-autosuggestions
 )
 
 
@@ -94,7 +96,8 @@ bindkey '\e[B' history-search-forward
 export MANPATH="/usr/local/man:$MANPATH"
 export JAVA_HOME="/usr/lib/jvm/java-9-openjdk"
 # export VISUAL="/usr/bin/kate"
-export EDITOR="nvim"
+export EDITOR="/bin/nvim"
+export SYSTEMD_EDITOR="/bin/nvim"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
 
 # You may need to manually set your language environment

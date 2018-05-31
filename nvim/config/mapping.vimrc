@@ -5,43 +5,167 @@ noremap  <silent> <F4>  :GundoToggle<cr>
 nnoremap <silent> <c-p> :Files<cr>
 " }}}
 
-" Alignement mappings ---------------------- {{{
-nnoremap <silent> <leader>t=       mxvip:EasyAlign 1/=/l1<cr>`x
-nnoremap <silent> <leader>t:       mxvip:EasyAlign 1/:/l0<cr>`x
-nnoremap <silent> <leader>tt:      mxvip:EasyAlign */:/{ 'stick_to_left': 1, 'left_margin': 0 }<cr>`x
-nnoremap <silent> <leader>t,       mxvip:EasyAlign */,/{ 'stick_to_left': 1, 'left_margin': 0 }<cr>`x
-nnoremap <silent> <leader>t<space> mxvip:EasyAlign*/\s\+/l0r0<cr>`x
-
-vnoremap <silent> <leader>t=       :EasyAlign*/=/l1<cr>
-vnoremap <silent> <leader>t:       :EasyAlign*/:/l0<cr>
-vnoremap <silent> <leader>tt:      :EasyAlign * /:/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>
-vnoremap <silent> <leader>t,       :EasyAlign * /,/ { 'stick_to_left': 1, 'left_margin': 0 }<cr>
-vnoremap <silent> <leader>t<space> :EasyAlign*/\s\+/l0r0<cr>
-
-nnoremap <silent> <leader>ta :set operatorfunc=<SID>AlignEqualOperator<cr>g@
-vnoremap <silent> <leader>ta :<c-u>call <SID>AlignEqualOperator(visualmode())<cr>
-
-function! s:AlignEqualOperator(type)
-
+" Alignement mappings (function) ---------------------- {{{
+function! s:AlignOperator(type,op,left,right,arity)
     let saved_unnamed_register = @@
-    let saved_unnamed_register= @@
+
+    let align_cmd = ':EasyAlign ' . a:arity . '/' . a:op . '/l' . a:left . 'r' . a:right
 
     if a:type ==? 'v'
-        "normal! `<v`>y
-        echo 'normal! `<v`>:EasyAlign1/=/l1'
-        "execute 'normal! `<v`>:EasyAlign1/=/l1' . "\<lt>cr>"
-    elseif a:type ==# 'char' || a:type ==# 'line'
-        silent execute 'normal! `[v`]:EasyAlign! */=/l1' . "\<lt>cr>"
+        silent execute "normal! `\<lt>". 'v' . "`>" . align_cmd . "\<cr>"
+    elseif a:type ==# 'V'
+        silent execute "normal! `\<lt>". 'V' . "`>" . align_cmd . "\<cr>"
+    elseif a:type ==# 'line'
+        silent execute "normal! `[". 'V' . "`]" . align_cmd . "\<cr>"
+    elseif a:type ==# 'char'
+        silent execute "normal! `[". 'v' . "`]" . align_cmd . "\<cr>"
     else
         "return
     endif
-        "echom 'normal'
-        "execute 'normal! `<v`>:EasyAlign1/=/l1' . "\<lt>cr>"
-
-
-    "silent execute "normal! `<,`>
 
     let @@ = saved_unnamed_register
+endfunction
+" }}}
+
+" Alignement mappings (coma) ---------------------- {{{
+nnoremap <silent> <leader>t, :set operatorfunc=<SID>AlignComaOperator01<cr>g@
+nnoremap <silent> <leader>t,00 :set operatorfunc=<SID>AlignComaOperator00<cr>g@
+nnoremap <silent> <leader>t,01 :set operatorfunc=<SID>AlignComaOperator01<cr>g@
+nnoremap <silent> <leader>t,10 :set operatorfunc=<SID>AlignComaOperator10<cr>g@
+nnoremap <silent> <leader>t,11 :set operatorfunc=<SID>AlignComaOperator11<cr>g@
+vnoremap <silent> <leader>t, :<c-u>call <SID>AlignComaOperator01(visualmode())<cr>
+
+function! s:AlignComaOperator(type,op,left,right)
+    call s:AlignOperator(a:type,a:op,a:left,a:right,'*')
+endfunction
+
+function! s:AlignComaOperator00(type)
+    call s:AlignComaOperator(a:type,',',0,0)
+endfunction
+
+function! s:AlignComaOperator01(type)
+    call s:AlignComaOperator(a:type,',',0,1)
+endfunction
+
+function! s:AlignComaOperator10(type)
+    call s:AlignComaOperator(a:type,',',1,0)
+endfunction
+
+function! s:AlignComaOperator11(type)
+    call s:AlignComaOperator(a:type,',',1,1)
+endfunction
+" }}}
+
+" Alignement mappings (column) ---------------------- {{{
+nnoremap <silent> <leader>t: :set operatorfunc=<SID>AlignColumnOperator01<cr>g@
+nnoremap <silent> <leader>t:00 :set operatorfunc=<SID>AlignColumnOperator00<cr>g@
+nnoremap <silent> <leader>t:01 :set operatorfunc=<SID>AlignColumnOperator01<cr>g@
+nnoremap <silent> <leader>t:10 :set operatorfunc=<SID>AlignColumnOperator10<cr>g@
+nnoremap <silent> <leader>t:11 :set operatorfunc=<SID>AlignColumnOperator11<cr>g@
+vnoremap <silent> <leader>t: :<c-u>call <SID>AlignColumnOperator01(visualmode())<cr>
+
+function! s:AlignColumnOperator(type,op,left,right)
+    call s:AlignOperator(a:type,a:op,a:left,a:right,1)
+endfunction
+
+function! s:AlignColumnOperator00(type)
+    call s:AlignColumnOperator(a:type,':',0,0)
+endfunction
+
+function! s:AlignColumnOperator01(type)
+    call s:AlignColumnOperator(a:type,':',0,1)
+endfunction
+
+function! s:AlignColumnOperator10(type)
+    call s:AlignColumnOperator(a:type,':',1,0)
+endfunction
+
+function! s:AlignColumnOperator11(type)
+    call s:AlignColumnOperator(a:type,':',1,1)
+endfunction
+" }}}
+
+" Alignement mappings (space) ---------------------- {{{
+nnoremap <silent> <leader>t<space>   :set operatorfunc=<SID>AlignSpaceOperator00<cr>g@
+nnoremap <silent> <leader>t<space>00 :set operatorfunc=<SID>AlignSpaceOperator00<cr>g@
+vnoremap <silent> <leader>t<space>   :<c-u>call <SID>AlignSpaceOperator00(visualmode())<cr>
+
+function! s:AlignSpaceOperator(type,op,left,right)
+    call s:AlignOperator(a:type,a:op,a:left,a:right,'*')
+endfunction
+
+function! s:AlignSpaceOperator00(type)
+    call s:AlignSpaceOperator(a:type,'\s\+',0,0)
+endfunction
+" }}}
+
+" Alignement mappings (equal) ---------------------- {{{
+nnoremap <silent> <leader>t= :set operatorfunc=<SID>AlignEqualOperator11<cr>g@
+nnoremap <silent> <leader>t=00 :set operatorfunc=<SID>AlignEqualOperator00<cr>g@
+nnoremap <silent> <leader>t=01 :set operatorfunc=<SID>AlignEqualOperator01<cr>g@
+nnoremap <silent> <leader>t=10 :set operatorfunc=<SID>AlignEqualOperator10<cr>g@
+nnoremap <silent> <leader>t=11 :set operatorfunc=<SID>AlignEqualOperator11<cr>g@
+vnoremap <silent> <leader>t= :<c-u>call <SID>AlignEqualOperator11(visualmode())<cr>
+
+function! s:AlignEqualOperator(type,op,left,right)
+    call s:AlignOperator(a:type,a:op,a:left,a:right,1)
+endfunction
+
+function! s:AlignEqualOperator00(type)
+    call s:AlignEqualOperator(a:type,'=',0,0)
+endfunction
+
+function! s:AlignEqualOperator01(type)
+    call s:AlignEqualOperator(a:type,'=',0,1)
+endfunction
+
+function! s:AlignEqualOperator10(type)
+    call s:AlignEqualOperator(a:type,'=',1,0)
+endfunction
+
+function! s:AlignEqualOperator11(type)
+    call s:AlignEqualOperator(a:type,'=',1,1)
+endfunction
+" }}}
+
+" Replace mappings  ---------------------- {{{
+nnoremap <silent> yr :set operatorfunc=<SID>YankReplaceDeletedOperator<cr>g@
+vnoremap <silent> yr :<c-u>call <SID>YankReplaceDeletedOperator(visualmode())<cr>
+nnoremap <silent> yR :set operatorfunc=<SID>YankReplacePastedOperator<cr>g@
+vnoremap <silent> yR :<c-u>call <SID>YankReplacePastedOperator(visualmode())<cr>
+
+function! s:YankReplaceDeletedOperator(type)
+    let register_pasted = @@
+
+    if a:type ==# 'v'
+        silent execute "normal! `\<lt>". v,' . "`>" . 'd'
+    elseif a:type ==# 'line' || a:type ==# 'char'
+        silent execute "normal! `[". 'v' . "`]" . 'd'
+    endif
+
+    let register_deleted = @@
+    silent execute "normal! h"
+    let @@ = register_pasted
+
+    silent execute "normal! p"
+
+    let @@               = register_deleted
+endfunction
+
+function! s:YankReplacePastedOperator(type)
+    let register_pasted = @@
+
+    if a:type ==# 'v'
+        silent execute "normal! `\<lt>". v,' . "`>" . 'd'
+    elseif a:type ==# 'line' || a:type ==# 'char'
+        silent execute "normal! `[". 'v' . "`]" . 'd'
+    endif
+
+    let register_deleted = @@
+    silent execute "normal! h"
+    let @@ = register_pasted
+
+    silent execute "normal! p"
 endfunction
 " }}}
 

@@ -1,0 +1,42 @@
+--langdef=Rust
+--langmap=Rust:.rs
+--regex-Rust=/^[ \t]*(#\[[^\]]\][ \t]*)*(pub[ \t]+)?(extern[ \t]+)?("[^"]+"[ \t]+)?(unsafe[ \t]+)?fn[ \t]+([a-zA-Z0-9_]+)/\6/f,functions,function definitions/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?type[ \t]+([a-zA-Z0-9_]+)/\2/T,types,type definitions/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?enum[ \t]+([a-zA-Z0-9_]+)/\2/g,enum,enumeration names/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?struct[ \t]+([a-zA-Z0-9_]+)/\2/s,structure names/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?mod[ \t]+([a-zA-Z0-9_]+)/\2/m,modules,module names/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?(static|const)[ \t]+(mut[ \t]+)?([a-zA-Z0-9_]+)/\4/c,consts,static constants/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?trait[ \t]+([a-zA-Z0-9_]+)/\3/t,traits,traits/
+--regex-Rust=/^[ \t]*(pub[ \t]+)?(unsafe[ \t]+)?impl([ \t\n]*<[^>]*>)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(<[^>]*>)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\5 \7 \8/i,impls,trait implementations/
+--regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/
+
+
+--langdef=bib
+--langmap=bib:.bib
+--regex-bib=/^@article\{([^,]*)/\1/a,article/i
+--regex-bib=/^@book\{([^,]*)/\1/b,book/i
+--regex-bib=/^@booklet\{([^,]*)/\1/L,booklet/i
+--regex-bib=/^@conference\{([^,]*)/\1/c,conference/i
+--regex-bib=/^@inbook\{([^,]*)/\1/B,inbook/i
+--regex-bib=/^@incollection\{([^,]*)/\1/C,incollection/i
+--regex-bib=/^@inproceedings\{([^,]*)/\1/P,inproceedings/i
+--regex-bib=/^@manual\{([^,]*)/\1/m,manual/i
+--regex-bib=/^@mastersthesis\{([^,]*)/\1/T,mastersthesis/i
+--regex-bib=/^@misc\{([^,]*)/\1/M,misc/i
+--regex-bib=/^@phdthesis\{([^,]*)/\1/t,phdthesis/i
+--regex-bib=/^@proceedings\{([^,]*)/\1/p,proceedings/i
+--regex-bib=/^@techreport\{([^,]*)/\1/r,techreport/i
+--regex-bib=/^@unpublished\{([^,]*)/\1/u,unpublished/i
+
+
+--langdef=markdown
+--langmap=markdown:.mkd
+--regex-markdown=/^#[ \t]+(.*)/\1/h,Heading_L1/
+--regex-markdown=/^##[ \t]+(.*)/\1/i,Heading_L2/
+--regex-markdown=/^###[ \t]+(.*)/\1/k,Heading_L3/
+
+--langdef=powershell
+--langmap=powershell:.ps1.psm1
+--regex-powershell=/^[Ff]unction[\t ]*([a-zA-Z0-9_-]+)/\1/f,function/
+--regex-powershell=/^[Ff]ilter[\t ]*([a-zA-Z0-9_-]+)/\1/i,filter/
+--regex-powershell=/^[sS]et-[Aa]lias[\t ]*([a-zA-Z0-9_-]+)/\1/a,alias/

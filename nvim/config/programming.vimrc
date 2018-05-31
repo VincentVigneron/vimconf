@@ -3,7 +3,7 @@ augroup rust_setting
     autocmd!
     autocmd FileType rust,rust_config compiler cargo
     autocmd FileType rust,rust_config nnoremap <F8> :AsyncRun cargo build<cr>
-    autocmd FileType rust,rust_config nnoremap <F7> :AsyncRun cargo test --color=always<cr>
+    autocmd FileType rust,rust_config nnoremap <F7> :AsyncRun cargo test<cr>
     autocmd FileType rust,rust_config nnoremap <F5> :AsyncRun cargo run<cr>
 augroup END
 " }}}
@@ -63,6 +63,7 @@ augroup java_setting
     autocmd FileType java onoremap qf :<c-u>execute "normal! ?}\\s*for\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
     autocmd FileType java onoremap qw :<c-u>execute "normal! ?}\\s*while\r:nohlsearch\r/(\r:nohlsearch\rlvi)"<cr>
     autocmd FileType java iabbrev sysout System.out.println
+    autocmd FileType java inoremap <localleader>jid  static private final long serialVersionUID = 1L;
 augroup END
 
 " }}}

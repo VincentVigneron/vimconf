@@ -290,7 +290,7 @@ label = %time%
 type = internal/volume
 
 format-volume               = <bar-volume>
-format-volume-prefix        = %{A1:amixer -D pulse sset Master toggle&:}  %{A}
+format-volume-prefix        = %{A1:pactl set-sink-mute 0 toggle&:}  %{A}
 label-volume-foreground     = ${root.foreground}
 bar-volume-width            = 30
 bar-volume-foreground-0     = #55aa55
@@ -309,11 +309,14 @@ bar-volume-empty            = %{T6}█%{T-}
 bar-volume-empty-font       = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-format-muted-prefix            = %{A1:amixer -D pulse sset Master toggle&:}  %{A}
+format-muted-prefix            = %{A1:pactl set-sink-mute 0 toggle&:}  %{A}
 format-muted-prefix-foreground = #ff0000
 format-muted                   = <label-muted>
 label-muted                    = %{T6}█████████████████████████████████%{T-}
 label-muted-foreground         = ${colors.foreground-alt}
+
+scroll-up   = pactl set-sink-volume 0 +1%
+scroll-down = pactl set-sink-volume 0 -1%
 
 [module/battery]
 type    = internal/battery

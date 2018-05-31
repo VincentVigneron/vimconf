@@ -69,6 +69,7 @@ Plug 'w0rp/ale'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'hkupty/iron.nvim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'aklt/plantuml-syntax'
 " }}}
 
 " Themes pluggins ---------------------- {{{
