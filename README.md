@@ -195,9 +195,10 @@ sudo gpasswd -a USER lp<br />
 
 ## LANG AND KEYBOARD
 ### TODO
-basic language config<br />
+setxkbmap fr (witch keyboard mapping)<br />
 localectl set-locale LANG=fr_FR.UTF-8<br />
-localectl set-x11-keymap fr<br />
+localectl set-x11-keymap fr "" latin9<br />
+localectl set-keymap fr-latin9<br />
 
 ### TODO
 basic keyboard config<br />
