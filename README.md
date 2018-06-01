@@ -1,6 +1,7 @@
 # INSTALLATION
 
 ## PACKAGES
+feh<br />
 trizen (aur)<br />
 termite<br />
 rofi<br />
