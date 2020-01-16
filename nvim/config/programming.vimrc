@@ -8,15 +8,23 @@ augroup rust_setting
 augroup END
 " }}}
 
+let g:clang_format#code_style = 'file'
 " C++ file settings ---------------------- {{{
 augroup cpp_setting
     autocmd!
-    autocmd FileType c,cpp nnoremap <F8> :AsyncRun make -C build<cr>
+    autocmd FileType c,cpp nnoremap <F7> :AsyncRun make clean<cr>
+    autocmd FileType c,cpp nnoremap <F8> :AsyncRun ./build.sh <cr>
     autocmd FileType c,cpp nnoremap <F9> :AsyncRun g++ -Wall %<cr>
     autocmd FileType c,cpp nnoremap <F10> :!./a.out<cr>
     autocmd FileType cpp nnoremap <F5> :AsyncRun ./run.sh<cr>
     autocmd FileType cpp setlocal foldmethod=indent
     autocmd FileType cpp setlocal foldlevel=99
+    autocmd FileType cpp setlocal shiftwidth=2
+    autocmd FileType cpp nnoremap <Leader>cf :ClangFormat<cr>
+    autocmd FileType cpp setlocal cinoptions=g0N-s
+    autocmd FileType cpp setlocal cinoptions+=(0,W2
+    autocmd FileType cpp setlocal cinoptions+=j1
+    autocmd FileType cpp setlocal cinoptions+=c0,C1
 augroup END
 " }}}
 

@@ -15,7 +15,7 @@ set shiftwidth=4
 set expandtab
 " }}}
 
-" Serach setting ---------------------- {{{
+" Search setting ---------------------- {{{
 set hlsearch
 " }}}
 
@@ -51,7 +51,7 @@ set number
 
 " Textwidth setting ---------------------- {{{
 set textwidth=0
-set colorcolumn=81
+set colorcolumn=81,161
 " }}}
 
 " Terminal color setting ---------------------- {{{
@@ -69,4 +69,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " MacOSX/Linux
 
 " Word repetition setting ---------------------- {{{
 match SpellBad /\<\(\w\+\)\s\+\1\>/
+" }}}
+
+" CtrlP pom.xml  ---------------------- {{{
+let g:ctrlp_root_markers = ['pom.xml']
+" }}}
+
+" Preview setting  ---------------------- {{{
+let g:float_preview#docked=1
+let g:float_preview#auto_close=1
 " }}}

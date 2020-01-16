@@ -5,6 +5,8 @@ noremap  <silent> <F4>  :GundoToggle<cr>
 nnoremap <silent> <c-p> :Files<cr>
 " }}}
 
+imap <c-j> <Plug>snipMateNextOrTrigger
+
 " Alignement mappings (function) ---------------------- {{{
 function! s:AlignOperator(type,op,left,right,arity)
     let saved_unnamed_register = @@
@@ -180,6 +182,7 @@ nnoremap <silent> <leader>gb :Gbrowse<cr>
 
 " Visual color mappings ---------------------- {{{
 nnoremap <silent> <leader>ct :ColorToggle<cr>
+nnoremap <silent> <leader>it :IndentGuidesToggle<cr>
 " }}}
 
 " Vim edditing mappings ---------------------- {{{
@@ -262,3 +265,8 @@ function! s:FoldColumnToggle()
     endif
 endfunction
 " }}}
+
+"  Quickfix mappings ---------------------- {{{
+nnoremap <silent> <leader>qn :cnext<cr>
+nnoremap <silent> <leader>qp :cprev<cr>
+

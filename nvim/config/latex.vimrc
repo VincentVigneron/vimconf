@@ -18,6 +18,7 @@ augroup latex_programming
     " au FileType plaintex,tex nnoremap <leader>sy :SyntasticCheck<cr>
     autocmd FileType plaintex,tex nnoremap <leader>fp mn{!}fmt -w 80<cr>`n
     autocmd FileType plaintex,tex set textwidth=80
+    " DISABLe ale
 augroup END
 " }}}
 

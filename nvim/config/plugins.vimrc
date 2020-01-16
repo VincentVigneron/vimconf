@@ -62,9 +62,11 @@ let g:markify_warning_text = '⚠'
 " }}}
 
 " Snippet setting ---------------------- {{{
-let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+"let g:UltiSnipsExpandTrigger='<c-j>'
+"let g:UltiSnipsJumpForwardTrigger='<c-j>'
+"let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+"let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+"let g:snipMate.scope_aliases['cpp'] = 'c,cpp'
 " }}}
 
 " Iron setting ---------------------- {{{
@@ -80,3 +82,11 @@ let g:easytags_async=1
 let g:gundo_preview_bottom = 1
 " }}}
 
+" UltiSnips setting ---------------------- {{{
+ "let g:UltiSnipsSnippetDirectories=[ '~/.vim/UltiSnips' ]
+" " }}}
+
+" Python setting ---------------------- {{{
+ "let g:python_host_prog = 'python2'
+ "let g:python3_host_prog = 'python'
+" }}}

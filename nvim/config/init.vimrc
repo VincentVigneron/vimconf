@@ -7,6 +7,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Navigation pluggins ---------------------- {{{
+Plug 'ncm2/float-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -41,6 +42,7 @@ Plug 'vim-scripts/nextval'
 Plug 'Raimondi/delimitMate'
 Plug 'chrisbra/Colorizer' " Coloration
 Plug 'timakro/vim-searchant' " Highlihht current search
+Plug 'machakann/vim-highlightedyank' " Highlihht yanked lines
 " }}}
 
 " Git pluggins ---------------------- {{{
@@ -49,7 +51,11 @@ Plug 'tpope/vim-rhubarb'
 " }}}
 
 " Programming pluggins ---------------------- {{{
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'dhruvasagar/vim-markify'
 Plug 'othree/xml.vim'
@@ -60,16 +66,20 @@ function! BuildYCM(info)
     " - name:   name of the plugin
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status == 'installed' || a:info.force
-        !./install.py --all
-    endif
+    !./install.py --all
+    "if a:info.status == 'installed' || a:info.force
+        "!./install.py --all
+    "endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'rdnetto/YCM-Generator', { 'branch' : 'stable' }
 Plug 'w0rp/ale'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'hkupty/iron.nvim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'aklt/plantuml-syntax'
+Plug 'rhysd/vim-clang-format'
+Plug 'nathanaelkane/vim-indent-guides'
 " }}}
 
 " Themes pluggins ---------------------- {{{
@@ -91,3 +101,4 @@ Plug 'vim-airline/vim-airline-themes'
 " }}}
 
 call plug#end()
+
