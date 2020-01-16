@@ -13,7 +13,8 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -26,7 +27,8 @@ floating_modifier $mod
 exec_always  --no-startup-id  ~/.config/polybar/launch.sh
 exec         --no-startup-id  compton
 #exec         --no-startup-id  albert
-exec         --no-startup-id  wicd-client  --tray
+#exec         --no-startup-id  wicd-client  --tray
+exec         --no-startup-id  nm-applet
 
 # set wallpaper
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/Images/Wallpapers/Art/Storm\ -\ Andreas\ Achenbach.png
@@ -100,6 +102,10 @@ exec xautolock -time 10 -locker i3lock -c 000000
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# move workspace
+bindsym  $mod+Shift+m move workspace to output left
+bindsym  $mod+m move workspace to output right
 
 # switch to workspace
 bindsym  $mod+ampersand   workspace  1
@@ -231,3 +237,4 @@ smart_gaps     on
 smart_borders  on
 
 for_window [class="Nautilus" instance="file_progress"] floating enable
+focus_on_window_activation urgent

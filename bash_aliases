@@ -20,3 +20,6 @@ alias @bureau="xrandr --output LVDS1 --off --output VGA1 --auto --output DP1 --a
 alias @salle="xrandr --output DP1 --off --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 && i3 restart > /dev/null"
 alias @clone="xrandr --output DP1 --off --output VGA1 --auto --output LVDS1 --same-as VGA1&& i3 restart > /dev/null"
 alias vim=nvim
+
+alias otsolver="/home/vincent/hg/otsolver/visual/src/optim/build/RELEASE/bin/otsolver"
+alias otsolver_debug="/home/vincent/hg/otsolver/visual/src/optim/build/DEBUG/bin/otsolver"

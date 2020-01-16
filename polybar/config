@@ -57,11 +57,11 @@ modules-center =
 modules-right  = volume cpu eth wlan battery  date
 ;modules-right = volume cpu eth wlan battery  date  powermenu 
 
-; tray-position = right
-; tray-detached = false
-; tray-padding = 2
-; tray-background = #0063ff
-; tray-transparent = true
+tray-position = right
+tray-detached = false
+tray-padding = 2
+tray-background = #0063ff
+tray-transparent = true
 ;tray-background = #55000000
 
 ;wm-restack = bspwm

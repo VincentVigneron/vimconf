@@ -26,6 +26,9 @@ gucharmap<br />
 i3-gap (aur)<br />
 i3lock<br />
 immagemagick<br />
+include-what-yous-use (aur)<br />
+cppcheck<br />
+clang-format<br />
 kate<br />
 lightdm<br />
 lightdm-gtk-greeter<br />
@@ -57,6 +60,7 @@ neovim-nerdtree (aur)<br />
 neovim-plug (aur)<br />
 neovim-ultisnips (aur)<br />
 neovim-youcomplete-me-core-git (aur)<br />
+systemd-numlockontty (aur)<br />
 python-neovim<br />
 vlc<br />
 w3m<br />
@@ -237,6 +241,9 @@ Clean bashrc => zshrc<br />
 
 ## ZSHRC
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"<br />
+
+## NUMLOCK ON TTY
+systemctl enable numLockOnTty.service
 
 ## SDDM
 systemctl enable sddm.service<br />

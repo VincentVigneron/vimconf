@@ -16,6 +16,7 @@ declare -a list_of_files=(
 	"vimrc"
 	"Xresources"
 	"Xdefaults"
+	"zshrc"
 )
 for i in "${list_of_files[@]}"
 do

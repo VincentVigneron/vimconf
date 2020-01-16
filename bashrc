@@ -165,10 +165,11 @@ stty ixoff -ixon
 
 # export VISUAL=kate
 
-export JAVA_HOME="/usr/lib/jvm/java-9-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
 # export VISUAL="/usr/bin/kate"
 export EDITOR="nvim"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
+export IWYU_MAPPING=$HOME/.config/iwyu/mappings.mp
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
     #PS1="%{$fg[black]%}[%T]%{$reset_color%}%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%}:%{$fg[yellow]%}%2~%{$reset_color%} "

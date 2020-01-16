@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$HOME/hg/otsolver/visual/src/optim/build/RELEASE/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/vincent/.oh-my-zsh
@@ -94,11 +95,12 @@ bindkey '\e[B' history-search-forward
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"
-export JAVA_HOME="/usr/lib/jvm/java-9-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-13-openjdk"
 # export VISUAL="/usr/bin/kate"
 export EDITOR="/bin/nvim"
 export SYSTEMD_EDITOR="/bin/nvim"
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
+export IWYU_MAPPING=$HOME/.config/iwyu/mappings.mp
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
