@@ -10,5 +10,6 @@
     { include: ["@<boost/lexical_cast/.*>", "private", "<boost/lexical_cast.hpp>", "public"] },
     { include: ["@<gecode/int/.*>", "private", "<gecode/int.hh>", "public"] },
     { include: ["@<math.h>", "public", "<cmath>", "public"] },
-    { include: ["@<stdlib.h>", "public", "<cstdlib>", "public"] }
+    { include: ["@<stdlib.h>", "public", "<cstdlib>", "public"] },
+    { include: ["@<cxxabi.h>", "public", "<future>", "public"] }
 ]
