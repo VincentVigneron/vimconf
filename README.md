@@ -52,8 +52,6 @@ wpa_supplicant<br />
 util-linux<br />
 neovim<br />
 neovim-surround (aur)<br />
-neovim-airline (aur)<br />
-neovim-airline-themes (aur)<br />
 neovim-commentary (aur)<br />
 neovim-fugitive (aur)<br />
 neovim-nerdtree (aur)<br />

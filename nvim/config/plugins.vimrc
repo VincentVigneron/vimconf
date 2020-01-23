@@ -15,45 +15,75 @@ let g:colorizer_skip_comments = 1
 " }}}
 
 " Airline setting ---------------------- {{{
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+"if !exists('g:airline_symbols')
+  "let g:airline_symbols = {}
+"endif
+"" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.maxlinenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.spell = 'Ꞩ'
+"let g:airline_symbols.notexists = '∄'
+"let g:airline_symbols.whitespace = 'Ξ'
 
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+"" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
 
-let g:bufferline_echo=0
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-let g:asyncrun_status=' pending '
+"let g:bufferline_echo=0
+"let g:airline#extensions#bufferline#enabled = 1
+"let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+"let g:asyncrun_status=' pending '
 
-set statusline+=%#warningmsg#
-set statusline+=%{fugitive#statusline()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{fugitive#statusline()}
+"set statusline+=%*
+" }}}
+
+" Status bar setting ---------------------- {{{
+"set statusline+=%#warningmsg#
+"set statusline+=%{fugitive#statusline()}
+"set statusline+=%*
+" }}}
+
+" Lightline setting ---------------------- {{{
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \      'left': [ [ 'mode', 'paste' ],
+            \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+            \      'right': [ [ 'percent', 'lineinfo' ],
+            \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
+            \            ['asyncrun_status']]},
+            \ 'inactive': {
+            \      'left': [ [ 'mode', 'paste' ],
+            \           [ 'readonly', 'filename', 'modified' ] ],
+            \      'right': [ [ 'percent', 'lineinfo' ],
+            \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
+            \            ['asyncrun_status']]},
+            \ 'component_expand': {
+            \          'asyncrun_status': 'lightline#asyncrun#status'},
+            \ 'component_function': {
+            \          'gitbranch': 'fugitive#head'},
+            \ 'component': {
+            \          'charvaluehex': '0x%B'},
+            \ }
 " }}}
 
 " Markify setting ---------------------- {{{
@@ -83,10 +113,10 @@ let g:gundo_preview_bottom = 1
 " }}}
 
 " UltiSnips setting ---------------------- {{{
- "let g:UltiSnipsSnippetDirectories=[ '~/.vim/UltiSnips' ]
+"let g:UltiSnipsSnippetDirectories=[ '~/.vim/UltiSnips' ]
 " " }}}
 
 " Python setting ---------------------- {{{
- "let g:python_host_prog = 'python2'
- "let g:python3_host_prog = 'python'
+"let g:python_host_prog = 'python2'
+"let g:python3_host_prog = 'python'
 " }}}

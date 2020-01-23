@@ -11,7 +11,9 @@ Plug 'ncm2/float-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+Plug 'albertomontesg/lightline-asyncrun'
 Plug 'rking/ag.vim'
 "Plug 'Chun-Yang/vim-action-ag'
 Plug 'majutsushi/tagbar'
@@ -20,7 +22,7 @@ function! BuildPhpctags(info)
     " - name:   name of the plugin
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status == 'installed' || a:info.force
+    if a:info.status ==# 'installed' || a:info.force
         !make
     endif
 endfunction
@@ -87,7 +89,7 @@ Plug 'uplus/vim-clang-rename'
 Plug 'dim13/smyck.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 " Plug 'godlygeek/csapprox'
 " }}}
 
