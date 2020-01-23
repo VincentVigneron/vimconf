@@ -3,6 +3,7 @@ noremap  <silent> <F2>  :NERDTreeToggle<cr>
 noremap  <silent> <F3>  :Tagbar<cr>
 noremap  <silent> <F4>  :GundoToggle<cr>
 nnoremap <silent> <c-p> :Files<cr>
+"nnoremap <silent> <c-p> <plug>(fzf-complete-file-ag)
 " }}}
 
 imap <c-j> <Plug>snipMateNextOrTrigger

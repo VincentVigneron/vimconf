@@ -128,3 +128,5 @@ export IWYU_MAPPING=$HOME/.config/iwyu/mappings.mp
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND="fd --type f"

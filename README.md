@@ -3,6 +3,7 @@
 ## PACKAGES
 feh<br />
 trizen (aur)<br />
+fd<br />
 termite<br />
 rofi<br />
 polybar (aur)<br />
