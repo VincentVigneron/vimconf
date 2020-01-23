@@ -3,6 +3,7 @@
     { symbol: ["std::ostringstream", "private", "<sstream>", "public"] },
     { symbol: ["std::pair", "private", "<utility>", "public"] },
     { symbol: ["std::size_t", "private", "<cstddef>", "public"] },
+    { symbol: ["std::abs", "private", "<cmath>", "public"] },
     { symbol: ["__gnu_cxx::size_t", "private", "<cstddef>", "public"] },
     { symbol: ["__gnu_cxx::__alloc_traits", "private", "<memory>", "public"] },
     { include: ["@<ext/alloc_traits.h>", "private", "<memory>", "public"] },

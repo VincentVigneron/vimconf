@@ -19,10 +19,6 @@ let g:colorizer_skip_comments = 1
   "let g:airline_symbols = {}
 "endif
 "" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
 "let g:airline_symbols.crypt = '🔒'
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
@@ -37,23 +33,11 @@ let g:colorizer_skip_comments = 1
 "let g:airline_symbols.notexists = '∄'
 "let g:airline_symbols.whitespace = 'Ξ'
 
-"" powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
 
-"let g:bufferline_echo=0
-"let g:airline#extensions#bufferline#enabled = 1
-"let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-"let g:asyncrun_status=' pending '
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{fugitive#statusline()}
-"set statusline+=%*
 " }}}
 
 " Status bar setting ---------------------- {{{
@@ -63,13 +47,20 @@ let g:colorizer_skip_comments = 1
 " }}}
 
 " Lightline setting ---------------------- {{{
+let g:lightline#ale#indicator_checking = '  '
+let g:lightline#ale#indicator_infos = ' '
+let g:lightline#ale#indicator_warnings = '  '
+let g:lightline#ale#indicator_errors = '  '
+let g:lightline#ale#indicator_ok = '  '
+
 let g:lightline = {
-            \ 'colorscheme': 'wombat',
+            \ 'colorscheme': 'one',
             \ 'active': {
             \      'left': [ [ 'mode', 'paste' ],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
             \      'right': [ [ 'percent', 'lineinfo' ],
             \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
+            \            [ 'linter_checking', 'linter_infos', 'linter_warnings', 'linter_errors', 'linter_ok' ],
             \            ['asyncrun_status']]},
             \ 'inactive': {
             \      'left': [ [ 'mode', 'paste' ],
@@ -78,12 +69,24 @@ let g:lightline = {
             \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
             \            ['asyncrun_status']]},
             \ 'component_expand': {
+            \          'linter_checking': 'lightline#ale#status',
+            \          'linter_infos': 'lightline#ale#infos',
+            \          'linter_warnings': 'lightline#ale#warnings',
+            \          'linter_errors': 'lightline#ale#errors',
+            \          'linter_ok': 'lightline#ale#ok',
             \          'asyncrun_status': 'lightline#asyncrun#status'},
+            \ 'component_type': {
+            \          'linter_checking': 'right',
+            \          'linter_infos': 'right',
+            \          'linter_warnings': 'warning',
+            \          'linter_errors': 'error',
+            \          'linter_ok': 'right'},
             \ 'component_function': {
             \          'gitbranch': 'fugitive#head'},
             \ 'component': {
             \          'charvaluehex': '0x%B'},
             \ }
+" component_type for color
 " }}}
 
 " Markify setting ---------------------- {{{
