@@ -54,7 +54,6 @@ neovim-surround (aur)<br />
 neovim-airline (aur)<br />
 neovim-airline-themes (aur)<br />
 neovim-commentary (aur)<br />
-neovim-ctrlp (aur)<br />
 neovim-fugitive (aur)<br />
 neovim-nerdtree (aur)<br />
 neovim-plug (aur)<br />
@@ -250,3 +249,6 @@ systemctl enable sddm.service<br />
 sudo su<br />
 echo 'setxkbmap "fr"' >> /usr/share/sddm/scripts/Xsetup<br />
 pacman -Rs qt5-virtualkayboard<br />
+
+## CLANG FORMAT
+Maybe add $CLANG_FORMAT variable to easy set clang format for all c++ project

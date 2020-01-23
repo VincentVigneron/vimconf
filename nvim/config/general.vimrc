@@ -1,5 +1,14 @@
 syntax on
 
+" Highlights NOTE setting ---------------------- {{{
+fun! SetMyTodos()
+    syn match myTodos /\%(NOTE:\)/
+    hi link myTodos Todo
+endfu
+autocmd bufenter * :call SetMyTodos()
+autocmd filetype * :call SetMyTodos()
+" }}}
+
 " Python setting ---------------------- {{{
 let g:python_host_prog = 'python'
 " }}}
@@ -72,10 +81,10 @@ match SpellBad /\<\(\w\+\)\s\+\1\>/
 " }}}
 
 " CtrlP pom.xml  ---------------------- {{{
-let g:ctrlp_root_markers = ['pom.xml']
+" # set crltrpxxx=[pom.xml"
 " }}}
 
 " Preview setting  ---------------------- {{{
-let g:float_preview#docked=1
+let g:float_preview#docked=0
 let g:float_preview#auto_close=1
 " }}}

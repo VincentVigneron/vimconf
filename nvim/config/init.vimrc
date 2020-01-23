@@ -80,6 +80,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'aklt/plantuml-syntax'
 Plug 'rhysd/vim-clang-format'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'uplus/vim-clang-rename'
 " }}}
 
 " Themes pluggins ---------------------- {{{

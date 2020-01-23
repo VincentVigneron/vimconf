@@ -14,8 +14,8 @@ augroup cpp_setting
     autocmd!
     autocmd FileType c,cpp nnoremap <F7> :AsyncRun make clean<cr>
     autocmd FileType c,cpp nnoremap <F8> :AsyncRun ./build.sh <cr>
-    autocmd FileType c,cpp nnoremap <F9> :AsyncRun g++ -Wall %<cr>
-    autocmd FileType c,cpp nnoremap <F10> :!./a.out<cr>
+    autocmd FileType c,cpp nnoremap <F9> :AsyncRun ./build_debug.sh %<cr>
+    autocmd FileType c,cpp nnoremap <F10> :AsyncRun g++ -Wall %<cr>
     autocmd FileType cpp nnoremap <F5> :AsyncRun ./run.sh<cr>
     autocmd FileType cpp setlocal foldmethod=indent
     autocmd FileType cpp setlocal foldlevel=99
