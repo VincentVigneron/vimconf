@@ -103,7 +103,7 @@ let g:markify_warning_text = '⚠'
 " }}}
 
 " Iron setting ---------------------- {{{
-let g:iron_repl_open_cmd="vsplit"
+let g:iron_repl_open_cmd = 'vsplit'
 " }}}
 
 " Easytag setting ---------------------- {{{

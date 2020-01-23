@@ -227,7 +227,6 @@ nnoremap <silent> <space>    :bnext<cr>
 nnoremap <silent> <c-space>  :bprevious<cr>
 nnoremap <silent> <leader>;  :<c-u>execute 'normal! mcA;'."\<lt>esc>".'`c'<cr>
 nnoremap <silent> <leader>br :<c-u>execute 'normal! mcA<br />'."\<lt>esc>".'`c'<cr>
-nnoremap <silent> <c-l>      :nohl<cr><c-l>:AirlineRefresh<cr>
 
 "nnoremap <leader>ag :<c-u>execute "normal! viw\"cy/\<lt>c-r>c\<lt>cr>:nohlsearch\<lt>cr>:AgFromSearch!\<lt>cr>"<cr>
 "vnoremap <leader>ag :<c-u>execute "normal! \"cy/\<lt>c-r>c\<lt>cr>:nohlsearch\<lt>cr>:AgFromSearch!\<lt>cr>"<cr>
