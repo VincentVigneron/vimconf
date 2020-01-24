@@ -59,7 +59,7 @@ let g:lightline = {
             \      'left': [ [ 'mode', 'paste' ],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
             \      'right': [ [ 'percent', 'lineinfo' ],
-            \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
+            \            [ 'fileformat', 'fileencoding', 'filetype' ],
             \            [ 'linter_checking', 'linter_infos', 'linter_warnings', 'linter_errors', 'linter_ok' ],
             \            ['asyncrun_status']]},
             \ 'inactive': {
