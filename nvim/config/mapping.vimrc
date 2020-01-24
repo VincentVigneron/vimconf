@@ -270,4 +270,6 @@ endfunction
 "  Quickfix mappings ---------------------- {{{
 nnoremap <silent> <leader>qn :cnext<cr>
 nnoremap <silent> <leader>qp :cprev<cr>
+"}}}
 
+nnoremap <silent> <c-l> :nohls<cr><c-l>
