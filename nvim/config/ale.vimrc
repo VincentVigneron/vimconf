@@ -10,8 +10,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 	\ 'rust' : ['rustfmt'],
 	\}
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:airline#extensions#ale#enabled = 1
 let g:ale_cpp_clang_options = '-std=c++2a -Wall'
 let g:ale_cpp_clangtidy_options = '-std=c++17'

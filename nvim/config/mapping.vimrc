@@ -188,7 +188,8 @@ nnoremap <silent> <leader>it :IndentGuidesToggle<cr>
 
 " Vim edditing mappings ---------------------- {{{
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
+" stop asynchronus execution to avoid bug during sourcing
+nnoremap <silent> <leader>sv :AsyncStop<cr>:source $MYVIMRC<cr>
 " }}}
 
 " Ale mappings ---------------------- {{{

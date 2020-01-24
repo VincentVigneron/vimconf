@@ -66,7 +66,7 @@ let g:lightline = {
             \      'left': [ [ 'mode', 'paste' ],
             \           [ 'readonly', 'filename', 'modified' ] ],
             \      'right': [ [ 'percent', 'lineinfo' ],
-            \            [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ],
+            \            [ 'fileformat', 'fileencoding', 'filetype' ],
             \            ['asyncrun_status']]},
             \ 'component_expand': {
             \          'linter_checking': 'lightline#ale#status',
