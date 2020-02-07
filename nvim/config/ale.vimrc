@@ -14,8 +14,8 @@ let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:airline#extensions#ale#enabled = 1
 let g:ale_cpp_clang_options = '-std=c++2a -Wall'
-let g:ale_cpp_clangtidy_options = '-std=c++17'
-let g:ale_cppcheck_options = '--enable=style --enable=warning --enable=performance --enable=portability --inconclusive --force -- inline-suppr'
+let g:ale_cpp_clangtidy_extra_options = '-std=c++2a'
+let g:ale_cppcheck_options = '--std=c++20 --enable=style --enable=warning --enable=portability --inconclusive --force -- inline-suppr'
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
 let g:ale_warn_about_trailing_whitespace = 1

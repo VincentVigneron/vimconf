@@ -7,51 +7,15 @@ let g:gruvbox_contrast_light     = 'hard'
 let g:gruvbox_contrast_dark      = 'hard'
 " }}}
 
-" Colorizer setting ---------------------- {{{
-let g:colorizer_auto_color = 0
-let g:colorizer_auto_filetype='css,html'
-let g:colorizer_fgcontrast=0
-let g:colorizer_skip_comments = 1
-" }}}
-
-" Airline setting ---------------------- {{{
-"if !exists('g:airline_symbols')
-  "let g:airline_symbols = {}
-"endif
-"" unicode symbols
-"let g:airline_symbols.crypt = '🔒'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.maxlinenr = '☰'
-"let g:airline_symbols.maxlinenr = ''
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.spell = 'Ꞩ'
-"let g:airline_symbols.notexists = '∄'
-"let g:airline_symbols.whitespace = 'Ξ'
-
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
-
-" }}}
-
-" Status bar setting ---------------------- {{{
-"set statusline+=%#warningmsg#
-"set statusline+=%{fugitive#statusline()}
-"set statusline+=%*
-" }}}
-
 " Lightline setting ---------------------- {{{
 let g:lightline#ale#indicator_checking = '  '
 let g:lightline#ale#indicator_infos = ' '
 let g:lightline#ale#indicator_warnings = '  '
 let g:lightline#ale#indicator_errors = '  '
 let g:lightline#ale#indicator_ok = '  '
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
 
 let g:lightline = {
             \ 'colorscheme': 'one',
@@ -90,8 +54,8 @@ let g:lightline = {
 " }}}
 
 " Markify setting ---------------------- {{{
-let g:markify_error_text = '✗'
-let g:markify_warning_text = '⚠'
+"let g:markify_error_text = '✗'
+"let g:markify_warning_text = '⚠'
 " }}}
 
 " Snippet setting ---------------------- {{{

@@ -5,4 +5,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = 'usr/bin/python3'
 let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 set completeopt-=preview
+
+let g:ycm_error_symbol = ''
+let g:ycm_warning_symbol = ''
 " }}}

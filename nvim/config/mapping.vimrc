@@ -181,6 +181,10 @@ nnoremap <silent> <leader>gp :AsyncRun git push origin HEAD<cr>
 nnoremap <silent> <leader>gb :Gbrowse<cr>
 " }}}
 
+" Async mappings ---------------------- {{{
+nnoremap <silent> <leader>as :AsyncStop<cr>
+" }}}
+
 " Visual color mappings ---------------------- {{{
 nnoremap <silent> <leader>ct :ColorToggle<cr>
 nnoremap <silent> <leader>it :IndentGuidesToggle<cr>

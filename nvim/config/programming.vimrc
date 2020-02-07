@@ -21,10 +21,6 @@ augroup cpp_setting
     autocmd FileType cpp setlocal foldlevel=99
     autocmd FileType cpp setlocal shiftwidth=2
     autocmd FileType cpp nnoremap <Leader>cf :ClangFormat<cr>
-    autocmd FileType cpp setlocal cinoptions=g0N-s
-    autocmd FileType cpp setlocal cinoptions+=(0,W2
-    autocmd FileType cpp setlocal cinoptions+=j1
-    autocmd FileType cpp setlocal cinoptions+=c0,C1
 augroup END
 " }}}
 
